@@ -72,8 +72,9 @@ h1 img {
     background-color: rgba(255, 255, 255, 0.8); /* Makes only the background transparent */
     padding: 20px;
     border-radius: 8px; /* Optional: adds rounded corners */
-    max-width: 80%;
+    max-width: 100%;
     margin: 0 auto; /* Centers the section horizontally */
+    min-width: 220px;
 }
 
 .how-it-works .row {
@@ -81,6 +82,10 @@ h1 img {
     justify-content: center;
     align-items: center;
     gap: 20px; /* Adds spacing between columns */
+}
+
+.how-it-works .row .col-md-3:nth-child(2) { 
+    margin-top: 60px; /* Moves the second column slightly down */
 }
 
 /* Newsletter Section */
@@ -199,6 +204,13 @@ h1 img {
     h1 img {
         max-width: 80%; /* Scales down the logo for tablets */
         padding-top: 120px;
+    }
+}
+
+@media (max-width: 767px) {
+
+    .how-it-works .row .col-md-3:nth-child(2) { 
+        margin-top: 0px; /* Reduces top margin for smaller screens */
     }
 }
 
