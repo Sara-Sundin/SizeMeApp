@@ -20,6 +20,21 @@ h1 img {
     position: relative; /* Ensures content is positioned correctly */
 }
 
+/* Overlay to make only the background semi-transparent */
+.index-page::before {
+    content: "";
+    position: absolute;
+    top: 60px; /* Moves the background image further down */
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: url("../images/body_male.gif") no-repeat top center;
+    background-size: cover;
+    background-attachment: scroll;
+    opacity: 0.5; /* Now only the background image is transparent */
+    z-index: -1; /*  Keeps it behind the content */
+}
+
 .hero div {
     padding-top: 30px;
     padding-bottom: 30px;
@@ -43,25 +58,78 @@ h1 img {
     transform: scale(1.5); 
 }
 
-/* Overlay to make only the background semi-transparent */
-.index-page::before {
-    content: "";
-    position: absolute;
-    top: 60px; /* Moves the background image further down */
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background: url("../images/body_male.gif") no-repeat top center;
-    background-size: cover;
-    background-attachment: scroll;
-    opacity: 0.5; /* Now only the background image is transparent */
-    z-index: -1; /*  Keeps it behind the content */
+.icon {
+    font-size: 48px;
+}
+
+.transparent-box {
+    background-color: rgba(255, 255, 255, 0.8); /* Makes only the background transparent */
+    padding: 20px;
+    border-radius: 8px; /* Optional: adds rounded corners */
+    max-width: 80%;
+    margin: 0 auto; /* Centers the section horizontally */
+}
+
+.how-it-works .row {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 20px; /* Adds spacing between columns */
+}
+
+/* Newsletter Section */
+.newsletter {
+    background-color: #616F82;
+    color: white;
+    padding: 40px 20px;
+    border-radius: 8px;
+    max-width: 500px;
+    margin: 0 auto; /* Centers the section horizontally */
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+
+/* Center form elements */
+.newsletter-form {
+    display: flex;
+    justify-content: center;
+    gap: 10px; /* Adds space between input and button */
+    margin: 20px auto; /* Centers the form */
+}
+
+/* Input field */
+.newsletter-form input {
+    flex: 1; /* Makes input expand to fill space */
+    padding: 12px;
+    border-radius: 5px;
+    font-size: 1rem;
+}
+
+/* Subscribe button */
+.newsletter-form button {
+    background-color: #E84E1B; 
+    color: white;
+    text-decoration: none;
+    padding: 12px 20px;
+    font-size: 1rem;
+    font-weight: bold;
+    border-radius: 5px;
+    border: none;
+    cursor: pointer;
 }
 
 @media (max-width: 480px) {
     h1 img {
         max-width: 80%; /* Scales down the logo for mobile screens */
         padding-top: 80px;
+    }
+}
+
+/* Responsive behavior */
+@media (max-width: 576px) {
+    .newsletter-form {
+        flex-direction: column; /* Stack input and button on small screens */
+        gap: 15px;
     }
 }
 
