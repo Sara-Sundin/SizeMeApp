@@ -60,6 +60,7 @@ h1 img {
 
 .icon {
     font-size: 48px;
+    color: #616F82;
 }
 
 .transparent-box {
@@ -116,6 +117,52 @@ h1 img {
     border-radius: 5px;
     border: none;
     cursor: pointer;
+}
+
+.contact {
+    padding-top: 20px;
+    padding-bottom: 20px;
+}
+
+/* Contact Button Styling */
+.contact .btn {
+    background-color: #616F82; 
+    color: white;
+    text-decoration: none;
+    padding: 12px 20px;
+    font-size: 1rem;
+    font-weight: bold;
+    border-radius: 5px;
+    border: none;
+    cursor: pointer;
+    transition: background 0.3s ease-in-out, transform 0.2s ease-in-out;
+}
+
+/* Hover Effect */
+.contact .btn:hover {
+    background-color: #4F5C6D; /* Slightly darker on hover */
+    transform: scale(1.05); /* Small scaling effect */
+}
+
+/* Social Icons Container */
+.social-icons {
+    display: flex;
+    justify-content: center; /* Centers icons */
+    gap: 50px; /* Space between icons */
+    padding-top: 20px;
+    padding-bottom: 20px;
+}
+
+.social-icons a {
+    font-size: 48px; /* Adjust icon size */
+    color: #616F82; /* Default color */
+    transition: color 0.3s ease-in-out, transform 0.2s ease-in-out;
+}
+
+/* Hover Effect */
+.social-icons a:hover {
+    color: #E84E1B; /* Change color on hover */
+    transform: scale(1.2); /* Slightly enlarge on hover */
 }
 
 @media (max-width: 480px) {
