@@ -1,8 +1,67 @@
-{% extends 'base.html' %}
 
-{% block title %}Home - SizeMeApp{% endblock %}
+{% extends "base.html" %}
 
 {% block content %}
-    <h1>Welcome to SizeMeApp</h1>
-    <p>Your go-to solution for size recommendations.</p>
+
+<!-- Hero Section -->
+<section class="hero">
+    <div class="container text-center">
+        <h1>
+            <img src="{% static 'images/logo.png' %}" alt="SizeMeApp Logo">
+        </h1>
+        
+        <a href="#" class="btn btn-primary">Try It Now</a>
+    </div>
+</section>
+
+<!-- How It Works -->
+<section class="how-it-works">
+    <div class="container">
+        <h2 class="text-center">How It Works</h2>
+        <div class="row">
+            <div class="col-md-4 text-center">
+                <i class="fa-solid fa-ruler-combined fa-3x"></i>
+                <h3>Measure</h3>
+                <p>Take your measurements easily.</p>
+            </div>
+            <div class="col-md-4 text-center">
+                <i class="fa-solid fa-cloud fa-3x"></i>
+                <h3>Upload</h3>
+                <p>Upload your measurements to SizeMeApp.</p>
+            </div>
+            <div class="col-md-4 text-center">
+                <i class="fa-solid fa-shirt fa-3x"></i>
+                <h3>Find Your Fit</h3>
+                <p>Get recommendations based on your size.</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Newsletter Signup -->
+<section class="newsletter text-center">
+    <h2>Stay Updated</h2>
+    <form>
+        <input type="email" placeholder="Enter your email" required>
+        <button type="submit" class="btn btn-secondary">Subscribe</button>
+    </form>
+</section>
+
+<!-- About Us -->
+<section class="about text-center">
+    <h2>About Us</h2>
+    <p>SizeMeApp is dedicated to helping you find the perfect fit for your online shopping.</p>
+</section>
+
+<!-- Contact & Social Media -->
+<section class="contact text-center">
+    <h2>Get in Touch</h2>
+    <a href="mailto:contact@sizemeapp.com" class="btn btn-primary">Contact Us</a>
+    <div class="social-icons">
+        <a href="#"><i class="fa-brands fa-facebook fa-2x"></i></a>
+        <a href="#"><i class="fa-brands fa-instagram fa-2x"></i></a>
+        <a href="#"><i class="fa-brands fa-twitter fa-2x"></i></a>
+    </div>
+</section>
+
 {% endblock %}
