@@ -14,26 +14,31 @@ h1 img {
     background-color: #D3D7DB; /* Solid background color */
     background-repeat: no-repeat;
     background-position: top center;
-    background-size: auto 100vh; /* Ensures full image is visible */
     background-attachment: scroll;
     min-height: 100vh;
     position: relative; /* Ensures content is positioned correctly */
+    min-height: 100vh;
 }
 
 /* Overlay to make only the background semi-transparent */
 .index-page::before {
     content: "";
     position: absolute;
-    top: 60px; /* Moves the background image further down */
+    top: 80px; /* Moves the background image further down */
     left: 0;
     width: 100%;
-    height: 100%;
     background: url("../images/body_male.gif") no-repeat top center;
-    background-size: cover;
+    background-size: 95%;
     background-attachment: scroll;
     opacity: 0.5; /* Now only the background image is transparent */
     z-index: -1; /*  Keeps it behind the content */
+    bottom: 0; /* Add this */
+    height: auto;
 }
+
+.navbar {
+    background-color: #616F82;
+} 
 
 .hero div {
     padding-top: 30px;
@@ -163,6 +168,16 @@ h1 img {
 .social-icons a:hover {
     color: #E84E1B; /* Change color on hover */
     transform: scale(1.2); /* Slightly enlarge on hover */
+}
+
+.footer {
+    background-color: #616F82;
+    color: white;
+    text-align: center;
+    padding: 20px 0;
+    font-size: 1rem;
+    width: 100%;
+    position: relative;
 }
 
 @media (max-width: 480px) {
