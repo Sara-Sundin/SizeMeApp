@@ -32,7 +32,7 @@ SECRET_KEY = config("SECRET_KEY", default="fallback-secret-key")
 DATABASE_URL = config("DATABASE_URL", default="")
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = False
+DEBUG = True
 
 ALLOWED_HOSTS = ['.herokuapp.com', 'localhost', '127.0.0.1']
 
@@ -96,6 +96,11 @@ DATABASES = {
     'default': dj_database_url.parse(os.environ.get("DATABASE_URL", ""))
 
 }
+
+CSRF_TRUSTED_ORIGINS = [
+    "https://*.codeinstitute-ide.net/",
+    "https://*.herokuapp.com"
+]
 
 
 # Password validation
