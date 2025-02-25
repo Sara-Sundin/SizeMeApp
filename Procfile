@@ -1,1 +1,1 @@
-web: gunicorn size-me-app.wsgi
+web: gunicorn SizeMeApp.wsgi
