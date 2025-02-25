@@ -32,7 +32,7 @@ SECRET_KEY = config("SECRET_KEY", default="fallback-secret-key")
 DATABASE_URL = config("DATABASE_URL", default="")
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = False
 
 ALLOWED_HOSTS = ['.herokuapp.com', 'localhost', '127.0.0.1']
 

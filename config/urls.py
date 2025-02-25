@@ -20,5 +20,5 @@ from django.urls import path, include
 urlpatterns = [
     path('admin/', admin.site.urls), 
     path('', include('apps.pages.urls')),  # Connects home page to the pages app
-    path('blog/', include('apps.blog.urls')),
+    path('blog/', include('apps.blog.urls'), name='blog-urls'),
 ]
