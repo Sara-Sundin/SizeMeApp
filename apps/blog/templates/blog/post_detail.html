@@ -48,16 +48,14 @@
         <div class="row">
             <div class="col-md-8 offset-md-2">
                 <div id="message-container">
-
                     {% if messages %}
-                    {% for message in messages %}
-                    <div class="alert {{ message.tags }} alert-dismissible fade show" role="alert">
-                        {{ message }}
-                        <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
-                    </div>
-                    {% endfor %}
-                {% endif %}
-                
+                        {% for message in messages %}
+                        <div class="alert {{ message.tags }} alert-dismissible fade show" role="alert">
+                            {{ message }}
+                            <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+                        </div>
+                        {% endfor %}
+                    {% endif %}
                 </div>
             </div>
         </div>
@@ -68,28 +66,37 @@
         <div class="col-md-8 card mb-4 mt-3">
             <h3>Comments:</h3>
             <div class="card-body" id="comments-list">
+                {% if comments %}
                 {% for comment in comments %}
-                <div class="p-2 comments
-                    {% if not comment.approved and comment.author == user %}
-                    faded{% elif not comment.approved %} d-none{% endif %}">
+                <div class="p-2 comments {% if not comment.approved and comment.author == request.user %} faded {% endif %}">
                     <p class="font-weight-bold">
                         {{ comment.author }}
                         <span class="font-weight-normal">
                             {{ comment.created_on }}
                         </span> wrote:
                     </p>
+                
                     <div id="comment{{ comment.id }}">
                         {{ comment.body | linebreaks }}
                     </div>
-                    {% if not comment.approved and comment.author == user %}
+                
+                    {% if not comment.approved and comment.author == request.user %}
                     <p class="approval">
                         This comment is awaiting approval
                     </p>
+                    {% endif %}
+                
+                    {% if request.user.is_authenticated and comment.author == request.user %}
+                    <button class="btn btn-edit" comment_id="{{ comment.id }}">Edit</button>
                     {% endif %}
                 </div>
                 {% empty %}
                 <p>No comments yet. Be the first to comment!</p>
                 {% endfor %}
+                
+                {% else %}
+                    <p>No comments yet. Be the first to comment!</p>
+                {% endif %}
             </div>
         </div>
 
@@ -124,10 +131,10 @@
                 type: "POST",
                 url: "{% url 'post_detail' post.slug %}",
                 data: $(this).serialize(),
-                dataType: "json",  //  Ensure response is expected as JSON
+                dataType: "json",
                 success: function (response) {
                     if (response.status === "success") {
-                        //  Show success message
+                        // Show success message
                         $("#message-container").html(`
                             <div class="alert alert-success alert-dismissible fade show" role="alert">
                                 ${response.message}
@@ -138,18 +145,24 @@
                         // Reset form fields
                         $("#commentForm")[0].reset();
 
+                        // Define classes for the new comment
+                        let fadedClass = response.new_comment.approved ? "" : "faded";
+                        let editButton = response.new_comment.approved ? "" : `
+                            <button class="btn btn-edit" data-comment-id="${response.new_comment.id}">Edit</button>
+                        `;
+
                         // Append new comment dynamically
-                        if (response.new_comment) {
-                            $("#comments-list").append(`
-                                <div class="p-2 comments">
-                                    <p class="font-weight-bold text-primary">${response.new_comment.author}
-                                        <span class="font-weight-normal text-muted">${response.new_comment.created_on}</span> wrote:
-                                    </p>
-                                    <div>${response.new_comment.body}</div>
-                                </div>
-                                <hr>
-                            `);
-                        }
+                        $("#comments-list").prepend(`
+                            <div class="p-2 comments ${fadedClass}" id="comment-${response.new_comment.id}">
+                                <p class="font-weight-bold text-primary">${response.new_comment.author}
+                                    <span class="font-weight-normal text-muted">${response.new_comment.created_on}</span> wrote:
+                                </p>
+                                <div>${response.new_comment.body}</div>
+                                ${response.new_comment.approved ? "" : "<p class='approval'>This comment is awaiting approval</p>"}
+                                ${editButton}
+                            </div>
+                            <hr>
+                        `);
                     } else {
                         // Handle form errors
                         $("#message-container").html(`
@@ -162,7 +175,6 @@
                 },
                 error: function (xhr) {
                     let errorMsg = "Something went wrong. Please try again.";
-                    
                     if (xhr.responseJSON && xhr.responseJSON.message) {
                         errorMsg = xhr.responseJSON.message;
                     }
@@ -178,5 +190,6 @@
         });
     });
 </script>
+
 
 {% endblock content %}
