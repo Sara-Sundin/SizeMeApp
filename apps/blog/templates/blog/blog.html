@@ -1,8 +1,10 @@
 {% extends "base.html" %}
 
+{% block body_class %}blog-page{% endblock %} 
+
 {% block content %}
 
-<!-- index.html content starts here -->
+<!-- blog.html content starts here -->
 <div class="container-fluid">
     <div class="row">
 
@@ -20,6 +22,7 @@
                             </div>
                             <a href="#" class="post-link">
                                 <h2 class="card-title">{{ post.title }}</h2>
+                                <p class="card-text">{{ post.excerpt }}</p>
                             </a>
 
                             <hr />

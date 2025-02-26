@@ -1,4 +1,4 @@
-body {
+.body {
     background-color: #D3D7DB;
 }
 
@@ -10,8 +10,8 @@ h1 img {
 }
 
 /* Ensure content is fully visible */
-.index-page {
-    background-color: #D3D7DB; /* Solid background color */
+.index-page,
+.blog-page {
     background-repeat: no-repeat;
     background-position: top center;
     background-attachment: scroll;
@@ -21,7 +21,8 @@ h1 img {
 }
 
 /* Overlay to make only the background semi-transparent */
-.index-page::before {
+.index-page::before,
+.blog-page::before  {
     content: "";
     position: absolute;
     top: 80px; /* Moves the background image further down */
@@ -187,7 +188,7 @@ h1 img {
 
 .card {
     border: none;
-    background-color: transparent;
+    background-color: rgba(255, 255, 255, 0.8) !important; /* Makes the background transparent */ 
 }
 
 .image-container {
