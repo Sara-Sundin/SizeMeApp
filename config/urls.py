@@ -19,6 +19,7 @@ from django.urls import path, include
 
 urlpatterns = [
     path('admin/', admin.site.urls), 
+    path("accounts/", include("allauth.urls")),
     path('summernote/', include('django_summernote.urls')),
     path('', include('apps.pages.urls')),  # Connects home page to the pages app
     path('blog/', include('apps.blog.urls'), name='blog-urls'),
