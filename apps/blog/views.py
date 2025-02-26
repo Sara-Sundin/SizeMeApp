@@ -2,7 +2,6 @@ from django.shortcuts import render, get_object_or_404, reverse
 from django.views import generic
 from django.contrib import messages
 from django.http import HttpResponseRedirect, JsonResponse
-from django.db.models import Q  # Import Q for filtering approved & pending comments
 from .models import Post, Comment
 from .forms import CommentForm
 
@@ -15,14 +14,13 @@ def post_detail(request, slug):
     queryset = Post.objects.filter(status=1)
     post = get_object_or_404(queryset, slug=slug)
 
-    # ✅ Fetch both approved comments + pending comments for the logged-in author
+    # Fetch both approved comments + pending comments for the logged-in author without Q()
     if request.user.is_authenticated:
-        comments = post.comments.filter(
-            Q(approved=True) | Q(author=request.user)
-        ).order_by("-created_on")
+        comments = post.comments.filter(approved=True) | post.comments.filter(author=request.user)
     else:
-        comments = post.comments.filter(approved=True).order_by("-created_on")
+        comments = post.comments.filter(approved=True)
 
+    comments = comments.order_by("-created_on")
     comment_count = comments.count()
     comment_form = CommentForm()
 
@@ -34,10 +32,10 @@ def post_detail(request, slug):
             comment.post = post
             comment.save()
 
-            # ✅ Success message
+            # Success message
             messages.success(request, "Comment submitted and awaiting approval")
 
-            # ✅ Return JSON response for AJAX
+            # Return JSON response for AJAX
             return JsonResponse({
                 "status": "success",
                 "message": "Comment submitted and awaiting approval",
@@ -50,7 +48,7 @@ def post_detail(request, slug):
             })
 
         else:
-            # ✅ Handle form errors
+            # Handle form errors
             return JsonResponse({
                 "status": "error",
                 "message": "Form validation failed. Please try again.",
@@ -89,7 +87,17 @@ def comment_edit(request, slug, comment_id):
             comment.approved = False  # Reset approval after edit
             comment.save()
             messages.success(request, "Comment updated and awaiting approval!")
+
+            return JsonResponse({
+                "status": "success",
+                "message": "Comment updated and awaiting approval",
+                "updated_comment_id": comment.id
+            })
         else:
-            messages.error(request, "Error updating comment!")
+            return JsonResponse({
+                "status": "error",
+                "message": "Error updating comment",
+                "errors": comment_form.errors
+            }, status=400)
 
     return HttpResponseRedirect(reverse('post_detail', args=[slug]))

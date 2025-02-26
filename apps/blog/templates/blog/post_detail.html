@@ -68,35 +68,36 @@
             <div class="card-body" id="comments-list">
                 {% if comments %}
                 {% for comment in comments %}
-                <div class="p-2 comments {% if not comment.approved and comment.author == request.user %} faded {% endif %}">
-                    <p class="font-weight-bold">
-                        {{ comment.author }}
-                        <span class="font-weight-normal">
-                            {{ comment.created_on }}
-                        </span> wrote:
-                    </p>
-                
-                    <div id="comment{{ comment.id }}">
-                        {{ comment.body | linebreaks }}
+                    <div class="p-2 comments {% if not comment.approved and comment.author == request.user %} faded {% endif %}" id="comment-{{ comment.id }}">
+                        <p class="font-weight-bold">
+                            {{ comment.author }}
+                            <span class="font-weight-normal">
+                                {{ comment.created_on }}
+                            </span> wrote:
+                        </p>
+
+                        <!-- Add a unique ID to the comment body -->
+                        <div class="comment-body" id="comment-body-{{ comment.id }}">
+                            {{ comment.body | linebreaks }}
+                        </div>
+
+                        {% if not comment.approved and comment.author == request.user %}
+                        <p class="approval">
+                            This comment is awaiting approval
+                        </p>
+                        {% endif %}
+
+                        {% if request.user.is_authenticated and comment.author == request.user %}
+                        <button class="btn btn-edit" data-comment-id="{{ comment.id }}">Edit</button>
+                        {% endif %}
                     </div>
-                
-                    {% if not comment.approved and comment.author == request.user %}
-                    <p class="approval">
-                        This comment is awaiting approval
-                    </p>
-                    {% endif %}
-                
-                    {% if request.user.is_authenticated and comment.author == request.user %}
-                    <button class="btn btn-edit" comment_id="{{ comment.id }}">Edit</button>
-                    {% endif %}
-                </div>
                 {% empty %}
-                <p>No comments yet. Be the first to comment!</p>
-                {% endfor %}
-                
-                {% else %}
                     <p>No comments yet. Be the first to comment!</p>
-                {% endif %}
+                {% endfor %}
+            {% else %}
+                <p>No comments yet. Be the first to comment!</p>
+            {% endif %}
+
             </div>
         </div>
 
@@ -193,3 +194,7 @@
 
 
 {% endblock content %}
+
+{% block extras %}
+<script src="{% static 'js/comments.js' %}"></script>
+{% endblock %}
