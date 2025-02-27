@@ -29,7 +29,7 @@ h1 img {
     left: 0;
     width: 100%;
     background: url("../images/body_male.gif") no-repeat top center;
-    background-size: 95%;
+    background-size: 50%;
     background-attachment: scroll;
     opacity: 0.5; /* Now only the background image is transparent */
     z-index: -1; /*  Keeps it behind the content */
@@ -305,7 +305,7 @@ h1 img {
 }
 
 .faded {
-    color: rgb(172, 175, 175);
+    color: #A6AAAD;
 }
 
 .approval {
