@@ -1,5 +1,5 @@
 .body {
-    background-color: #D3D7DB;
+    background-color: #878787;
 }
 
 h1 img {
@@ -126,6 +126,11 @@ h1 img {
     cursor: pointer;
 }
 
+.about {
+    max-width: 800px;
+    padding-top: 50px;
+}
+
 .contact {
     padding-top: 20px;
     padding-bottom: 20px;
@@ -162,7 +167,7 @@ h1 img {
 
 .social-icons a {
     font-size: 48px; /* Adjust icon size */
-    color: #616F82; /* Default color */
+    color: white;
     transition: color 0.3s ease-in-out, transform 0.2s ease-in-out;
 }
 
@@ -196,7 +201,7 @@ h1 img {
     bottom: 5%;
     min-width: 30%;
     left: -2px;
-    background-color: #188181;
+    background-color: #616F82;
 }
 
 .author {
@@ -351,13 +356,14 @@ h1 img {
 
 @media  screen and (min-width: 1024px) {
     h1 img {
-        max-width: 90%;
+        max-width: 50%;
         padding-top: 80px;
+        padding-right: 20px;
     }
 
     .index-page::before,
     .blog-page::before  {
-        background-size: 50%;
+        background-size: 40%;
         top: 90px; /* Moves the background image further down */
     } 
 }
