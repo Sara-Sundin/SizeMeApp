@@ -57,6 +57,7 @@ INSTALLED_APPS = [
     'rest_framework',
     'apps.pages',
     'apps.blog', 
+    'apps.accounts',
 ]
 
 SITE_ID = 1
@@ -139,6 +140,8 @@ AUTH_PASSWORD_VALIDATORS = [
 ]
 
 ACCOUNT_EMAIL_VERIFICATION = 'none'
+
+AUTH_USER_MODEL = 'accounts.CustomUser'
 
 # Internationalization
 # https://docs.djangoproject.com/en/5.1/topics/i18n/
