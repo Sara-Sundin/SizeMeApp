@@ -3,35 +3,35 @@
 {% load crispy_forms_tags %}
 
 {% block content %}
-
-<!-- Masthead (Post Title & Image) -->
 <div class="masthead">
     <div class="container">
         <div class="row g-0">
             <div class="col-md-6 masthead-text">
+                <!-- Post title goes in these h1 tags -->
                 <h1 class="post-title">{{ post.title }}</h1>
+                <!-- Post author goes before the | the post's created date goes after -->
                 <p class="post-subtitle">{{ post.author }} | {{ post.created_on }}</p>
             </div>
             <div class="d-none d-md-block col-md-6 masthead-image">
-                <img src="{% static 'images/female_measurement_body.jpg' %}" class="scale" alt="placeholder">
+                <img src="{% static 'images/default.jpg' %}" class="scale" alt="placeholder">
             </div>
         </div>
     </div>
 </div>
 
-<!-- Post Content -->
 <div class="container">
     <div class="row">
-        <div class="col card mb-4 mt-3 left top">
+        <div class="col card mb-4  mt-3 left  top">
             <div class="card-body">
+                <!-- The post content goes inside the card-text. -->
+                <!-- Use the | safe filter inside the template tags -->
                 <p class="card-text">
                     {{ post.content | safe }}
                 </p>
             </div>
         </div>
     </div>
-
-    <!-- Displaying Comment Count -->
+    <!-- Displaying count of comments -->
     <div class="row">
         <div class="col-12">
             <strong class="text-secondary">
@@ -42,76 +42,47 @@
             <hr>
         </div>
     </div>
-
-     <!-- Django Messages (Success/Error Messages) -->
-     <div class="container">
-        <div class="row">
-            <div class="col-md-8 offset-md-2">
-                <div id="message-container">
-                    {% if messages %}
-                        {% for message in messages %}
-                        <div class="alert {{ message.tags }} alert-dismissible fade show" role="alert">
-                            {{ message }}
-                            <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
-                        </div>
-                        {% endfor %}
-                    {% endif %}
-                </div>
-            </div>
-        </div>
-    </div>
-
     <!-- Displaying Comments -->
     <div class="row">
-        <div class="col-md-8 card mb-4 mt-3">
+        <div class="col-md-8 card mb-4  mt-3 ">
             <h3>Comments:</h3>
-            <div class="card-body" id="comments-list">
-                {% if comments %}
+            <div class="card-body">
+                <!-- We want a for loop inside the empty control tags to iterate through each comment in comments -->
                 {% for comment in comments %}
-                    <div class="p-2 comments {% if not comment.approved and comment.author == request.user %} faded {% endif %}" id="comment-{{ comment.id }}">
-                        <p class="font-weight-bold">
-                            {{ comment.author }}
-                            <span class="font-weight-normal">
-                                {{ comment.created_on }}
-                            </span> wrote:
-                        </p>
-
-                        <!-- Add a unique ID to the comment body -->
-                        <div class="comment-body" id="comment-body-{{ comment.id }}">
-                            {{ comment.body | linebreaks }}
-                        </div>
-
-                        {% if not comment.approved and comment.author == request.user %}
-                        <p class="approval">
-                            This comment is awaiting approval
-                        </p>
-                        {% endif %}
-
-                        {% if request.user.is_authenticated and comment.author == request.user %}
-                        <button class="btn btn-edit" data-comment-id="{{ comment.id }}">Edit</button>
-                        {% endif %}
+                <div
+                    class="p-2 comments{% if not comment.approved and comment.author == user %} faded{% elif not comment.approved %} d-none{% endif %}">
+                    <p class="font-weight-bold">
+                        {{ comment.author }}
+                        <span class="font-weight-normal">
+                            {{ comment.created_on }}
+                        </span> wrote:
+                    </p>
+                    <div id="comment{{ comment.id }}">
+                        {{ comment.body | linebreaks }}
                     </div>
-                {% empty %}
-                    <p>No comments yet. Be the first to comment!</p>
+                    {% if not comment.approved and comment.author == user %}
+                    <p class="approval">This comment is awaiting approval</p>
+                    {% endif %}
+                    {% if user.is_authenticated and comment.author == user %}
+                    <button class="btn btn-delete" comment_id="{{ comment.id }}">Delete</button>
+                    <button class="btn btn-edit" comment_id="{{ comment.id }}">Edit</button>
+                    {% endif %}
+                </div>
+                <!-- Our for loop ends here -->
                 {% endfor %}
-            {% else %}
-                <p>No comments yet. Be the first to comment!</p>
-            {% endif %}
-
             </div>
         </div>
-
         <!-- Creating New Comments -->
-        <div class="col-md-4 card mb-4 mt-3">
+        <div class="col-md-4 card mb-4  mt-3 ">
             <div class="card-body">
                 {% if user.is_authenticated %}
                 <h3>Leave a comment:</h3>
                 <p>Posting as: {{ user.username }}</p>
-                <form id="commentForm" method="post">
+                <form id="commentForm" method="post" style="margin-top: 1.3em;">
+                    {{ comment_form | crispy }}
                     {% csrf_token %}
-                    {{ comment_form.body | as_crispy_field }}
                     <button id="submitButton" type="submit" class="btn btn-signup btn-lg">Submit</button>
-                </form>                
+                </form>
                 {% else %}
                 <p>Log in to leave a comment</p>
                 {% endif %}
@@ -119,79 +90,24 @@
         </div>
     </div>
 </div>
-
-<!-- jQuery (Required for AJAX) -->
-<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-
-<script>
-    $(document).ready(function () {
-        $("#commentForm").submit(function (e) {
-            e.preventDefault(); // Prevent page reload
-
-            $.ajax({
-                type: "POST",
-                url: "{% url 'post_detail' post.slug %}",
-                data: $(this).serialize(),
-                dataType: "json",
-                success: function (response) {
-                    if (response.status === "success") {
-                        // Show success message
-                        $("#message-container").html(`
-                            <div class="alert alert-success alert-dismissible fade show" role="alert">
-                                ${response.message}
-                                <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
-                            </div>
-                        `);
-
-                        // Reset form fields
-                        $("#commentForm")[0].reset();
-
-                        // Define classes for the new comment
-                        let fadedClass = response.new_comment.approved ? "" : "faded";
-                        let editButton = response.new_comment.approved ? "" : `
-                            <button class="btn btn-edit" data-comment-id="${response.new_comment.id}">Edit</button>
-                        `;
-
-                        // Append new comment dynamically
-                        $("#comments-list").prepend(`
-                            <div class="p-2 comments ${fadedClass}" id="comment-${response.new_comment.id}">
-                                <p class="font-weight-bold text-primary">${response.new_comment.author}
-                                    <span class="font-weight-normal text-muted">${response.new_comment.created_on}</span> wrote:
-                                </p>
-                                <div>${response.new_comment.body}</div>
-                                ${response.new_comment.approved ? "" : "<p class='approval'>This comment is awaiting approval</p>"}
-                                ${editButton}
-                            </div>
-                            <hr>
-                        `);
-                    } else {
-                        // Handle form errors
-                        $("#message-container").html(`
-                            <div class="alert alert-warning alert-dismissible fade show" role="alert">
-                                ${response.message}
-                                <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
-                            </div>
-                        `);
-                    }
-                },
-                error: function (xhr) {
-                    let errorMsg = "Something went wrong. Please try again.";
-                    if (xhr.responseJSON && xhr.responseJSON.message) {
-                        errorMsg = xhr.responseJSON.message;
-                    }
-
-                    $("#message-container").html(`
-                        <div class="alert alert-danger alert-dismissible fade show" role="alert">
-                            ${errorMsg}
-                            <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
-                        </div>
-                    `);
-                }
-            });
-        });
-    });
-</script>
-
+<!-- Delete confirmation modal -->
+<div class="modal fade" id="deleteModal" tabindex="-1" aria-labelledby="deleteModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="deleteModalLabel">Delete comment?</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                Are you sure you want to delete your comment? This action cannot be undone.
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                <a id="deleteConfirm" href="#" class="btn btn-danger">Delete</a>
+            </div>
+        </div>
+    </div>
+</div>
 
 {% endblock content %}
 
