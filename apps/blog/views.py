@@ -10,7 +10,7 @@ from .forms import CommentForm
 
 class PostList(generic.ListView):
     queryset = Post.objects.filter(status=1)
-    template_name = "blog/index.html"
+    template_name = "blog/blog.html"
     paginate_by = 6
 
 
