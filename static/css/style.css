@@ -25,15 +25,11 @@ h1 img {
 .blog-page::before  {
     content: "";
     position: absolute;
-    top: 80px; /* Moves the background image further down */
-    left: 0;
     width: 100%;
     background: url("../images/body_male.gif") no-repeat top center;
-    background-size: 50%;
-    background-attachment: scroll;
-    opacity: 0.5; /* Now only the background image is transparent */
+    opacity: 0.5; /* Only the background image is transparent */
     z-index: -1; /*  Keeps it behind the content */
-    bottom: 0; /* Add this */
+    bottom: 0; 
     height: auto;
 }
 
@@ -332,6 +328,12 @@ h1 img {
         max-width: 80%; /* Scales down the logo for tablets */
         padding-top: 120px;
     }
+
+    .index-page::before,
+    .blog-page::before  {
+        background-size: 75%;
+        top: 80px; /* Moves the background image further down */
+    } 
 }
 
 @media (max-width: 767px) {
@@ -339,11 +341,23 @@ h1 img {
     .how-it-works .row .col-md-3:nth-child(2) { 
         margin-top: 0px; /* Reduces top margin for smaller screens */
     }
+
+    .index-page::before,
+    .blog-page::before  {
+        background-size: 100%;
+        top: 80px; /* Moves the background image further down */
+    }    
 }
 
 @media  screen and (min-width: 1024px) {
     h1 img {
         max-width: 90%;
-        padding-top: 160px;
+        padding-top: 80px;
     }
+
+    .index-page::before,
+    .blog-page::before  {
+        background-size: 60%;
+        top: 90px; /* Moves the background image further down */
+    } 
 }
