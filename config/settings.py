@@ -34,7 +34,7 @@ SECRET_KEY = config("SECRET_KEY", default="fallback-secret-key")
 DATABASE_URL = config("DATABASE_URL", default="")
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = False
+DEBUG = True
 
 ALLOWED_HOSTS = ['.herokuapp.com', 'localhost', '127.0.0.1']
 
@@ -59,6 +59,7 @@ INSTALLED_APPS = [
     'apps.blog', 
     'apps.accounts',
     'apps.dashboard',
+    'apps.newsletter',
 ]
 
 SITE_ID = 1
@@ -81,6 +82,16 @@ MIDDLEWARE = [
 ]
 
 ROOT_URLCONF = 'config.urls'
+
+# === Django Allauth Settings === #
+ACCOUNT_AUTHENTICATION_METHOD = "email"
+ACCOUNT_EMAIL_REQUIRED = True
+ACCOUNT_EMAIL_VERIFICATION = "optional"  # Avoid forced logout issues
+ACCOUNT_SESSION_REMEMBER = True  # Ensures session persists properly
+ACCOUNT_USERNAME_REQUIRED = False  # Optional: If using email-only authentication
+
+# === CSRF Settings === #
+CSRF_USE_SESSIONS = True  # Ensures CSRF tokens match session authentication
 
 TEMPLATES = [
     {
