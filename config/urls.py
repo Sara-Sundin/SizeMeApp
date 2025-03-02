@@ -24,4 +24,5 @@ urlpatterns = [
     path('', include('apps.pages.urls')),  # Connects home page to the pages app
     path('blog/', include('apps.blog.urls'), name='blog-urls'),
     path("dashboard/", include("apps.dashboard.urls")),
+    path('newsletter/', include('apps.newsletter.urls')),
 ]
