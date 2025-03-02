@@ -47,10 +47,12 @@
 <section class="newsletter text-center">
     <div class="container">
         <h3>Sign up to our newsletter!</h3>
-        <form class="newsletter-form">
-            <input type="email" class="form-control" placeholder="Enter your email" required>
+        <form class="newsletter-form" method="post" action="{% url 'index' %}">
+            {% csrf_token %}
+            <input type="email" name="email" class="form-control" 
+                   placeholder="Enter your email" required>
             <button type="submit" class="btn">Subscribe</button>
-        </form>
+        </form>        
     </div>
 </section>
 
