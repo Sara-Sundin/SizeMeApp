@@ -17,6 +17,7 @@ from pathlib import Path
 
 
 
+
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
 
@@ -79,6 +80,17 @@ MIDDLEWARE = [
     'allauth.account.middleware.AccountMiddleware',
 ]
 
+AUTHENTICATION_BACKENDS = [
+    "django.contrib.auth.backends.ModelBackend",  # Default backend
+    "allauth.account.auth_backends.AuthenticationBackend",  # Allauth backend
+]
+
+AUTH_USER_MODEL = "accounts.CustomUser" 
+
+ACCOUNT_FORMS = {
+    "signup": "apps.accounts.forms.CustomSignupForm",
+}
+
 ROOT_URLCONF = 'config.urls'
 
 # === Django Allauth Settings === #
@@ -129,8 +141,7 @@ WSGI_APPLICATION = 'config.wsgi.application'
 #}
 
 DATABASES = {
-    'default': dj_database_url.parse(os.environ.get("DATABASE_URL", ""))
-
+    'default': dj_database_url.parse(config("DATABASE_URL", default="sqlite:///db.sqlite3"))
 }
 
 CSRF_TRUSTED_ORIGINS = [
