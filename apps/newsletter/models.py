@@ -16,10 +16,3 @@ class Subscriber(models.Model):
     def __str__(self):
         return self.email
 
-class NewsletterSubscription(models.Model):
-    subscriber = models.ForeignKey(Subscriber, on_delete=models.CASCADE)
-    newsletter = models.ForeignKey(Newsletter, on_delete=models.CASCADE)
-    sent_at = models.DateTimeField(auto_now_add=True)
-
-    def __str__(self):
-        return f"{self.subscriber.email} - {self.newsletter.title}"
