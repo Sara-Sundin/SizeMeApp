@@ -1,5 +1,10 @@
 {% load static %}
 
+{% url 'index' as home_url %}
+{% url 'about' as about_url %}
+{% url 'contact' as contact_url %}
+{% url 'blog' as blog_url %}
+{% url 'dashboard' as dashboard_url %}
 {% url 'account_login' as login_url %}
 {% url 'account_signup' as signup_url %}
 {% url 'account_logout' as logout_url %}
@@ -29,7 +34,7 @@
         <!-- Bootstrap Navbar -->
         <nav class="navbar navbar-expand-lg navbar-dark">
             <div class="container">
-                <a class="navbar-brand" href="{% url 'index' %}">
+                <a class="navbar-brand" href="{{ home_url }}">
                     <img src="{% static 'images/logo_icon.png' %}" alt="SizeMeApp Logo" width="50">
                 </a>                
                 <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
@@ -38,38 +43,36 @@
                 </button>
                 <div class="collapse navbar-collapse" id="navbarNav">
                     <ul class="navbar-nav ms-auto">
-                        <li class="nav-item"><a class="nav-link
-                            {% if request.path == home_url %}active{%endif%}"
-                            aria-current="page" href="{% url 'index' %}">Home</a></li>
-                        <li class="nav-item"><a class="nav-link
-                            {% if request.path == about_url %}active{%endif%}"
-                            aria-current="page" href="{% url 'about' %}">About</a></li>
-                        <li class="nav-item"><a class="nav-link
-                            {% if request.path == contact_url %}active{%endif%}"
-                            aria-current="page" href="{% url 'about' %}">Contact</a></li>
-                        <li class="nav-item"><a class="nav-link
-                            {% if request.path == blog_url %}active{%endif%}"
-                            aria-current="page" href="{% url 'blog' %}">Blog</a></li>
+                        <li class="nav-item">
+                            <a class="nav-link {% if request.path == home_url %}active{% endif %}" href="{{ home_url }}">Home</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link {% if request.path == about_url %}active{% endif %}" href="{{ about_url }}">About</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link {% if request.path == contact_url %}active{% endif %}" href="{{ contact_url }}">Contact</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link {% if request.path == blog_url %}active{% endif %}" href="{{ blog_url }}">Blog</a>
+                        </li>
 
-                            {% if user.is_authenticated %}
-                            <!-- Displays in the menu as logged in -->
-                            <p class="text-end m-3">You are logged in as {{ user.username }}</p>
-                            
-                            <li class="nav-item">
-                                <a class="nav-link {% if request.path == dashboard_url %}active{% endif %}" aria-current="page" href="{% url 'dashboard' %}">Dashboard</a>
-                            </li>
-                            <li class="nav-item">
-                                <a class="nav-link {% if request.path == logout_url %}active{% endif %}" aria-current="page" href="{% url 'account_logout' %}">Logout</a>
-                            </li>
-                            {% else %}
-                            <li class="nav-item">
-                                <a class="nav-link {% if request.path == signup_url %}active{% endif %}" aria-current="page"
-                                    href="{% url 'account_signup' %}">Register</a>
-                            </li>
-                            <li class="nav-item">
-                                <a class="nav-link {% if request.path == login_url %}active{% endif %}" aria-current="page" href="{% url 'account_login' %}">Login</a>
-                            </li>
-                            {% endif %}               
+                        {% if user.is_authenticated %}
+                        <p class="text-end m-3">You are logged in as {{ user.username }}</p>
+                        
+                        <li class="nav-item">
+                            <a class="nav-link {% if request.path == dashboard_url %}active{% endif %}" href="{{ dashboard_url }}">Dashboard</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link {% if request.path == logout_url %}active{% endif %}" href="{{ logout_url }}">Logout</a>
+                        </li>
+                        {% else %}
+                        <li class="nav-item">
+                            <a class="nav-link {% if request.path == signup_url %}active{% endif %}" href="{{ signup_url }}">Register</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link {% if request.path == login_url %}active{% endif %}" href="{{ login_url }}">Login</a>
+                        </li>
+                        {% endif %}
                     </ul>
                 </div>
             </div>

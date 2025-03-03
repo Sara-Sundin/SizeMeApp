@@ -37,6 +37,20 @@ h1 img {
     background-color: #616F82;
 } 
 
+.nav-link {
+    color: white;
+}
+
+.nav-link:hover {
+    color: #FF5000;
+}
+
+.nav-link.active {
+    color: #FF5000 !important;
+    font-size: 130%;
+    font-weight: bold;
+}
+
 .hero div {
     padding-top: 30px;
     padding-bottom: 30px;
@@ -61,8 +75,13 @@ h1 img {
 }
 
 .icon {
-    font-size: 48px;
+    font-size: 80px;
     color: #616F82;
+    padding-bottom: 20px;
+}
+
+a.icon-button {
+    color: #616F82; 
 }
 
 .transparent-box {
