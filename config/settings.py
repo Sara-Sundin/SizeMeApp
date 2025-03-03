@@ -12,8 +12,6 @@ https://docs.djangoproject.com/en/5.1/ref/settings/
 
 import os
 import dj_database_url
-if os.path.isfile('env.py'):
-    import env
 from decouple import config
 from pathlib import Path
 
@@ -30,7 +28,7 @@ TEMPLATES_DIR = os.path.join(BASE_DIR, 'templates')
 
 # SECURITY WARNING: keep the secret key used in production secret!
 
-SECRET_KEY = config("SECRET_KEY", default="fallback-secret-key")
+SECRET_KEY = config("SECRET_KEY")
 DATABASE_URL = config("DATABASE_URL", default="")
 
 # SECURITY WARNING: don't run with debug turned on in production!
@@ -84,11 +82,19 @@ MIDDLEWARE = [
 ROOT_URLCONF = 'config.urls'
 
 # === Django Allauth Settings === #
-ACCOUNT_AUTHENTICATION_METHOD = "email"
+ACCOUNT_LOGIN_METHODS = {"email"} 
 ACCOUNT_EMAIL_REQUIRED = True
 ACCOUNT_EMAIL_VERIFICATION = "optional"  # Avoid forced logout issues
 ACCOUNT_SESSION_REMEMBER = True  # Ensures session persists properly
 ACCOUNT_USERNAME_REQUIRED = False  # Optional: If using email-only authentication
+
+EMAIL_BACKEND = "django.core.mail.backends.smtp.EmailBackend"
+EMAIL_HOST = "mail.inleed.com"  # Change this for Outlook, Yahoo, etc.
+EMAIL_PORT = 465  # SSL requires port 465
+EMAIL_USE_SSL = True  # Use SSL (disable TLS)
+EMAIL_USE_TLS = False  # Disable TLS (only use one at a time)
+EMAIL_HOST_USER = config("EMAIL_HOST_USER")
+EMAIL_HOST_PASSWORD = config("EMAIL_HOST_PASSWORD")
 
 # === CSRF Settings === #
 CSRF_USE_SESSIONS = True  # Ensures CSRF tokens match session authentication
