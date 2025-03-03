@@ -7,4 +7,4 @@ class CustomUserUpdateForm(UserChangeForm):
 
     class Meta:
         model = CustomUser
-        fields = ["profile_picture", "full_name", "email", "chest", "waist", "hips", "shoulders"]
+        fields = ["profile_picture", "name", "email", "chest", "waist", "hips", "shoulders"]

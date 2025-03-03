@@ -3,7 +3,7 @@ from django.db import models
 
 class CustomUser(AbstractUser):
     profile_picture = models.ImageField(upload_to="avatars/", blank=True, null=True)
-    full_name = models.CharField(max_length=255, blank=True, null=True)
+    name = models.CharField(max_length=255, blank=True, null=True)  # Renamed field
     email = models.EmailField(unique=True)
     chest = models.FloatField(blank=True, null=True)
     waist = models.FloatField(blank=True, null=True)
