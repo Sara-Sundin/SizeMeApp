@@ -408,30 +408,37 @@ h1 img {
     background: #0056b3;
 }
 
-/* Form Button */
-button[type="submit"] {
-    background: #28a745;
+/* Ensure form inputs align to the left */
+.signup input[type="text"],
+.signup input[type="email"],
+.signup input[type="password"],
+.signup select,
+.signup textarea {
+    width: 100%; /* Full width */
+    padding: 10px; /* Spacing inside inputs */
+    border: 1px solid #ccc; /* Light border */
+    border-radius: 8px; /* Rounded corners */
+    display: block; /* Ensures proper alignment */
+    margin-bottom: 15px; /* Space between fields */
 }
 
-button[type="submit"]:hover {
-    background: #218838;
-}
-
-.btn-signup,
-.btn-edit {
-    background-color: #188181;
-    color: #fff;
-}
-
-.btn-signup:hover,
-.btn-signup:active {
-    background-color: #fff;
-    color: #23BBBB;
+/* Style the submit button */
+.btn-signup {
+    background-color: #E84E1B; /* Primary color */
+    color: white;
+    font-size: 1.2rem;
+    padding: 10px 20px;
+    border-radius: 8px; /* Rounded button */
+    border: none;
+    display: block;
+    width: 100%;
+    text-align: center;
 }
 
 .link {
-    color: #23BBBB;
+    color: #E84E1B;
     text-decoration: none;
+    text-transform: uppercase;
 }
 
 .link:hover,

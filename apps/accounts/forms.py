@@ -19,7 +19,6 @@ class CustomSignupForm(SignupForm):
             "name": self.fields["name"],
             "email": self.fields["email"],
             "password1": self.fields["password1"],
-            "password2": self.fields["password2"],
         }
 
     def save(self, request):
