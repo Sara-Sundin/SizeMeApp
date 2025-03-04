@@ -5,9 +5,17 @@
 {% block content %}
 
 <div class="container transparent-box dashboard-container">
-    
+
+    <!-- Dynamic Heading Based on Source -->
+    {% if just_signed_up %}
+    <h2>Welcome, {{ user.name }}!</h2>
+    <p>Start exploring with <strong>SizeMeApp</strong>. Begin by entering your measurements to get personalized recommendations.</p>
+    {% else %}
+    <h2>Dashboard</h2>
+    {% endif %}
+
     <!-- Flexbox for Profile & Logo -->
-    <div class="dashboard-header">
+    <div class="dashboard-header">   
         <!-- Profile Section (Left) -->
         <div class="profile-section">
             <div class="profile-box">
@@ -33,7 +41,11 @@
 
     <!-- Measurement Intro Text -->
     <p class="measurement-intro">
-        Fill in your measurements to start exploring with <strong>SizeMeApp</strong>.
+        {% if just_signed_up %}
+            Enter your measurements to start personalizing your experience.
+        {% else %}
+            Update your measurements anytime to improve your recommendations.
+        {% endif %}
     </p>
 
     <!-- Toggle Button for Measurements -->
