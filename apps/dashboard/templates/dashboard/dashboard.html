@@ -70,17 +70,24 @@
                     {{ form.age.label_tag }} {{ form.age }}
                 </div>
                 <div class="form-group">
-                    {{ form.chest.label_tag }} {{ form.chest }}
+                    <label for="{{ form.waist.id_for_label }}">A. {{ form.waist.label }}</label>
+                    {{ form.waist }}
                 </div>
+                
                 <div class="form-group">
-                    {{ form.waist.label_tag }} {{ form.waist }}
+                    <label for="{{ form.chest.id_for_label }}">B. {{ form.chest.label }}</label>
+                    {{ form.chest }}
                 </div>
+                
                 <div class="form-group">
-                    {{ form.hips.label_tag }} {{ form.hips }}
+                    <label for="{{ form.hips.id_for_label }}">C. {{ form.hips.label }}</label>
+                    {{ form.hips }}
                 </div>
+                
                 <div class="form-group">
-                    {{ form.shoulders.label_tag }} {{ form.shoulders }}
-                </div>
+                    <label for="{{ form.shoulders.id_for_label }}">D. {{ form.shoulders.label }}</label>
+                    {{ form.shoulders }}
+                </div>                
                 <button type="submit" class="btn btn-signup">Update Measurements</button>
             </form>
         </div>
