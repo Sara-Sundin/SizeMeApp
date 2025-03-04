@@ -1,7 +1,6 @@
 {% extends "base.html" %}
 
 {% load static %}
-
 {% load i18n %}
 
 {% block head_title %}{% trans "Signup" %}{% endblock %}
@@ -25,25 +24,29 @@
       <form class="signup" id="signup_form" method="post" action="{% url 'account_signup' %}">
         {% csrf_token %}
 
-        <!-- Loop through form fields, exclude "password2" -->
-        {% for field in form %}
-          {% if field.name != "password2" %}  {# Exclude Confirm Password Field #}
-            <div class="form-group">
-              {{ field.label_tag }}
-              {% if "password" in field.name %}
-                <div class="input-group">
-                  {{ field }}
-                  <button type="button" class="btn toggle-password" onclick="togglePassword('{{ field.id_for_label }}')">
-                    <i class="fa fa-eye"></i>
-                    <span class="toggle-text">Show Password</span>
-                  </button>
-                </div>
-              {% else %}
-                {{ field }}
-              {% endif %}
-            </div>
-          {% endif %}
-        {% endfor %}
+        <!-- Name Field -->
+        <div class="form-group">
+          {{ form.name.label_tag }}
+          {{ form.name }}
+        </div>
+
+        <!-- Email Field -->
+        <div class="form-group">
+          {{ form.email.label_tag }}
+          {{ form.email }}
+        </div>
+
+        <!-- Password Field with Toggle -->
+        <div class="form-group">
+          {{ form.password1.label_tag }}
+          <div class="input-group">
+            {{ form.password1 }}
+            <button type="button" class="btn toggle-password" onclick="togglePassword('{{ form.password1.id_for_label }}')">
+              <i class="fa fa-eye"></i>
+              <span class="toggle-text">Show Password</span>
+            </button>
+          </div>
+        </div>
 
         {% if redirect_field_value %}
           <input type="hidden" name="{{ redirect_field_name }}" value="{{ redirect_field_value }}" />
