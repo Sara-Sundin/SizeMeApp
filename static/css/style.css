@@ -252,6 +252,7 @@ h1 img {
 /* About Page Styling*/
 .about-box {
     margin-top: 50px;
+    max-width: 1000px;
 }
 
 .footer {
@@ -408,18 +409,57 @@ h1 img {
     background: #0056b3;
 }
 
-/* Ensure form inputs align to the left */
+/* Ensure form inputs align to the left and have consistent styling */
 .signup input[type="text"],
 .signup input[type="email"],
 .signup input[type="password"],
 .signup select,
-.signup textarea {
+.signup textarea,
+.login-form input[type="text"],
+.login-form input[type="email"],
+.login-form input[type="password"],
+.login-form select,
+.login-form textarea {
     width: 100%; /* Full width */
     padding: 10px; /* Spacing inside inputs */
     border: 1px solid #ccc; /* Light border */
     border-radius: 8px; /* Rounded corners */
     display: block; /* Ensures proper alignment */
     margin-bottom: 15px; /* Space between fields */
+    background-color: white !important; /* Ensure input fields remain white */
+    color: #333; /* Dark text for readability */
+    -webkit-appearance: none; /* Remove browser-specific styling */
+    -moz-appearance: none;
+    appearance: none;
+}
+
+/* Autofill Fix for Chrome, Safari */
+.signup input:-webkit-autofill,
+.login-form input:-webkit-autofill {
+    background-color: white !important; /* Ensure autofilled fields remain white */
+    color: #333 !important; /* Ensure text remains dark */
+    -webkit-box-shadow: 0 0 0px 1000px white inset !important; /* Override autofill styling */
+    box-shadow: 0 0 0px 1000px white inset !important;
+}
+
+/* Autofill Fix for Firefox */
+.signup input:-moz-autofill,
+.login-form input:-moz-autofill {
+    background-color: white !important;
+    color: #333 !important;
+}
+
+/* Autofill Fix for Edge */
+.signup input:-ms-autofill,
+.login-form input:-ms-autofill {
+    background-color: white !important;
+    color: #333 !important;
+}
+
+/* Ensure password input fields inside input-group are also white */
+.input-group input {
+    background-color: white !important; /* Keep password input fields white */
+    color: #333 !important;
 }
 
 /* Style the submit button */
