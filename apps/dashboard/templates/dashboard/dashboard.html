@@ -3,54 +3,74 @@
 {% load static %}
 
 {% block content %}
-<div class="dashboard-container">
-    <h2>Dashboard</h2>
 
-    <div class="profile-section">
-        <!-- Profile Picture Box -->
-        <div class="profile-box">
-            {% if user.profile_picture %}
-                <img src="{{ user.profile_picture.url }}" alt="Avatar">
-            {% else %}
-                <p>No avatar</p>
-            {% endif %}
+<div class="container transparent-box dashboard-container">
+    
+    <!-- Flexbox for Profile & Logo -->
+    <div class="dashboard-header">
+        <!-- Profile Section (Left) -->
+        <div class="profile-section">
+            <div class="profile-box">
+                {% if user.profile_picture %}
+                    <img src="{{ user.profile_picture.url }}" alt="Avatar">
+                {% else %}
+                    <p>No avatar</p>
+                {% endif %}
+            </div>
+            <div class="user-info">
+                <h3>{{ user.name }}</h3>
+                <p>{{ user.email }}</p>
+            </div>
         </div>
 
-        <!-- Name & Email -->
-        <div class="user-info">
-            <h3>{{ user.name }}</h3>
-            <p>{{ user.email }}</p>
+        <!-- SizeMeApp Logo (Right) -->
+        <div class="sizemeapp-logo">
+            <a href="{% url 'dashboard' %}">
+                <img src="{% static 'images/sizemeapp_logo.png' %}" alt="SizeMeApp Logo">
+            </a>
         </div>
     </div>
 
+    <!-- Measurement Intro Text -->
+    <p class="measurement-intro">
+        Fill in your measurements to start exploring with <strong>SizeMeApp</strong>.
+    </p>
+
     <!-- Toggle Button for Measurements -->
-    <button id="toggle-measurements">Show Measurements</button>
+    <button id="toggle-measurements" class="btn btn-toggle">Show Measurements</button>
 
     <!-- User Measurements (Hidden by Default) -->
     <div id="measurements-section" class="hidden">
-        <h3>Measurements</h3>
-        <form method="post" enctype="multipart/form-data">
-            {% csrf_token %}
-            <div class="form-group">
-                {{ form.gender.label_tag }} {{ form.gender }}
+        <div class="measurements-container">
+            <!-- Measurement Guide Image -->
+            <div class="measurement-image">
+                <img src="{% static 'images/how_to_measure.jpg' %}" alt="Measurement Guide">
             </div>
-            <div class="form-group">
-                {{ form.age.label_tag }} {{ form.age }}
-            </div>
-            <div class="form-group">
-                {{ form.chest.label_tag }} {{ form.chest }}
-            </div>
-            <div class="form-group">
-                {{ form.waist.label_tag }} {{ form.waist }}
-            </div>
-            <div class="form-group">
-                {{ form.hips.label_tag }} {{ form.hips }}
-            </div>
-            <div class="form-group">
-                {{ form.shoulders.label_tag }} {{ form.shoulders }}
-            </div>
-            <button type="submit">Update Profile</button>
-        </form>
+
+            <!-- Measurement Form -->
+            <form method="post" enctype="multipart/form-data">
+                {% csrf_token %}
+                <div class="form-group">
+                    {{ form.gender.label_tag }} {{ form.gender }}
+                </div>
+                <div class="form-group">
+                    {{ form.age.label_tag }} {{ form.age }}
+                </div>
+                <div class="form-group">
+                    {{ form.chest.label_tag }} {{ form.chest }}
+                </div>
+                <div class="form-group">
+                    {{ form.waist.label_tag }} {{ form.waist }}
+                </div>
+                <div class="form-group">
+                    {{ form.hips.label_tag }} {{ form.hips }}
+                </div>
+                <div class="form-group">
+                    {{ form.shoulders.label_tag }} {{ form.shoulders }}
+                </div>
+                <button type="submit" class="btn btn-signup">Update Measurements</button>
+            </form>
+        </div>
     </div>
 </div>
 
@@ -59,5 +79,3 @@
 {% endblock %}
 
 {% endblock %}
-
-
