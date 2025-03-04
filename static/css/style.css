@@ -100,7 +100,14 @@ h1 img {
     padding-bottom: 20px;
 }
 
-a.icon-button {
+/* Hover Effect */
+.icon:hover {
+    color: #E84E1B; /* Change color on hover */
+    transform: scale(1.2); /* Slightly enlarge on hover */
+    transition: transform 0.3s ease-in-out;
+}
+
+.info-icon-blue {
     color: #616F82; 
 }
 
@@ -192,7 +199,8 @@ a.icon-button {
 /* Hover Effect */
 .contact .btn:hover {
     background-color: #4F5C6D; /* Slightly darker on hover */
-    transform: scale(1.05); /* Small scaling effect */
+    transform: scale(1.2); /* Small scaling effect */
+    transition: transform 0.3s ease-in-out;
 }
 
 /* Social Icons Container */
