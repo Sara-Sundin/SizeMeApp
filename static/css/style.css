@@ -329,33 +329,6 @@ h1 img {
     color: lightgray;
 }
 
-/* Dashboard */
-.dashboard-container {
-    background-color: rgba(255, 255, 255, 0.8);
-    padding: 20px;
-    border-radius: 8px;
-    max-width: 800px;
-    margin: 20px auto;
-    text-align: center;
-    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
-}
-
-/* Dashboard Header */
-.dashboard-header {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    margin-bottom: 20px;
-    padding: 10px;
-}
-
-/* Profile Section */
-.profile-section {
-    display: flex;
-    align-items: center;
-    gap: 15px;
-}
-
 /* Profile Box */
 .profile-box {
     width: 200px;
@@ -365,6 +338,7 @@ h1 img {
     display: flex;
     align-items: center;
     justify-content: center;
+    flex-wrap: wrap; /* Allow wrapping on smaller screens */
     overflow: hidden;
 }
 
@@ -375,28 +349,40 @@ h1 img {
     border-radius: 10px;
 }
 
+/* Dashboard container */
+.dashboard-container {
+    margin: 0 auto;
+    padding: 20px;
+    text-align: center; /* Center align text */
+}
+
+/* Center-align header elements */
+.dashboard-header {
+    display: flex;
+    flex-direction: column; /* Stack elements vertically */
+    align-items: center;
+    justify-content: center;
+    gap: 15px;
+    margin-bottom: 20px;
+}
+
+/* Profile section */
+.profile-section {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
 /* User Info */
-.user-info h3 {
-    margin: 0;
-    font-size: 1.5rem;
-    font-weight: bold;
+.user-info {
+    text-align: center;
+    margin-top: 10px;
 }
 
-.user-info p {
-    margin: 5px 0;
-    color: #555;
-}
-
-/* SizeMeApp Logo */
+/* Logo Section */
 .sizemeapp-logo img {
-    width: 150px;
-    max-width: 100%;
+    max-width: 200px;
     height: auto;
-    transition: transform 0.3s ease-in-out;
-}
-
-.sizemeapp-logo a:hover img {
-    transform: scale(1.1);
 }
 
 /* Measurements Section (Hidden by Default) */
@@ -609,6 +595,32 @@ h1 img {
     .active-user {
         font-size: 1.1rem;
     }
+
+    .dashboard-container {
+        max-width: 600px;
+    }
+
+    .dashboard-header {
+        flex-direction: row; /* Align items in a row */
+        justify-content: space-between; /* Space them out */
+        text-align: left;
+    }
+
+    .profile-section {
+        flex-direction: row; /* Align profile image and info side-by-side */
+        align-items: center;
+        gap: 15px; /* Add spacing */
+    }
+
+    .user-info {
+        text-align: left; /* Align text to the left */
+        margin-top: 0; /* Remove extra margin */
+    }
+
+    .sizemeapp-logo {
+        margin-left: auto; /* Push logo to the right */
+    }
+
 }
 
 @media  screen and (min-width: 1024px) {
@@ -623,5 +635,9 @@ h1 img {
     .about-page::before  {
         background-size: 50%;
         top: 0px; /* Moves the background image further down */
-    } 
+    }
+    
+    .dashboard-container {
+        max-width: 800px;
+    }
 }
