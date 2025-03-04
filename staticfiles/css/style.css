@@ -1,17 +1,46 @@
-.body {
+body {
     background-color: #878787;
+    font-family: "Raleway",sans-serif;
+    margin-top: 100px;
+}
+
+h2,
+h3,
+h4 {
+    font-family: "Poppins", sans-serif;   
+}
+
+.white-text {
+    color: white;
+}
+
+.blue-text {
+    color: #445261;
+}
+
+.section {
+    padding-top: 10px;
+    padding-bottom: 10px
 }
 
 h1 img {
-    max-width: 700px;
     height: auto;
     display: block;
     margin: 0 auto;
+    padding-top: 20px;
+    max-width: 80%; /* Scales down the logo for mobile screens */
+    padding-top: 100px;
+}
+
+/* Style the "Logged in as" text to be smaller */
+.active-user {
+    font-size: 0.7rem; /* Smaller font size */
 }
 
 /* Ensure content is fully visible */
 .index-page,
-.blog-page {
+.blog-page,
+.about-page {
     background-repeat: no-repeat;
     background-position: top center;
     background-attachment: scroll;
@@ -22,7 +51,8 @@ h1 img {
 
 /* Overlay to make only the background semi-transparent */
 .index-page::before,
-.blog-page::before  {
+.blog-page::before,
+.about-page::before  {
     content: "";
     position: absolute;
     width: 100%;
@@ -31,38 +61,61 @@ h1 img {
     z-index: -1; /*  Keeps it behind the content */
     bottom: 0; 
     height: auto;
+    background-size: 70%;
+    top: 0px; 
 }
 
 .navbar {
     background-color: #616F82;
+    --bs-navbar-toggler-icon-bg: url("data:image/svg+xml;charset=UTF8,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 30 30'%3E%3Cpath stroke='white' stroke-width='2' stroke-linecap='round' stroke-miterlimit='10' d='M4 7h22M4 15h22M4 23h22'/%3E%3C/svg%3E");
 } 
 
-.hero div {
-    padding-top: 30px;
-    padding-bottom: 30px;
-}
-
-    /* Custom Button Styling */
-.btn-try-now {
-    background-color: #E84E1B; 
+.navbar p {
     color: white;
-    text-decoration: none;
-    font-size: 1.25rem;
-    padding: 12px 24px;
-    border: none;
-    border-radius: 8px; /* Rounded corners */
-    transition: background 0.3s ease-in-out, transform 0.2s ease-in-out;
 }
 
-/* Hover Effect */
-.btn-try-now:hover {
-    background-color: #cc3d14; 
-    transform: scale(1.5); 
+.navbar-toggler {
+    --bs-navbar-toggler-border-color: white;
+}
+
+.nav-link {
+    color: white;
+}
+
+.nav-link:hover {
+    color: #FF5000;
+}
+
+.nav-link.active {
+    color: #FF5000 !important;
+    font-size: 130%;
+    font-weight: bold;
 }
 
 .icon {
-    font-size: 48px;
+    font-size: 80px;
     color: #616F82;
+    padding-bottom: 20px;
+}
+
+.icon-medium {
+    font-size: 50px;
+    padding-bottom: 20px;
+}
+
+/* Hover Effect */
+.icon:hover {
+    color: #E84E1B; /* Change color on hover */
+    transform: scale(1.2); /* Slightly enlarge on hover */
+    transition: transform 0.3s ease-in-out;
+}
+
+.info-icon-primary {
+    color: #616F82; 
+}
+
+.info-icon-secondary {
+    color: #E84E1B;
 }
 
 .transparent-box {
@@ -114,7 +167,7 @@ h1 img {
 }
 
 /* Subscribe button */
-.newsletter-form button {
+.newsletter-form button[type="submit"] {
     background-color: #E84E1B; 
     color: white;
     text-decoration: none;
@@ -125,6 +178,10 @@ h1 img {
     border: none;
     cursor: pointer;
 }
+
+.newsletter-form button[type="submit"]:hover {
+    background-color: #cc3d14; 
+}    
 
 .about {
     max-width: 800px;
@@ -153,7 +210,8 @@ h1 img {
 /* Hover Effect */
 .contact .btn:hover {
     background-color: #4F5C6D; /* Slightly darker on hover */
-    transform: scale(1.05); /* Small scaling effect */
+    transform: scale(1.2); /* Small scaling effect */
+    transition: transform 0.3s ease-in-out;
 }
 
 /* Social Icons Container */
@@ -175,6 +233,13 @@ h1 img {
 .social-icons a:hover {
     color: #E84E1B; /* Change color on hover */
     transform: scale(1.2); /* Slightly enlarge on hover */
+}
+
+/* About Page Styling*/
+.about-box {
+    margin-top: 50px;
+    margin-bottom: 50px;
+    max-width: 1000px;
 }
 
 .footer {
@@ -264,51 +329,80 @@ h1 img {
     color: lightgray;
 }
 
-/* Dashboard Layout */
-.dashboard-container {
-    max-width: 800px;
-    margin: 20px auto;
-    padding: 20px;
-    background: #f9f9f9;
-    border-radius: 8px;
-    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
-}
-
-/* Profile Section */
-.profile-section {
-    display: flex;
-    align-items: center;
-    margin-bottom: 20px;
-}
-
 /* Profile Box */
 .profile-box {
-    width: 120px;
-    height: 120px;
+    width: 200px;
+    height: 200px;
     border-radius: 10px;
     background: #e0e0e0;
     display: flex;
     align-items: center;
     justify-content: center;
+    flex-wrap: wrap; /* Allow wrapping on smaller screens */
     overflow: hidden;
-    margin-right: 20px;
 }
 
 .profile-box img {
     width: 100%;
     height: 100%;
     object-fit: cover;
+    border-radius: 10px;
+}
+
+/* Dashboard container */
+.dashboard-container {
+    margin: 0 auto;
+    padding: 20px;
+    text-align: center; /* Center align text */
+}
+
+/* Center-align header elements */
+.dashboard-header {
+    display: flex;
+    flex-direction: column; /* Stack elements vertically */
+    align-items: center;
+    justify-content: center;
+    gap: 15px;
+    margin-bottom: 20px;
+}
+
+/* Profile section */
+.profile-section {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }
 
 /* User Info */
-.user-info h3 {
-    margin: 0;
-    font-size: 20px;
+.user-info {
+    text-align: center;
+    margin-top: 10px;
 }
 
-.user-info p {
-    margin: 5px 0;
-    color: #666;
+/* Logo Section */
+.sizemeapp-logo {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+}
+
+.sizemeapp-logo img {
+    max-width: 150px;
+    height: auto;
+}
+
+.sizemeapp-logo button {
+    background-color: #616F82; 
+    color: white;
+    text-decoration: none;
+    padding: 12px 20px;
+    font-size: 1rem;
+    font-weight: bold;
+    border-radius: 5px;
+    border: none;
+    cursor: pointer;
+    transition: background 0.3s ease-in-out, transform 0.2s ease-in-out;
 }
 
 /* Measurements Section (Hidden by Default) */
@@ -316,51 +410,159 @@ h1 img {
     display: none;
 }
 
-/* Toggle Button */
-#toggle-measurements {
-    background: #007bff;
+/* Ensure form inputs are consistently styled */
+.signup input[type="text"],
+.signup input[type="email"],
+.signup input[type="password"],
+.signup select,
+.signup textarea,
+.login-form input[type="text"],
+.login-form input[type="email"],
+.login-form input[type="password"],
+.login-form select,
+.login-form textarea,
+.measurements-container input[type="text"],
+.measurements-container input[type="number"],
+.measurements-container select {
+    width: 100%; /* Full width */
+    padding: 10px; /* Spacing inside inputs */
+    border: 1px solid #ccc; /* Light border */
+    border-radius: 8px; /* Rounded corners */
+    display: block; /* Ensures proper alignment */
+    margin-bottom: 15px; /* Space between fields */
+    background-color: white !important; /* Ensure input fields remain white */
+    color: #333; /* Dark text for readability */
+    font-size: 1rem;
+    -webkit-appearance: none; /* Remove browser-specific styling */
+    -moz-appearance: none;
+    appearance: none;
+}
+
+/* Autofill Fix for Chrome, Safari */
+.signup input:-webkit-autofill,
+.login-form input:-webkit-autofill,
+.measurements-container input:-webkit-autofill {
+    background-color: white !important;
+    color: #333 !important;
+    -webkit-box-shadow: 0 0 0px 1000px white inset !important;
+    box-shadow: 0 0 0px 1000px white inset !important;
+}
+
+/* Autofill Fix for Firefox */
+.signup input:-moz-autofill,
+.login-form input:-moz-autofill,
+.measurements-container input:-moz-autofill {
+    background-color: white !important;
+    color: #333 !important;
+}
+
+/* Autofill Fix for Edge */
+.signup input:-ms-autofill,
+.login-form input:-ms-autofill,
+.measurements-container input:-ms-autofill {
+    background-color: white !important;
+    color: #333 !important;
+}
+
+/* Ensure password input fields inside input-group are also white */
+.input-group input {
+    background-color: white !important; /* Keep password input fields white */
+    color: #333 !important;
+}
+
+/* Style the measurement form container */
+.measurements-container {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+/* Measurement Form Styling */
+.measurements-container form {
+    flex: 1;
+    max-width: 400px;
+    text-align: left;
+}
+
+/* Form Group Styling for Spacing */
+.measurements-container .form-group {
+    margin-bottom: 15px;
+}
+
+/* Measurement Image */
+.measurement-image img {
+    max-width: 250px;
+    border-radius: 8px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+}
+
+/* Buttons */
+.btn-orange, .btn-signup, .btn-toggle {
+    background-color: #E84E1B;
     color: white;
+    text-decoration: none;
+    font-size: 1.5rem;
+    padding: 12px 24px;
     border: none;
-    padding: 10px 15px;
-    cursor: pointer;
-    border-radius: 5px;
-    margin-bottom: 10px;
+    border-radius: 8px;
+    transition: transform 0.3s ease-in-out;
+    display: block;
+    width: 100%;
+    text-align: center;
 }
 
-#toggle-measurements:hover {
-    background: #0056b3;
-}
-
-/* Form Button */
-button[type="submit"] {
-    background: #28a745;
-}
-
-button[type="submit"]:hover {
-    background: #218838;
-}
-
-.btn-signup,
-.btn-edit {
-    background-color: #188181;
-    color: #fff;
-}
-
-.btn-signup:hover,
-.btn-signup:active {
-    background-color: #fff;
-    color: #23BBBB;
+.btn-orange:hover, .btn-signup:hover, .btn-toggle:hover {
+    background-color: #cc3d14;
+    transform: scale(1.1);
 }
 
 .link {
-    color: #23BBBB;
+    color: #E84E1B;
     text-decoration: none;
+    text-transform: uppercase;
 }
 
 .link:hover,
 .link:active {
     color: #445261;
     text-decoration: underline;
+}
+
+/* Style logout container to match login */
+.logout-container {
+    background-color: rgba(255, 255, 255, 0.8);
+    padding: 20px;
+    border-radius: 8px;
+    max-width: 100%;
+    margin: 0 auto;
+    min-width: 220px;
+    text-align: center; /* Center text */
+}
+
+/* Logout heading styling */
+.logout-heading {
+    font-size: 2rem;
+    font-weight: bold;
+    text-align: center;
+}
+
+/* Ensure logout button matches login/signup */
+.logout-button {
+    background-color: #E84E1B;
+    color: white;
+    font-size: 1.2rem;
+    padding: 10px 20px;
+    border-radius: 8px;
+    border: none;
+    display: block;
+    width: 100%;
+    text-align: center;
+}
+
+.logout-button:hover {
+    background-color: #cc3d14;
 }
 
 .btn-like {
@@ -389,13 +591,6 @@ button[type="submit"]:hover {
     color: rgb(222, 146, 168);
 }
 
-@media (max-width: 480px) {
-    h1 img {
-        max-width: 80%; /* Scales down the logo for mobile screens */
-        padding-top: 80px;
-    }
-}
-
 /* Responsive behavior */
 @media (max-width: 576px) {
     .newsletter-form {
@@ -407,39 +602,62 @@ button[type="submit"]:hover {
 @media  screen and (min-width: 768px){
     h1 img {
         max-width: 80%; /* Scales down the logo for tablets */
-        padding-top: 120px;
+        padding-top: 140px;
     }
 
     .index-page::before,
-    .blog-page::before  {
+    .blog-page::before,
+    .about-page::before  {
         background-size: 75%;
-        top: 80px; /* Moves the background image further down */
+        top: 0px;
     } 
-}
 
-@media (max-width: 767px) {
-
-    .how-it-works .row .col-md-3:nth-child(2) { 
-        margin-top: 0px; /* Reduces top margin for smaller screens */
+    .active-user {
+        font-size: 1.1rem;
     }
 
-    .index-page::before,
-    .blog-page::before  {
-        background-size: 100%;
-        top: 80px; /* Moves the background image further down */
-    }    
+    .dashboard-container {
+        max-width: 600px;
+    }
+
+    .dashboard-header {
+        flex-direction: row; /* Align items in a row */
+        justify-content: space-between; /* Space them out */
+        text-align: left;
+    }
+
+    .profile-section {
+        flex-direction: row; /* Align profile image and info side-by-side */
+        align-items: center;
+        gap: 15px; /* Add spacing */
+    }
+
+    .user-info {
+        text-align: left; /* Align text to the left */
+        margin-top: 0; /* Remove extra margin */
+    }
+
+    .sizemeapp-logo {
+        margin-left: auto; /* Push logo to the right */
+    }
+
 }
 
 @media  screen and (min-width: 1024px) {
     h1 img {
-        max-width: 50%;
-        padding-top: 80px;
-        padding-right: 20px;
+        max-width: 70%;
+        padding-top: 100px;
+        padding-right: 30px;
     }
 
     .index-page::before,
-    .blog-page::before  {
-        background-size: 40%;
-        top: 90px; /* Moves the background image further down */
-    } 
+    .blog-page::before,
+    .about-page::before  {
+        background-size: 50%;
+        top: 0px; /* Moves the background image further down */
+    }
+    
+    .dashboard-container {
+        max-width: 800px;
+    }
 }
