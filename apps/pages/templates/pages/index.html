@@ -12,7 +12,7 @@
         </h1>    
         <div class="white-text">
             <h2 class="section display-5">Ready to have a go?</h2>
-            <a class="btn-try-now" 
+            <a class="btn-orange" 
             {% if user.is_authenticated %} href="{{ dashboard_url }}"
             {% else %} href="{{ signup_url }}"
             {% endif %}
@@ -31,7 +31,7 @@
                 <i class="info-icon-blue fa-solid fa-info-circle"></i>
                 <i class="fa-solid fa-lightbulb icon"></i>
                 </a>
-                <h3>Why SizeMeApp?</h3>
+                <h3 class="blue-text">Why SizeMeApp?</h3>
                 <p>Shopping online is frustrating due to sizing issues. SizeMeApp give you accurate recommendations, reduce returns and improve the experience for both shoppers and brands.</p>
             </div>
             <div class="col-md-3 text-center transparent-box">
@@ -39,7 +39,7 @@
                 <i class="info-icon-blue fa-solid fa-info-circle"></i>
                 <i class="fa-solid fa-gears icon"></i>
                 </a>
-                <h3>How It Works!</h3>
+                <h3 class="blue-text">How It Works!</h3>
                 <ul class="text-start">
                     <li><strong>Measure</strong> – Take body measurements with our guide.</li>
                     <li><strong>Upload</strong> – Enter or sync your data.</li>
@@ -51,7 +51,7 @@
                 <i class="info-icon-blue fa-solid fa-info-circle"></i>
                 <i class="fa-solid fa-cart-shopping icon"></i>
                 </a>
-                <h3>Start Shopping!</h3>
+                <h3 class="blue-text">Start Shopping!</h3>
                 <p>Save your measurements in SizeMeApp, browse brands, and get personalized size recommendations for a hassle-free shopping experience with fewer returns and better fits.</p> 
             </div>
         </div>
@@ -77,7 +77,7 @@
         <i class="info-icon-blue fa-solid fa-info-circle"></i>
     <i class="fa-solid fa-address-card icon"></i>
     </a>
-    <h3>About Us</h3>
+    <h3 class="blue-text">About Us</h3>
     <p>SizeMeApp is dedicated to revolutionizing online shopping with precise size recommendations. Our team combines expertise in fashion, tech, and user experience to create seamless, accurate, and inclusive solutions. Click the icon to find out more.</p>
 </section>
 
