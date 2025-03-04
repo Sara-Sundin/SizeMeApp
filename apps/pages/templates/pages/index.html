@@ -10,15 +10,14 @@
         <h1>
             <img src="{% static 'images/logo-hero.png' %}" alt="SizeMeApp Logo">
         </h1>    
-        <div>
-            <h2>Ready to have a go? 
-               
+        <div class="white-text">
+            <h2 class="section display-5">Ready to have a go?</h2>
             <a class="btn-try-now" 
             {% if user.is_authenticated %} href="{{ dashboard_url }}"
             {% else %} href="{{ signup_url }}"
             {% endif %}
              >Click here!</a>
-            <p> Register and try now.</p>
+            <p class="section"> Register and try now.</p>
         </div>
     </div>
 </section>
