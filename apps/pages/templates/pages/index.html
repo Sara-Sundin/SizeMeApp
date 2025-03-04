@@ -11,7 +11,14 @@
             <img src="{% static 'images/logo-hero.png' %}" alt="SizeMeApp Logo">
         </h1>    
         <div>
-            <a href="#" class="btn-try-now">Try It Now</a>
+            <h2>Ready to have a go? 
+               
+            <a class="btn-try-now" 
+            {% if user.is_authenticated %} href="{{ dashboard_url }}"
+            {% else %} href="{{ signup_url }}"
+            {% endif %}
+             >Click here!</a>
+            <p> Register and try now.</p>
         </div>
     </div>
 </section>
@@ -22,12 +29,12 @@
         <div class="row">
             <div class="col-md-3 text-center transparent-box">
                 <i class="fa-solid fa-lightbulb icon"></i>
-                <h2>Why SizeMeApp?</h2>
+                <h3>Why SizeMeApp?</h3>
                 <p>Shopping online is frustrating due to sizing issues. SizeMeApp give you accurate recommendations, reduce returns and improve the experience for both shoppers and brands.</p>
             </div>
             <div class="col-md-3 text-center transparent-box">
                 <i class="fa-solid fa-gears icon"></i>
-                <h2>How It Works!</h2>
+                <h3>How It Works!</h3>
                 <ul class="text-start">
                     <li><strong>Measure</strong> – Take body measurements with our guide.</li>
                     <li><strong>Upload</strong> – Enter or sync your data.</li>
@@ -36,7 +43,7 @@
             </div>            
             <div class="col-md-3 text-center transparent-box">
                 <i class="fa-solid fa-cart-shopping icon"></i>
-                <h2>Start Shopping!</h2>
+                <h3>Start Shopping!</h3>
                 <p>Save your measurements in SizeMeApp, browse brands, and get personalized size recommendations for a hassle-free shopping experience with fewer returns and better fits.</p> 
             </div>
         </div>
@@ -46,7 +53,7 @@
 <!-- Newsletter Signup -->
 <section class="newsletter text-center">
     <div class="container">
-        <h3>Sign up to our newsletter!</h3>
+        <h2>Sign up to our newsletter!</h2>
         <form class="newsletter-form" method="post" action="{% url 'index' %}">
             {% csrf_token %}
             <input type="email" name="email" class="form-control" 
@@ -62,7 +69,7 @@
         <i class="fa-solid fa-info-circle"></i>
     <i class="fa-solid fa-address-card icon"></i>
     </a>
-    <h2>About Us</h2>
+    <h3>About Us</h3>
     <p>SizeMeApp is dedicated to revolutionizing online shopping with precise size recommendations. Our team combines expertise in fashion, tech, and user experience to create seamless, accurate, and inclusive solutions. Click the icon to find out more.</p>
 </section>
 
