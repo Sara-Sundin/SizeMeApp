@@ -252,6 +252,7 @@ h1 img {
 /* About Page Styling*/
 .about-box {
     margin-top: 50px;
+    margin-bottom: 50px;
     max-width: 1000px;
 }
 
@@ -485,6 +486,41 @@ h1 img {
 .link:active {
     color: #445261;
     text-decoration: underline;
+}
+
+/* Style logout container to match login */
+.logout-container {
+    background-color: rgba(255, 255, 255, 0.8);
+    padding: 20px;
+    border-radius: 8px;
+    max-width: 100%;
+    margin: 0 auto;
+    min-width: 220px;
+    text-align: center; /* Center text */
+}
+
+/* Logout heading styling */
+.logout-heading {
+    font-size: 2rem;
+    font-weight: bold;
+    text-align: center;
+}
+
+/* Ensure logout button matches login/signup */
+.logout-button {
+    background-color: #E84E1B;
+    color: white;
+    font-size: 1.2rem;
+    padding: 10px 20px;
+    border-radius: 8px;
+    border: none;
+    display: block;
+    width: 100%;
+    text-align: center;
+}
+
+.logout-button:hover {
+    background-color: #cc3d14;
 }
 
 .btn-like {
