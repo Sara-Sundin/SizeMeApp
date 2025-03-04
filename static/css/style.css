@@ -1,6 +1,7 @@
 body {
     background-color: #878787;
     font-family: "Raleway",sans-serif;
+    margin-top: 80px;
 }
 
 h2,
@@ -28,12 +29,13 @@ h1 img {
     margin: 0 auto;
     padding-top: 20px;
     max-width: 80%; /* Scales down the logo for mobile screens */
-    padding-top: 130px;
+    padding-top: 100px;
 }
 
 /* Ensure content is fully visible */
 .index-page,
-.blog-page {
+.blog-page,
+.about-page {
     background-repeat: no-repeat;
     background-position: top center;
     background-attachment: scroll;
@@ -44,7 +46,8 @@ h1 img {
 
 /* Overlay to make only the background semi-transparent */
 .index-page::before,
-.blog-page::before  {
+.blog-page::before,
+.about-page::before  {
     content: "";
     position: absolute;
     width: 100%;
@@ -53,6 +56,8 @@ h1 img {
     z-index: -1; /*  Keeps it behind the content */
     bottom: 0; 
     height: auto;
+    background-size: 100%;
+    top: 0px; 
 }
 
 .navbar {
@@ -107,6 +112,11 @@ h1 img {
     padding-bottom: 20px;
 }
 
+.icon-medium {
+    font-size: 50px;
+    padding-bottom: 20px;
+}
+
 /* Hover Effect */
 .icon:hover {
     color: #E84E1B; /* Change color on hover */
@@ -114,8 +124,12 @@ h1 img {
     transition: transform 0.3s ease-in-out;
 }
 
-.info-icon-blue {
+.info-icon-primary {
     color: #616F82; 
+}
+
+.info-icon-secondary {
+    color: #E84E1B;
 }
 
 .transparent-box {
@@ -233,6 +247,11 @@ h1 img {
 .social-icons a:hover {
     color: #E84E1B; /* Change color on hover */
     transform: scale(1.2); /* Slightly enlarge on hover */
+}
+
+/* About Page Styling*/
+.about-box {
+    margin-top: 50px;
 }
 
 .footer {
@@ -462,9 +481,10 @@ button[type="submit"]:hover {
     }
 
     .index-page::before,
-    .blog-page::before  {
+    .blog-page::before,
+    .about-page::before  {
         background-size: 75%;
-        top: 80px; /* Moves the background image further down */
+        top: 0px;
     } 
 }
 
@@ -472,25 +492,20 @@ button[type="submit"]:hover {
 
     .how-it-works .row .col-md-3:nth-child(2) { 
         margin-top: 0px; /* Reduces top margin for smaller screens */
-    }
-
-    .index-page::before,
-    .blog-page::before  {
-        background-size: 100%;
-        top: 80px; /* Moves the background image further down */
-    }    
+    } 
 }
 
 @media  screen and (min-width: 1024px) {
     h1 img {
-        max-width: 50%;
-        padding-top: 130px;
-        padding-right: 20px;
+        max-width: 70%;
+        padding-top: 100px;
+        padding-right: 30px;
     }
 
     .index-page::before,
-    .blog-page::before  {
-        background-size: 40%;
-        top: 90px; /* Moves the background image further down */
+    .blog-page::before,
+    .about-page::before  {
+        background-size: 50%;
+        top: 0px; /* Moves the background image further down */
     } 
 }
