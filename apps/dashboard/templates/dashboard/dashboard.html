@@ -11,7 +11,6 @@
     <h2>Welcome, {{ user.name }}!</h2>
     <p>Start exploring with <strong>SizeMeApp</strong>. Begin by entering your measurements to get personalized recommendations.</p>
     {% else %}
-    <h2>Dashboard</h2>
     {% endif %}
 
     <!-- Profile -->
@@ -28,28 +27,30 @@
             <div class="user-info">
                 <h3>{{ user.name }}</h3>
                 <p>{{ user.email }}</p>
+                <br>
+                <a href="#">Add Avatar</a>
             </div>
         </div>
 
         <!-- SizeMeApp Logo -->
         <div class="sizemeapp-logo">
-            <a href="{% url 'dashboard' %}">
-                <img src="{% static 'images/sizemeapp_logo.png' %}" alt="SizeMeApp Logo">
-            </a>
+                <img src="{% static 'images/sizemeapp-logo.png' %}" alt="SizeMeApp Logo">
+                Enter after adding your <br> measurements.</p>
+                <button>Lets go!</button>
         </div>
     </div>
 
-    <!-- Measurement Intro Text -->
-    <p class="measurement-intro">
+    <!-- Toggle Button for Measurements -->
+    <button id="toggle-measurements" class="btn btn-toggle">Show Measurements</button>
+
+     <!-- Measurement Intro Text -->
+     <p class="measurement-intro">
         {% if just_signed_up %}
             Enter your measurements to start personalizing your experience.
         {% else %}
             Update your measurements anytime to improve your recommendations.
         {% endif %}
     </p>
-
-    <!-- Toggle Button for Measurements -->
-    <button id="toggle-measurements" class="btn btn-toggle">Show Measurements</button>
 
     <!-- User Measurements (Hidden by Default) -->
     <div id="measurements-section" class="hidden">
