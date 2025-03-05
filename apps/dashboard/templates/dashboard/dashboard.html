@@ -17,18 +17,21 @@
     <div class="dashboard-header">   
         <!-- Profile Section (Left) -->
         <div class="profile-section">
-            <div class="profile-box">
+            <div class="avatar-box">
+                <div class="profile-box">
                 {% if user.profile_picture %}
                     <img src="{{ user.profile_picture.url }}" alt="Avatar">
                 {% else %}
                     <p>No avatar</p>
                 {% endif %}
+                </div>
+                <a href="#">Add Avatar</a>
             </div>
             <div class="user-info">
                 <h3>{{ user.name }}</h3>
                 <p>{{ user.email }}</p>
                 <br>
-                <a href="#">Add Avatar</a>
+               
             </div>
         </div>
 

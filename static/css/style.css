@@ -414,6 +414,10 @@ h1 img {
 }
 
 /* Profile Box */
+.avatar-box {
+    text-align: center;
+}
+
 .profile-box {
     width: 200px;
     height: 200px;
