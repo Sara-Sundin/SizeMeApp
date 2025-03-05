@@ -197,6 +197,7 @@ h1 img {
 
 .contact-sub-heading {
     text-align: left;
+    padding-bottom: 20px;
 }
 
 .contact-intro {
@@ -261,6 +262,12 @@ h1 img {
 .contact-form button:hover {
     background-color: #cc3d14;
     transform: scale(1.1);
+}
+
+/* Success messages*/
+
+.success-message {
+    font-size: 20px;
 }
 
 /* Contact Details */
@@ -584,7 +591,6 @@ h1 img {
     padding: 12px 24px;
     border: none;
     border-radius: 8px;
-    transition: transform 0.3s ease-in-out;
     display: block;
     width: 100%;
     text-align: center;
@@ -592,7 +598,6 @@ h1 img {
 
 .btn-orange:hover, .btn-signup:hover, .btn-toggle:hover {
     background-color: #cc3d14;
-    transform: scale(1.1);
 }
 
 .link {
