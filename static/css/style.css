@@ -61,7 +61,7 @@ h1 img {
     z-index: -1; /*  Keeps it behind the content */
     bottom: 0; 
     height: auto;
-    background-size: 70%;
+    background-size: 100%;
     top: 0px; 
 }
 
@@ -278,24 +278,6 @@ h1 img {
 
 .details {
     padding-top: 50px;
-}
-
-/* Two-Column Layout for Larger Screens */
-@media (min-width: 768px) {
-    .contact-wrapper {
-        flex-direction: row;
-        justify-content: space-between;
-    }
-
-    .contact-form-container,
-    .contact-details {
-        width: 48%;
-    }
-
-    .contact-form button {
-        width: auto;
-        padding: 12px 20px;
-    }
 }
 
 /* Social Icons Container */
@@ -686,6 +668,7 @@ h1 img {
 }
 
 @media  screen and (min-width: 768px){
+
     h1 img {
         max-width: 80%; /* Scales down the logo for tablets */
         padding-top: 140px;
@@ -694,7 +677,7 @@ h1 img {
     .index-page::before,
     .blog-page::before,
     .about-page::before  {
-        background-size: 75%;
+        background-size: 85%;
         top: 0px;
     } 
 
@@ -727,6 +710,21 @@ h1 img {
         margin-left: auto; /* Push logo to the right */
     }
 
+    /* Two-Column Layout for Larger Screens */
+    .contact-wrapper {
+        flex-direction: row;
+        justify-content: space-between;
+    }
+
+    .contact-form-container,
+    .contact-details {
+        width: 48%;
+    }
+
+    .contact-form button {
+        width: auto;
+        padding: 12px 20px;
+    }
 }
 
 @media  screen and (min-width: 1024px) {
@@ -739,7 +737,7 @@ h1 img {
     .index-page::before,
     .blog-page::before,
     .about-page::before  {
-        background-size: 50%;
+        background-size: 62%;
         top: 0px; /* Moves the background image further down */
     }
     
