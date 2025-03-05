@@ -1,8 +1,6 @@
-from django.contrib.auth.signals import user_logged_in
 from django.dispatch import receiver
-from django.contrib.sessions.models import Session
+from allauth.account.signals import user_signed_up
 
-@receiver(user_logged_in)
-def set_just_signed_up_session(sender, request, user, **kwargs):
-    if not request.session.get('just_signed_up', False):  # Avoid overriding if already set
-        request.session['just_signed_up'] = True
+@receiver(user_signed_up)
+def set_just_signed_up_session(request, user, **kwargs):
+    request.session['just_signed_up'] = True  # Set for new users only
