@@ -39,6 +39,17 @@
                 </form>
             </div>
 
+            {% if messages %}
+                <div class="messages-contact">
+                    {% for message in messages %}
+                    <div class="{% if message.tags %}{{ message.tags }}{% endif %}">
+                        {{ message }}
+                    </div>
+                    {% endfor %}
+                </div>
+            {% endif %}
+
+
             <!-- Contact Details -->
             <div class="contact-details">
                 <h3 class="contact-sub-heading">Or.. Contact us directly</h3>
