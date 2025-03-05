@@ -583,7 +583,7 @@ h1 img {
 }
 
 /* Buttons */
-.btn-orange, .btn-signup, .btn-toggle {
+.btn-orange {
     background-color: #E84E1B;
     color: white;
     text-decoration: none;
