@@ -677,7 +677,7 @@ h1 img {
     .index-page::before,
     .blog-page::before,
     .about-page::before  {
-        background-size: 85%;
+        background-size: 75%;
         top: 0px;
     } 
 
@@ -737,7 +737,7 @@ h1 img {
     .index-page::before,
     .blog-page::before,
     .about-page::before  {
-        background-size: 62%;
+        background-size: 55%;
         top: 0px; /* Moves the background image further down */
     }
     
