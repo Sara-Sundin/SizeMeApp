@@ -1,12 +1,14 @@
 from django.shortcuts import render, redirect
 from apps.newsletter.forms import SubscriberForm  # Import the form
-from apps.newsletter.models import Subscriber  # Import the model
 
 def index(request):
     return render(request, 'pages/index.html')
 
 def about(request):
     return render(request, 'pages/about.html')
+
+def contact(request):
+    return render(request, 'pages/contact.html')
 
 def index(request):
     form = SubscriberForm()  # Ensure form is initialized
