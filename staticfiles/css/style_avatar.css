@@ -1,0 +1,310 @@
+#main-thumbnails {
+  display: flex; /* Default */
+}
+
+#main-thumbnails:not(.visible) {
+  display: none; /* Hide when additional thumbnails appear */
+}
+
+.flex-center {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Avatar Generator */
+
+#generator {
+  flex-direction: column;
+  gap: 17px;
+  width: 100%;
+  margin: 0 auto;
+  text-align: center;
+  max-width: 800px;
+}
+
+.canvas-container {
+  position: relative;
+  width: 200px;
+  height: 200px;
+}
+
+.canvas {
+  position: absolute;
+  border: 1px solid black;
+  top: 0;
+  left: 0;
+  width: 200px;
+  height: 200px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.button-container {
+  gap: 30px;
+}
+
+.thumbnail-container {
+  flex-wrap: wrap;
+  gap: 13px;
+  margin: 0 auto;
+}
+
+/* Radio Button Styling for Thumbnails */
+.thumbnail-radio {
+  display: none;
+}
+
+.thumbnail {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 45px;
+  height: auto;
+  border: 1px solid black;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: transform 0.3s, border-color 0.3s;
+  overflow: hidden;
+}
+
+.thumbnail span {
+  font-size: 12px;
+  color: #000;
+}
+
+.thumbnail img {
+  width: 50px;
+  height: 50px;
+  object-fit: cover;
+  border-radius: 8px;
+  overflow: hidden;
+}
+
+.thumbnails-row {
+  display: flex;
+  /* Arrange the thumbnails in a row */
+  flex-wrap: wrap;
+  /* Allow wrapping if they exceed the width */
+  gap: 15px;
+  justify-content: center;
+  /* Center thumbnails horizontally */
+  align-items: center;
+  /* Align thumbnails vertically */
+}
+
+/* Highlight Active Thumbnail */
+.thumbnail-radio:checked+.thumbnail {
+  border-color: blue;
+  transform: scale(1.2);
+  box-shadow: 0 0 8px rgba(0, 0, 255, 0.6);
+}
+
+.thumbnail-zoom {
+  transform: scale(2.5);
+  /* Zooms in the image */
+  overflow: hidden !important;
+}
+
+.thumbnail-zoom-md {
+  transform: scale(1.5);
+  overflow: hidden !important;
+}
+
+/* Clears the selection*/
+.clear-label {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 1px solid black;
+  border-radius: 8px;
+  cursor: pointer;
+  position: relative;
+  overflow: hidden;
+}
+
+.clear-label img {
+  width: 100%;
+  /* Ensures the image fills the label */
+  height: 100%;
+  /* Ensures the image fills the label */
+  object-fit: contain;
+  /* Maintains aspect ratio */
+}
+
+.back-button {
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.back-button:focus {
+  outline: none;
+  /* Remove default focus outline */
+  box-shadow: 0 0 2px #007bff;
+  /* Add focus ring for accessibility */
+}
+
+/* General styles for the color picker */
+#custom-color-picker {
+  flex-direction: column;
+  gap: 10px;
+}
+
+/* Slider track */
+.slider {
+  position: relative;
+  width: 100%;
+  background: linear-gradient(to right, red, yellow, lime, cyan, blue, magenta, red);
+  cursor: crosshair;
+  overflow: hidden;
+  margin: 0;
+}
+
+#hue-slider {
+  height: 40px;
+}
+
+#lightness-slider {
+  background: linear-gradient(to right, black, white);
+  height: 30px;
+}
+
+.slider-handle {
+  position: absolute;
+  top: 50%;
+  left: 0%;
+  width: 12px;
+  height: 12px;
+  background-color: white;
+  border: 2px solid black;
+  border-radius: 50%;
+  transform: translate(-50%, -50%);
+  transition: left 0.1s ease-out;
+}
+
+.swatches {
+  gap: 10px;
+}
+
+.swatch {
+  width: 30px;
+  height: 30px;
+  border: none;
+  border-radius: 8%;
+  cursor: pointer;
+  outline: none;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+  transition: transform 0.2s ease-in-out;
+}
+
+.swatch:hover {
+  transform: scale(1.2);
+}
+
+/* Responsive Adjustments for Medium Screens */
+@media screen and (min-width: 425px) {
+  #custom-color-picker {
+    width: 400px;
+  }
+
+  .canvas-container {
+    width: 300px;
+    height: 300px;
+  }
+
+  .canvas {
+    width: 300px;
+    height: 300px;
+  }
+
+  .thumbnail-container {
+    width: 400px;
+  }
+}
+
+/* Responsive Adjustments for Larger Screens */
+@media screen and (min-width: 1024px) {
+
+  #generator {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    /* 5 equal columns */
+    grid-template-rows: repeat(2, auto);
+    /* Create 2 rows of equal height */
+    padding-left: 20px;
+    padding-right: 10px;
+  }
+
+  .column-1 {
+    grid-column: 1 / 2;
+    /* First column */
+    grid-row: 2 / 1;
+    /* Place in the second row */
+  }
+
+  .column-2 {
+    grid-column: 2 / 3;
+    /* Second column */
+    grid-row: 1 / 2;
+    /* Only in the first row */
+  }
+
+  .column-3 {
+    grid-column: 2;
+    /* Span the entire width */
+    grid-row: 3;
+    /* Place in the third row */
+  }
+
+  .column-4 {
+    grid-column: 3 / 4;
+    /* Third column */
+    grid-row: 1 / 2;
+    /* Only in the first row */
+    width: 300px;
+    /* Optional width */
+  }
+
+  .column-5 {
+    grid-column: 1 / 2;
+    /* Same column as column-1 */
+    grid-row: 1 / 1;
+    /* Place in the first row */
+    align-self: start;
+    /* Align at the top of its row */
+    width: 300px;
+  }
+
+  #hue-slider {
+    height: 50px;
+  }
+
+  .thumbnail {
+    height: 65px;
+    width: 65px;
+  }
+
+  .clear-label img {
+    height: 65px;
+    width: 65px;
+  }
+
+  #custom-color-picker {
+    width: 300px;
+  }
+
+  .canvas-container {
+    width: 300px;
+    height: 300px;
+  }
+
+  .canvas {
+    width: 300px;
+    height: 300px;
+  }
+
+  .thumbnail-container {
+    width: 250px;
+  }
+}
