@@ -446,7 +446,6 @@ h1 img {
 /* User Info */
 .user-info {
     text-align: center;
-    margin-top: 10px;
 }
 
 /* Logo Section */
@@ -473,6 +472,43 @@ h1 img {
     border: none;
     cursor: pointer;
     transition: background 0.3s ease-in-out, transform 0.2s ease-in-out;
+}
+
+.modal {
+    display: none; /* Hidden by default */
+    position: fixed;
+    z-index: 1050; /* Higher than the navbar */
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    width: 90%;
+    max-width: 1000px;
+    max-height: 460px;
+    background-color: white;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+/* Background overlay to darken screen */
+.modal-overlay {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.4);
+    z-index: 1049; /* Just below modal */
+}
+
+/* Close button */
+.close-modal {
+    position: absolute;
+    top: 10px;
+    right: 15px;
+    font-size: 24px;
+    cursor: pointer;
 }
 
 /* Measurements Section (Hidden by Default) */
@@ -698,12 +734,11 @@ h1 img {
     .profile-section {
         flex-direction: row; /* Align profile image and info side-by-side */
         align-items: center;
-        gap: 15px; /* Add spacing */
+        gap: 30px; /* Add spacing */
     }
 
     .user-info {
         text-align: left; /* Align text to the left */
-        margin-top: 0; /* Remove extra margin */
     }
 
     .sizemeapp-logo {
@@ -742,6 +777,6 @@ h1 img {
     }
     
     .dashboard-container {
-        max-width: 800px;
+        max-width: 1100px;
     }
 }
