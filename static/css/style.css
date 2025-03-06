@@ -588,7 +588,7 @@ h1 img {
 /* Measurement Form Styling */
 .measurements-container form {
     flex: 1;
-    max-width: 400px;
+    max-width: 250px;
     text-align: left;
 }
 
@@ -722,27 +722,45 @@ h1 img {
     }
 
     .dashboard-container {
-        max-width: 600px;
+        max-width: 400px;
     }
 
     .dashboard-header {
-        flex-direction: row; /* Align items in a row */
-        justify-content: space-between; /* Space them out */
+        flex-direction: column; 
+        justify-content: center;
+        align-items: center;
         text-align: left;
     }
 
     .profile-section {
-        flex-direction: row; /* Align profile image and info side-by-side */
+        flex-direction: column; /* Align profile image and info side-by-side */
         align-items: center;
         gap: 30px; /* Add spacing */
     }
 
-    .user-info {
-        text-align: left; /* Align text to the left */
+    .measurements-container {
+        flex-direction: row; /* Place elements side by side */
+        align-items: center; /* Align them at the center */
     }
 
-    .sizemeapp-logo {
-        margin-left: auto; /* Push logo to the right */
+    .measurement-image {
+        flex: 1; /* Take equal width */
+        max-width: 50%; /* Prevent image from being too large */
+    }
+
+    .measurement-image img {
+        width: 100%; /* Make image responsive */
+        height: auto;
+        display: block;
+    }
+
+    form {
+        flex: 1; /* Take equal width */
+        max-width: 50%;
+    }
+
+    .user-info {
+        text-align: left; /* Align text to the left */
     }
 
     /* Two-Column Layout for Larger Screens */
@@ -777,6 +795,39 @@ h1 img {
     }
     
     .dashboard-container {
-        max-width: 1100px;
+        max-width: 900px;
+    }
+
+    .dashboard-header {
+        flex-direction: row; /* Align items in a row */
+        justify-content: space-between; /* Space them out */
+        text-align: center;
+    }
+
+    .profile-section {
+        flex-direction: row; /* Align profile image and info side-by-side */
+        align-items: center;
+        gap: 30px; /* Add spacing */
+    }
+
+    .measurements-container {
+        flex-direction: row; /* Place elements side by side */
+        align-items: center; /* Align them at the center */
+    }
+
+    .measurement-image {
+        flex: 1; /* Take equal width */
+        max-width: 50%; /* Prevent image from being too large */
+    }
+
+    .measurement-image img {
+        width: 100%; /* Make image responsive */
+        height: auto;
+        display: block;
+    }
+
+    form {
+        flex: 1; /* Take equal width */
+        max-width: 50%;
     }
 }
