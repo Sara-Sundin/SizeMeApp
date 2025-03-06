@@ -1,5 +1,7 @@
 {% extends "base.html" %}
 
+{% include 'dashboard/avatar.html' %}
+
 {% load static %}
 
 {% block content %}
@@ -18,10 +20,16 @@
     {% endif %}
 
     <!-- Profile -->
-    <div class="dashboard-header">   
+    <div class="dashboard-header">  
+
         <!-- Profile Section (Left) -->
         <div class="profile-section">
             <div class="avatar-box">
+                <div class="user-info">
+                    <h3>{{ user.name }}</h3>
+                    <p>{{ user.email }}</p>
+                    <br>      
+                </div>
                 <div class="profile-box">
                 {% if user.profile_picture %}
                     <img src="{{ user.profile_picture.url }}" alt="Avatar">
@@ -29,13 +37,72 @@
                     <p>No avatar</p>
                 {% endif %}
                 </div>
-                <a href="#">Add Avatar</a>
+
+                <!-- Link to Avatar generator-->
+                <a href="#" id="open-avatar-modal" class="open-modal-link">Create Avatar</a>
+
+                <!-- Modal Structure -->
+                <div id="avatar-modal" class="modal">
+                    <div class="modal-content">
+                        <span class="close-modal">&times;</span>
+                        <h3>Create Your Avatar</h3>
+                        {% include 'dashboard/avatar.html' %} <!-- Include the avatar generator here -->
+                    </div>
+                </div>
             </div>
-            <div class="user-info">
-                <h3>{{ user.name }}</h3>
-                <p>{{ user.email }}</p>
-                <br>
-               
+        </div>
+           
+        <div>
+            <!-- Measurement Intro Text -->
+            <p class="measurement-intro">
+                {% if just_signed_up %}
+                    Enter your measurements to start personalizing your experience.
+                {% else %}
+                    Update your measurements anytime to improve your recommendations.
+                {% endif %}
+            </p>
+             <!-- Toggle Button for Measurements -->
+            <button id="toggle-measurements" class="btn btn-orange">Show Measurements</button>
+        </div>
+
+        <!-- User Measurements (Hidden by Default) -->
+        <div id="measurements-section" class="hidden">
+            <div class="measurements-container">
+                <!-- Measurement Guide Image -->
+                <div class="measurement-image">
+                    <img src="{% static 'images/how_to_measure.jpg' %}" alt="Measurement Guide">
+                </div>
+
+                <!-- Measurement Form -->
+                <form method="post" enctype="multipart/form-data">
+                    {% csrf_token %}
+                    <div class="form-group">
+                        {{ form.gender.label_tag }} {{ form.gender }}
+                    </div>
+                    <div class="form-group">
+                        {{ form.age.label_tag }} {{ form.age }}
+                    </div>
+                    <div class="form-group">
+                        <label for="{{ form.waist.id_for_label }}">A. {{ form.waist.label }}</label>
+                        {{ form.waist }}
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="{{ form.chest.id_for_label }}">B. {{ form.chest.label }}</label>
+                        {{ form.chest }}
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="{{ form.hips.id_for_label }}">C. {{ form.hips.label }}</label>
+                        {{ form.hips }}
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="{{ form.shoulders.id_for_label }}">D. {{ form.shoulders.label }}</label>
+                        {{ form.shoulders }}
+                    </div>                
+                    <button type="submit" class="btn btn-orange">Update Measurements</button>
+                </form>
             </div>
         </div>
 
@@ -46,63 +113,12 @@
                 <button>Lets go!</button>
         </div>
     </div>
-
-    <!-- Toggle Button for Measurements -->
-    <button id="toggle-measurements" class="btn btn-orange">Show Measurements</button>
-
-     <!-- Measurement Intro Text -->
-     <p class="measurement-intro">
-        {% if just_signed_up %}
-            Enter your measurements to start personalizing your experience.
-        {% else %}
-            Update your measurements anytime to improve your recommendations.
-        {% endif %}
-    </p>
-
-    <!-- User Measurements (Hidden by Default) -->
-    <div id="measurements-section" class="hidden">
-        <div class="measurements-container">
-            <!-- Measurement Guide Image -->
-            <div class="measurement-image">
-                <img src="{% static 'images/how_to_measure.jpg' %}" alt="Measurement Guide">
-            </div>
-
-            <!-- Measurement Form -->
-            <form method="post" enctype="multipart/form-data">
-                {% csrf_token %}
-                <div class="form-group">
-                    {{ form.gender.label_tag }} {{ form.gender }}
-                </div>
-                <div class="form-group">
-                    {{ form.age.label_tag }} {{ form.age }}
-                </div>
-                <div class="form-group">
-                    <label for="{{ form.waist.id_for_label }}">A. {{ form.waist.label }}</label>
-                    {{ form.waist }}
-                </div>
-                
-                <div class="form-group">
-                    <label for="{{ form.chest.id_for_label }}">B. {{ form.chest.label }}</label>
-                    {{ form.chest }}
-                </div>
-                
-                <div class="form-group">
-                    <label for="{{ form.hips.id_for_label }}">C. {{ form.hips.label }}</label>
-                    {{ form.hips }}
-                </div>
-                
-                <div class="form-group">
-                    <label for="{{ form.shoulders.id_for_label }}">D. {{ form.shoulders.label }}</label>
-                    {{ form.shoulders }}
-                </div>                
-                <button type="submit" class="btn btn-orange">Update Measurements</button>
-            </form>
-        </div>
-    </div>
 </div>
 
 {% block extra_js %}
-<script src="{% static 'js/dashboard.js' %}"></script>
+    <script src="{% static 'js/dashboard.js' %}"></script>
+    <script src="{% static 'js/modal.js' %}"></script>
 {% endblock %}
+
 
 {% endblock %}
