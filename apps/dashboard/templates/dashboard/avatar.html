@@ -1,0 +1,246 @@
+{% load static %}
+
+{% block content %}
+
+<link rel="stylesheet" href="{% static 'css/style_avatar.css' %}?v=2">
+
+<!-- Female Avatar Generator-->
+
+<div id="generator" class="flex-center grid-container">
+
+    <!-- Color Picker -->
+
+    <div id="custom-color-picker" class="hidden flex-center column-1">
+      <p>Pick your colors!</p>
+
+      <!-- Swatches -->
+      <div id="color-swatches" class="swatches flex-center">
+        <button class="swatch" style="background-color: rgb(97, 111, 130);" data-color="rgb(97, 111, 130)"></button>
+        <button class="swatch" style="background-color: rgb(211, 215, 219);" data-color="rgb(211, 215, 219)"></button>
+        <button class="swatch" style="background-color: rgb(135, 135, 135);" data-color="rgb(135, 135, 135)"></button>
+        <button class="swatch" style="background-color: rgb(232, 78, 22);" data-color="rgb(232, 78, 22)"></button>
+        <button class="swatch" style="background-color: rgb(115, 143, 166);" data-color="rgb(115, 143, 166)"></button>
+      </div>
+    </div>
+
+    <!-- Avatar Canvas Container -->
+
+    <!-- Canvas-->
+    <div class="column-2">
+      <div id="canvas-container" class="flex-center canvas-container">
+        <canvas id="canvas-base" class="canvas"></canvas>
+        <canvas id="canvas-head" class="canvas"></canvas>
+        <canvas id="canvas-eyes" class="canvas"></canvas>
+        <canvas id="canvas-mouth" class="canvas"></canvas>
+        <canvas id="canvas-ears" class="canvas"></canvas>
+        <canvas id="canvas-rods" class="canvas"></canvas>
+      </div>
+    </div>
+
+    <!-- Buttons Canvas -->
+    <div class="button-container flex-center column-3">
+      <button id="reset-button" class="btn btn-dark">Reset</button>
+      <button id="randomize-button" class="btn btn-dark">Randomize</button>
+    </div>
+
+
+    <!-- Thumbnails -->
+
+    <!-- Main Thumbnails -->
+    <div id="main-thumbnails" class="thumbnail-container flex-center column-4">
+
+      <!-- Background Thumbnail-->
+      <div>
+        <input type="radio" id="thumbnail-base" name="thumbnail" class="thumbnail-radio main-thumbnail"
+          data-layer="base" data-src="#">
+        <label for="thumbnail-base" class="thumbnail">
+          <span>Base</span>
+          <img src="#" alt="Base">
+        </label>
+      </div>
+
+      <!-- Head Thumbnail -->
+      <div>
+        <input type="radio" id="thumbnail-head" name="thumbnail" class="thumbnail-radio main-thumbnail"
+          data-layer="head" data-src="#">
+        <label for="thumbnail-head" class="thumbnail">
+          <span>Head</span>
+          <img src="#" alt="Head">
+        </label>
+      </div>
+
+      <!-- Eyes Thumbnail -->
+      <div>
+        <input type="radio" id="thumbnail-eyes" name="thumbnail" class="thumbnail-radio main-thumbnail"
+          data-layer="eyes" data-src="#">
+        <label for="thumbnail-eyes" class="thumbnail">
+          <span>Eyes</span>
+          <img class="thumbnail-zoom-md" src="#" alt="Eyes">
+        </label>
+      </div>
+
+      <!-- Mouth Thumbnail -->
+      <div>
+        <input type="radio" id="thumbnail-mouth" name="thumbnail" class="thumbnail-radio main-thumbnail"
+          data-layer="mouth" data-src="#">
+        <label for="thumbnail-mouth" class="thumbnail">
+          <span>Mouth</span>
+          <img src="#" alt="Mouth">
+        </label>
+      </div>
+
+      <!-- Ears Thumbnail -->
+      <div>
+        <input type="radio" id="thumbnail-ears" name="thumbnail" class="thumbnail-radio main-thumbnail"
+          data-layer="ears" data-src=">#">
+        <label for="thumbnail-ears" class="thumbnail">
+          <span>Ears</span>
+          <img class="thumbnail-zoom" src="#" alt="Ears">
+        </label>
+      </div>
+
+      <!-- Rods Thumbnail -->
+      <div>
+        <input type="radio" id="thumbnail-rods" name="thumbnail" class="thumbnail-radio main-thumbnail"
+          data-layer="rods" data-src="#">
+        <label for="thumbnail-antenna" class="thumbnail">
+          <span>Rods</span>
+          <img class="thumbnail-zoom" src="#" alt="Rods">
+        </label>
+      </div>
+
+    <!-- Additional Thumbnails -->
+    <div id="additional-thumbnails-container" class="column-4">
+
+      <!-- Additional Thumbnail Head -->
+      <div id="additional-thumbnails-head" class="additional-thumbnails hidden">
+        <div>
+          <button class="back-button btn btn-primary">Back</button>
+        </div>
+        <div class="thumbnails-row">
+          <div class="thumbnail">
+            <input type="radio" id="clear-thumbnail-head" name="thumbnail" class="thumbnail-radio clear-radio"
+              data-layer="head">
+            <label for="clear-thumbnail-head" class="clear-label">
+              <img src="assets/images/images_page/clear-line.png" alt="Clear Feature">
+            </label>
+          </div>
+          <div class="thumbnail">
+            <input type="radio" id="thumbnail-head-1" name="thumbnail" class="thumbnail-radio" data-layer="head"
+              data-src="#">
+            <label for="thumbnail-head-1">
+              <img class="thumbnail-zoom-md" src="#"
+                alt="Head One">
+            </label>
+          </div>
+        </div>
+      </div>
+
+      <!-- Additional Thumbnail Eyes -->
+      <div id="additional-thumbnails-eyes" class="additional-thumbnails hidden">
+        <div>
+          <button class="back-button btn btn-primary">Back</button>
+        </div>
+        <div class="thumbnails-row">
+          <div class="thumbnail">
+            <input type="radio" id="clear-thumbnail-eyes" name="thumbnail" class="thumbnail-radio clear-radio"
+              data-layer="eyes">
+            <label for="clear-thumbnail-eyes" class="clear-label">
+              <img src="#" alt="Clear Feature">
+            </label>
+          </div>
+          <div class="thumbnail">
+            <input type="radio" id="thumbnail-eyes-1" name="thumbnail" class="thumbnail-radio" data-layer="eyes"
+              data-src="#">
+            <label for="thumbnail-eyes-1">
+              <img class="thumbnail-zoom" src="#"
+                alt="Eyes One">
+            </label>
+          </div>
+        </div>
+      </div>
+
+      <!-- Additional Thumbnail Mouth -->
+      <div id="additional-thumbnails-mouth" class="additional-thumbnails hidden">
+        <div>
+          <button class="back-button btn btn-primary">Back</button>
+        </div>
+        <div class="thumbnails-row">
+          <div class="thumbnail">
+            <input type="radio" id="clear-thumbnail-mouth" name="thumbnail" class="thumbnail-radio clear-radio"
+              data-layer="mouth">
+            <label for="clear-thumbnail-mouth" class="clear-label">
+              <img src="assets/images/images_page/clear-line.png" alt="Clear Feature">
+            </label>
+          </div>
+          <div class="thumbnail">
+            <input type="radio" id="thumbnail-mouth-1" name="thumbnail" class="thumbnail-radio" data-layer="mouth"
+              data-src="#">
+            <label for="thumbnail-mouth-1">
+              <img class="thumbnail-zoom" src="#"
+                alt="Mouth One">
+            </label>
+          </div>
+        </div>
+      </div>
+
+      <!-- Additional Thumbnail Ears -->
+      <div id="additional-thumbnails-ears" class="additional-thumbnails hidden">
+        <div>
+          <button class="back-button btn btn-primary">Back</button>
+        </div>
+        <div class="thumbnails-row">
+          <div class="thumbnail">
+            <input type="radio" id="clear-thumbnail-beard" name="thumbnail" class="thumbnail-radio clear-radio"
+              data-layer="ears">
+            <label for="clear-thumbnail-ears" class="clear-label">
+              <img src="assets/images/images_page/clear-line.png" alt="Clear Feature">
+            </label>
+          </div>
+          <div class="thumbnail">
+            <input type="radio" id="thumbnail-ears-1" name="thumbnail" class="thumbnail-radio" data-layer="ears"
+              data-src="#">
+            <label for="thumbnail-ears-1">
+              <img class="thumbnail-zoom" src="#"
+                alt="Ears One">
+            </label>
+          </div>
+        </div>
+      </div>
+
+      <!-- Additional Thumbnail Rods -->
+      <div id="additional-thumbnails-rods" class="additional-thumbnails hidden">
+        <div>
+          <button class="back-button btn btn-primary">Back</button>
+        </div>
+        <div class="thumbnails-row">
+          <div class="thumbnail">
+            <input type="radio" id="clear-thumbnail-rods" name="thumbnail" class="thumbnail-radio clear-radio"
+              data-layer="rods">
+            <label for="clear-thumbnail-rods" class="clear-label">
+              <img src="assets/images/images_page/clear-line.png" alt="Clear Feature">
+            </label>
+          </div>
+          <div class="thumbnail">
+            <input type="radio" id="thumbnail-sunglasses-1" name="thumbnail" class="thumbnail-radio"
+              data-layer="rods" data-src="#">
+            <label for="thumbnail-rods-1">
+              <img class="thumbnail-zoom" src="#"
+                alt="Rods One">
+            </label>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Download Button -->
+    <div class="column-5">
+      <button id="download-button" class="btn btn-primary">Save Avatar</button>
+    </div>
+</div>
+
+{% block extra_js %}
+<script src="{% static 'js/avatar.js' %}"></script>
+{% endblock %}
+
+{% endblock %}
