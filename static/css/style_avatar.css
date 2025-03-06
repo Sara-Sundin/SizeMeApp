@@ -1,4 +1,10 @@
+#main-thumbnails {
+  display: flex; /* Default */
+}
 
+#main-thumbnails:not(.visible) {
+  display: none; /* Hide when additional thumbnails appear */
+}
 
 .flex-center {
   display: flex;
@@ -218,7 +224,7 @@
 }
 
 /* Responsive Adjustments for Larger Screens */
-@media screen and (min-width: 768px) {
+@media screen and (min-width: 1024px) {
 
   #generator {
     display: grid;
@@ -296,5 +302,9 @@
   .canvas {
     width: 300px;
     height: 300px;
+  }
+
+  .thumbnail-container {
+    width: 250px;
   }
 }

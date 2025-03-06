@@ -4,7 +4,7 @@
 
 <link rel="stylesheet" href="{% static 'css/style_avatar.css' %}?v=2">
 
-<!-- Female Avatar Generator-->
+<!-- Avatar Generator-->
 
 <div id="generator" class="flex-center grid-container">
 
@@ -21,6 +21,11 @@
         <button class="swatch" style="background-color: rgb(232, 78, 22);" data-color="rgb(232, 78, 22)"></button>
         <button class="swatch" style="background-color: rgb(115, 143, 166);" data-color="rgb(115, 143, 166)"></button>
       </div>
+    </div>
+
+    <!-- Download Button -->
+    <div class="column-5">
+      <button id="download-button" class="btn btn-primary">Save Avatar</button>
     </div>
 
     <!-- Avatar Canvas Container -->
@@ -47,7 +52,7 @@
     <!-- Thumbnails -->
 
     <!-- Main Thumbnails -->
-    <div id="main-thumbnails" class="thumbnail-container flex-center column-4">
+    <div id="main-thumbnails" class="thumbnail-container flex-center column-4 visible">
 
       <!-- Background Thumbnail-->
       <div>
@@ -103,11 +108,13 @@
       <div>
         <input type="radio" id="thumbnail-rods" name="thumbnail" class="thumbnail-radio main-thumbnail"
           data-layer="rods" data-src="#">
-        <label for="thumbnail-antenna" class="thumbnail">
+        <label for="thumbnail-rods" class="thumbnail">
           <span>Rods</span>
           <img class="thumbnail-zoom" src="#" alt="Rods">
         </label>
       </div>
+    </div>
+
 
     <!-- Additional Thumbnails -->
     <div id="additional-thumbnails-container" class="column-4">
@@ -146,7 +153,7 @@
             <input type="radio" id="clear-thumbnail-eyes" name="thumbnail" class="thumbnail-radio clear-radio"
               data-layer="eyes">
             <label for="clear-thumbnail-eyes" class="clear-label">
-              <img src="#" alt="Clear Feature">
+              <img src="assets/images/images_page/clear-line.png" alt="Clear Feature">
             </label>
           </div>
           <div class="thumbnail">
@@ -222,7 +229,7 @@
             </label>
           </div>
           <div class="thumbnail">
-            <input type="radio" id="thumbnail-sunglasses-1" name="thumbnail" class="thumbnail-radio"
+            <input type="radio" id="thumbnail-rods-1" name="thumbnail" class="thumbnail-radio"
               data-layer="rods" data-src="#">
             <label for="thumbnail-rods-1">
               <img class="thumbnail-zoom" src="#"
@@ -232,12 +239,6 @@
         </div>
       </div>
     </div>
-
-    <!-- Download Button -->
-    <div class="column-5">
-      <button id="download-button" class="btn btn-primary">Save Avatar</button>
-    </div>
-</div>
 
 {% block extra_js %}
 <script src="{% static 'js/avatar.js' %}"></script>

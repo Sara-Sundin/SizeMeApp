@@ -778,6 +778,11 @@ h1 img {
         width: auto;
         padding: 12px 20px;
     }
+
+    .modal {
+        max-width: 450px;
+        min-height: 700px;
+    }
 }
 
 @media  screen and (min-width: 1024px) {
@@ -829,5 +834,11 @@ h1 img {
     form {
         flex: 1; /* Take equal width */
         max-width: 50%;
+    }
+
+    .modal {
+        width: 90%;
+        max-width: 1000px;
+        min-height: 450px;
     }
 }
