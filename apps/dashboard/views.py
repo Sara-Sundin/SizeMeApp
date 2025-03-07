@@ -5,6 +5,7 @@ from django.urls import reverse
 from django.http import JsonResponse
 from django.core.files.base import ContentFile
 import base64
+from cloudinary.uploader import upload  # Import Cloudinary uploader
 from apps.accounts.forms import CustomUserUpdateForm
 
 @login_required
@@ -32,18 +33,22 @@ def user_dashboard(request):
 
     return render(request, "dashboard/dashboard.html", context)
 
-# New View to Save Avatar
+# Updated View to Save Avatar to Cloudinary
 @login_required
 def save_avatar(request):
-    """Handles saving the avatar from the frontend and updating the profile picture."""
+    """Handles saving the avatar from the frontend and uploading it to Cloudinary."""
     if request.method == "POST" and request.FILES.get("avatar"):
         user = request.user
-        avatar = request.FILES["avatar"]
+        avatar_file = request.FILES["avatar"]
 
-        # Save the uploaded avatar image to the user's profile
-        user.profile_picture.save("avatar.png", avatar)
-        user.save()
+        # Upload the avatar to Cloudinary
+        cloudinary_response = upload(avatar_file, folder="avatars")
 
-        return JsonResponse({"success": True, "avatar_url": user.profile_picture.url})
+        if "secure_url" in cloudinary_response:
+            # Save the Cloudinary URL to the user's profile
+            user.profile_picture = cloudinary_response["secure_url"]
+            user.save()
+
+            return JsonResponse({"success": True, "avatar_url": user.profile_picture})
 
     return JsonResponse({"success": False, "error": "Invalid request"})
