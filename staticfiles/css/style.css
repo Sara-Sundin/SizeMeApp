@@ -37,6 +37,16 @@ h1 img {
     font-size: 0.7rem; /* Smaller font size */
 }
 
+.mini-avatar {
+    width: 40px;  /* Adjust the size as needed */
+    height: 40px;
+    border-radius: 50%; /* Makes it a perfect circle */
+    object-fit: cover; /* Ensures the image fills the space without distortion */
+    margin-right: 10px; /* Adds spacing between the avatar and text */
+    vertical-align: middle; /* Keeps it aligned with text */
+    display: inline-block; /* Ensures correct positioning */
+}
+
 /* Ensure content is fully visible */
 .index-page,
 .blog-page,
@@ -704,7 +714,6 @@ h1 img {
 }
 
 @media  screen and (min-width: 768px){
-
     h1 img {
         max-width: 80%; /* Scales down the logo for tablets */
         padding-top: 140px;
@@ -756,22 +765,12 @@ h1 img {
 
     form {
         flex: 1; /* Take equal width */
-        max-width: 50%;
-    }
-
-    .user-info {
-        text-align: left; /* Align text to the left */
     }
 
     /* Two-Column Layout for Larger Screens */
     .contact-wrapper {
         flex-direction: row;
         justify-content: space-between;
-    }
-
-    .contact-form-container,
-    .contact-details {
-        width: 48%;
     }
 
     .contact-form button {
@@ -833,7 +832,6 @@ h1 img {
 
     form {
         flex: 1; /* Take equal width */
-        max-width: 50%;
     }
 
     .modal {
