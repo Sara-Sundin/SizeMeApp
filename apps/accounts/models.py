@@ -1,8 +1,9 @@
 from django.contrib.auth.models import AbstractUser
 from django.db import models
+from cloudinary.models import CloudinaryField  # Import CloudinaryField
 
 class CustomUser(AbstractUser):
-    profile_picture = models.ImageField(upload_to="avatars/", blank=True, null=True)
+    profile_picture = CloudinaryField("profile_pictures", blank=True, null=True)  # Stores images in Cloudinary
     name = models.CharField(max_length=255, blank=True, null=True)  # Renamed field
     email = models.EmailField(unique=True)
     chest = models.FloatField(blank=True, null=True)
