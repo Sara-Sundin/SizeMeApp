@@ -210,3 +210,46 @@ document.addEventListener("DOMContentLoaded", () => {
     applyColorToActiveLayer();
     setupBackButtons();
 });
+
+document.getElementById("download-button").addEventListener("click", function () {
+    const saveAvatarUrl = document.getElementById("save-avatar-url").value;
+    const csrfToken = document.getElementById("csrf-token").value; // ✅ Get CSRF token
+
+    // Create a new canvas to merge all layers
+    const finalCanvas = document.createElement("canvas");
+    finalCanvas.width = 400;
+    finalCanvas.height = 400;
+    const finalCtx = finalCanvas.getContext("2d");
+
+    // Draw all visible layers onto the final canvas
+    Object.keys(canvases).forEach((layer) => {
+        if (layers[layer]) {
+            finalCtx.drawImage(canvases[layer], 0, 0);
+        }
+    });
+
+    // Convert the final merged image to a Blob
+    finalCanvas.toBlob(function (blob) {
+        const formData = new FormData();
+        formData.append("avatar", blob, "avatar.png");
+
+        // ✅ Send the image to the Django backend with CSRF token
+        fetch(saveAvatarUrl, {
+            method: "POST",
+            body: formData,
+            headers: {
+                "X-CSRFToken": csrfToken,  // ✅ Include CSRF token
+            },
+        })
+        .then(response => response.json())
+        .then(data => {
+            if (data.success) {
+                alert("Avatar saved successfully!");
+                location.reload(); // Reload to update the profile picture
+            } else {
+                alert("Error saving avatar.");
+            }
+        })
+        .catch(error => console.error("Error:", error));
+    }, "image/png");
+});
