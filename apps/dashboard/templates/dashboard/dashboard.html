@@ -25,18 +25,18 @@
         <!-- Profile Section (Left) -->
         <div class="profile-section">
             <div class="avatar-box">
-                <!--<div class="user-info">
-                    <h3>{{ user.name }}</h3>
-                    <p>{{ user.email }}</p>
-                    <br>      
-                </div>-->
                 <div class="profile-box">
-                {% if user.profile_picture %}
-                    <img src="{{ user.profile_picture.url }}" alt="Avatar">
-                {% else %}
-                    <p>No avatar</p>
-                {% endif %}
+                    {% if user.profile_picture %}
+                    <img src="{{ user.profile_picture.url }}" alt="Avatar" class="mini-avatar">
+                    {% else %}
+                        <p>No avatar</p>
+                    {% endif %}
                 </div>
+
+                 <!-- Hidden input to store the save_avatar URL -->
+                    <input type="hidden" id="save-avatar-url" value="{% url 'save_avatar' %}">
+
+                <input type="hidden" id="csrf-token" value="{{ csrf_token }}">
 
                 <!-- Link to Avatar generator-->
                 <a href="#" id="open-avatar-modal" class="open-modal-link">Create Avatar</a>
