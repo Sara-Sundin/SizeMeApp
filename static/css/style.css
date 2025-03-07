@@ -704,7 +704,6 @@ h1 img {
 }
 
 @media  screen and (min-width: 768px){
-
     h1 img {
         max-width: 80%; /* Scales down the logo for tablets */
         padding-top: 140px;
@@ -756,22 +755,12 @@ h1 img {
 
     form {
         flex: 1; /* Take equal width */
-        max-width: 50%;
-    }
-
-    .user-info {
-        text-align: left; /* Align text to the left */
     }
 
     /* Two-Column Layout for Larger Screens */
     .contact-wrapper {
         flex-direction: row;
         justify-content: space-between;
-    }
-
-    .contact-form-container,
-    .contact-details {
-        width: 48%;
     }
 
     .contact-form button {
@@ -833,7 +822,6 @@ h1 img {
 
     form {
         flex: 1; /* Take equal width */
-        max-width: 50%;
     }
 
     .modal {
