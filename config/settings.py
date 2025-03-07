@@ -43,6 +43,8 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'django.contrib.sites',
+    "cloudinary",
+    "cloudinary_storage",
     'allauth',
     'allauth.account',
     'allauth.socialaccount',
@@ -193,7 +195,17 @@ STATIC_ROOT = os.path.join(BASE_DIR, "staticfiles")  # Heroku collects files her
 # Enable WhiteNoise compression and caching
 STATICFILES_STORAGE = "whitenoise.storage.CompressedManifestStaticFilesStorage"
 
-MEDIA_URL = '/media/'
+# Use Cloudinary for media uploads (avatars)
+DEFAULT_FILE_STORAGE = "cloudinary_storage.storage.MediaCloudinaryStorage"
+
+CLOUDINARY_STORAGE = {
+    "CLOUD_NAME": config("CLOUDINARY_CLOUD_NAME"),
+    "API_KEY": config("CLOUDINARY_API_KEY"),
+    "API_SECRET": config("CLOUDINARY_API_SECRET"),
+}
+
+# Media files (User avatars)
+MEDIA_URL = "https://res.cloudinary.com/{}/".format(config("CLOUDINARY_CLOUD_NAME"))
 MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
 
 # Default primary key field type
