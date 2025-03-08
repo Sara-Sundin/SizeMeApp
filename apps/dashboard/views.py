@@ -5,15 +5,15 @@ from django.urls import reverse
 from django.http import JsonResponse
 from django.core.files.base import ContentFile
 import base64
-from cloudinary.uploader import upload  # Import Cloudinary uploader
+import os
+from cloudinary.uploader import upload  # Cloudinary uploader
 from apps.accounts.forms import CustomUserUpdateForm
 
 @login_required
 def user_dashboard(request):
+    """Handles user profile updates."""
     user = request.user
-    
-    # Retrieve & remove `just_signed_up` flag after first page load
-    just_signed_up = request.session.pop('just_signed_up', False)
+    just_signed_up = request.session.pop("just_signed_up", False)  # Retrieve flag
 
     if request.method == "POST":
         form = CustomUserUpdateForm(request.POST, request.FILES, instance=user)
@@ -27,28 +27,31 @@ def user_dashboard(request):
     context = {
         "form": form,
         "user": user,
-        "just_signed_up": just_signed_up,  # This will be `True` only for new signups
-        "signup_url": reverse('account_signup'), 
+        "just_signed_up": just_signed_up,  # This is `True` only for new signups
+        "signup_url": reverse("account_signup"),
     }
 
     return render(request, "dashboard/dashboard.html", context)
 
-# Updated View to Save Avatar to Cloudinary
+
 @login_required
 def save_avatar(request):
-    """Handles saving the avatar from the frontend and uploading it to Cloudinary."""
+    """Handles avatar uploads for both local and Cloudinary storage."""
     if request.method == "POST" and request.FILES.get("avatar"):
         user = request.user
         avatar_file = request.FILES["avatar"]
 
-        # Upload the avatar to Cloudinary
-        cloudinary_response = upload(avatar_file, folder="avatars")
+        if "DYNO" in os.environ:  # Running on Heroku, use Cloudinary
+            cloudinary_response = upload(avatar_file, folder="avatars")
 
-        if "secure_url" in cloudinary_response:
-            # Save the Cloudinary URL to the user's profile
-            user.profile_picture = cloudinary_response["secure_url"]
+            if "secure_url" in cloudinary_response:
+                user.profile_picture = cloudinary_response["secure_url"]
+                user.save()
+                return JsonResponse({"success": True, "avatar_url": user.profile_picture})
+
+        else:  # Running locally, save to media directory
+            user.profile_picture.save(f"avatars/{user.id}.png", avatar_file)
             user.save()
-
-            return JsonResponse({"success": True, "avatar_url": user.profile_picture})
+            return JsonResponse({"success": True, "avatar_url": user.profile_picture.url})
 
     return JsonResponse({"success": False, "error": "Invalid request"})
