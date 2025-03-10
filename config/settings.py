@@ -16,12 +16,11 @@ TEMPLATES_DIR = os.path.join(BASE_DIR, "templates")
 
 # === SECURITY === #
 SECRET_KEY = config("SECRET_KEY")
-DEBUG = False
+DEBUG = True  # Set to False in production
 ALLOWED_HOSTS = [".herokuapp.com", "localhost", "127.0.0.1"]
 
 # === INSTALLED APPS === #
 INSTALLED_APPS = [
-    # Django Core Apps
     "django.contrib.admin",
     "django.contrib.auth",
     "django.contrib.contenttypes",
@@ -62,8 +61,8 @@ ACCOUNT_SESSION_REMEMBER = True
 ACCOUNT_FORMS = {"signup": "apps.accounts.forms.CustomSignupForm"}
 
 AUTHENTICATION_BACKENDS = [
-    "django.contrib.auth.backends.ModelBackend",  # Default authentication backend
-    "allauth.account.auth_backends.AuthenticationBackend",  # Django-Allauth authentication
+    "django.contrib.auth.backends.ModelBackend",
+    "allauth.account.auth_backends.AuthenticationBackend",
 ]
 
 # === MIDDLEWARE === #
@@ -112,23 +111,17 @@ STATIC_URL = "/static/"
 STATICFILES_DIRS = [os.path.join(BASE_DIR, "static")]
 STATIC_ROOT = os.path.join(BASE_DIR, "staticfiles")
 
-# Use different static storage for local & production
-if "DYNO" in os.environ:  # Running on Heroku
-    STATICFILES_STORAGE = "whitenoise.storage.CompressedManifestStaticFilesStorage"
-else:
-    STATICFILES_STORAGE = "django.contrib.staticfiles.storage.StaticFilesStorage"
+cloudinary.config( 
+    cloud_name=config("CLOUDINARY_CLOUD_NAME", default=""),
+    api_key=config("CLOUDINARY_API_KEY", default=""),
+    api_secret=config("CLOUDINARY_API_SECRET", default="")
+)
 
-# === MEDIA FILE STORAGE (Profile Pictures) === #
-USE_CLOUDINARY = "DYNO" in os.environ  # Running on Heroku?
+# Make sure MEDIA storage is set properly
+DEFAULT_FILE_STORAGE = "cloudinary_storage.storage.MediaCloudinaryStorage"
+MEDIA_URL = f"https://res.cloudinary.com/{config('CLOUDINARY_CLOUD_NAME')}/"
 
-if USE_CLOUDINARY:
-    DEFAULT_FILE_STORAGE = "cloudinary_storage.storage.MediaCloudinaryStorage"
-    MEDIA_URL = f"https://res.cloudinary.com/{config('CLOUDINARY_CLOUD_NAME', default='')}/"
-else:
-    DEFAULT_FILE_STORAGE = "django.core.files.storage.FileSystemStorage"
-    MEDIA_URL = "/media/"
-    MEDIA_ROOT = os.path.join(BASE_DIR, "media")
-    
+
 # === EMAIL CONFIGURATION === #
 EMAIL_BACKEND = "django.core.mail.backends.smtp.EmailBackend"
 EMAIL_HOST = "mail.inleed.com"
