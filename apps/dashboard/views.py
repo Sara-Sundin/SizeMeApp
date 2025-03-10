@@ -58,7 +58,7 @@ def save_avatar(request):
                     cloudinary_response = upload(avatar_file, folder="avatars")
 
                     if "secure_url" in cloudinary_response:
-                        user.profile_picture = cloudinary_response["secure_url"]
+                        user.profile_picture = cloudinary_response["secure_url"]  # ✅ Assign URL directly
                         user.save()
                         return JsonResponse({"success": True, "avatar_url": user.profile_picture})
                     else:
@@ -66,10 +66,8 @@ def save_avatar(request):
                         return JsonResponse({"success": False, "error": "Cloudinary upload failed"})
 
                 else:  # Running locally, save to media directory
-                    file_path = f"avatars/{user.id}.png"
-                    user.profile_picture.save(file_path, avatar_file)
+                    user.profile_picture.save(f"avatars/{user.id}.png", avatar_file)
                     user.save()
-                    logger.info(f"Avatar saved locally at: {user.profile_picture.url}")
                     return JsonResponse({"success": True, "avatar_url": user.profile_picture.url})
 
             elif avatar_base64:
@@ -84,7 +82,7 @@ def save_avatar(request):
                     cloudinary_response = upload(decoded_img, folder="avatars")
 
                     if "secure_url" in cloudinary_response:
-                        user.profile_picture = cloudinary_response["secure_url"]
+                        user.profile_picture = cloudinary_response["secure_url"]  # ✅ Assign URL directly
                         user.save()
                         return JsonResponse({"success": True, "avatar_url": user.profile_picture})
                     else:
@@ -92,10 +90,8 @@ def save_avatar(request):
                         return JsonResponse({"success": False, "error": "Cloudinary upload failed"})
 
                 else:  # Save locally
-                    file_name = f"avatars/{user.id}.{ext}"
-                    user.profile_picture.save(file_name, ContentFile(decoded_img))
+                    user.profile_picture.save(f"avatars/{user.id}.{ext}", ContentFile(decoded_img))
                     user.save()
-                    logger.info(f"Avatar saved locally at: {user.profile_picture.url}")
                     return JsonResponse({"success": True, "avatar_url": user.profile_picture.url})
 
             else:
