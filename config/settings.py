@@ -6,6 +6,9 @@ import os
 import dj_database_url
 from decouple import config
 from pathlib import Path
+import cloudinary
+import cloudinary.uploader
+import cloudinary.api
 
 # === BASE DIRECTORY === #
 BASE_DIR = Path(__file__).resolve().parent.parent
@@ -101,7 +104,7 @@ TEMPLATES = [
 
 # === DATABASE === #
 DATABASES = {
-    "default": dj_database_url.parse(config("DATABASE_URL", default="sqlite:///db.sqlite3"))
+    "default": dj_database_url.parse(config("DATABASE_URL"))
 }
 
 # === STATIC FILES === #

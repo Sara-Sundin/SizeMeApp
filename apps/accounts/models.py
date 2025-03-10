@@ -6,10 +6,9 @@ import os
 class CustomUser(AbstractUser):
     """Custom user model with profile picture handling for local & production."""
 
-    # Use Cloudinary for production, local storage for development
-    if "DYNO" in os.environ:  # Running on Heroku (Production)
+    if os.getenv("USE_CLOUDINARY") == "True":  # Enable Cloudinary only if explicitly set
         profile_picture = CloudinaryField("profile_pictures", blank=True, null=True)
-    else:  # Local development
+    else:
         profile_picture = models.ImageField(upload_to="media/avatars/", blank=True, null=True)
 
     name = models.CharField(max_length=255, blank=True, null=True)
