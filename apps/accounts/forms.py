@@ -2,7 +2,6 @@ from django import forms
 from django.contrib.auth.forms import UserChangeForm
 from allauth.account.forms import SignupForm
 from .models import CustomUser 
-
 from django import forms
 from allauth.account.forms import SignupForm
 from .models import CustomUser 

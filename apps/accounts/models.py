@@ -17,5 +17,14 @@ class CustomUser(AbstractUser):
     USERNAME_FIELD = "email"
     REQUIRED_FIELDS = ["username"]
 
+    def get_full_name(self):
+        """Return the user's full name or email if name is missing."""
+        return self.name if self.name else self.email
+
+    def get_short_name(self):
+        """Return the first word of the user's name or fallback to email."""
+        return self.name.split()[0] if self.name else self.email
+
     def __str__(self):
-        return self.name or self.email
+        """Use the short name for display."""
+        return self.get_short_name()
