@@ -27,11 +27,11 @@
             <div class="avatar-box">
                 <div class="profile-box">
                     {% if user.profile_picture %}
-                    <img src="{{ user.profile_picture.url }}" alt="Avatar" class="mini-avatar">
+                        <img src="{{ user.profile_picture.url }}" alt="Avatar" class="mini-avatar">
                     {% else %}
-                        <p>No avatar</p>
+                        <img src="{% static 'images/avatar_images/base.png' %}" alt="Avatar" class="mini-avatar">
                     {% endif %}
-                </div>
+                </div>                
 
                  <!-- Hidden input to store the save_avatar URL -->
                     <input type="hidden" id="save-avatar-url" value="{% url 'save_avatar' %}">

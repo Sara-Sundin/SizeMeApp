@@ -40,8 +40,9 @@
 
                 {% if user.is_authenticated %}
                 <p class="m-3 active-user">
-                    <img src="{{ user.profile_picture.url }}" alt="Avatar" class="mini-avatar">
-                    Logged in as {{ user.get_short_name }}
+                <img src="{% if user.profile_picture %}{{ user.profile_picture.url }}{% else %}{% static 'images/avatar_images/base.png' %}{% endif %}" 
+                alt="User Avatar" class="mini-avatar">
+                Logged in as {{ user.get_short_name }}
                 </p>
                 {% endif %}
             
