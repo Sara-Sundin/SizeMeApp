@@ -230,27 +230,45 @@ document.getElementById("download-button").addEventListener("click", function ()
 
     // Convert the final merged image to a Blob
     finalCanvas.toBlob(function (blob) {
-        const formData = new FormData();
-        formData.append("avatar", blob, "avatar.png");
+        if (!blob) {
+            console.error("Failed to create avatar blob.");
+            alert("Error: Could not generate avatar.");
+            return;
+        }
 
-        // Send the image to the Django backend
-        fetch(saveAvatarUrl, {
-            method: "POST",
-            body: formData,
-            headers: {
-                "X-CSRFToken": csrfToken,  // Ensure CSRF token is included
-            },
-        })
-        .then(response => response.json())
-        .then(data => {
-            if (data.success) {
-                alert("Avatar saved successfully!");
-                location.reload(); // Reload to update profile picture
-            } else {
-                console.error("Error response:", data);
-                alert("Error saving avatar.");
-            }
-        })
-        .catch(error => console.error("Fetch Error:", error));
+        // Convert Blob to Base64 for Cloudinary support
+        const reader = new FileReader();
+        reader.readAsDataURL(blob);
+        reader.onloadend = function () {
+            const base64data = reader.result; // Base64 image string
+
+            const formData = new FormData();
+            formData.append("avatar", blob, "avatar.png");
+            formData.append("avatar_base64", base64data);  // Cloudinary may require this
+            formData.append("csrfmiddlewaretoken", csrfToken); // Ensure CSRF token is included
+
+            // Send the image to the Django backend
+            fetch(saveAvatarUrl, {
+                method: "POST",
+                body: formData,
+                headers: {
+                    "X-CSRFToken": csrfToken,
+                },
+            })
+            .then(response => response.json())
+            .then(data => {
+                if (data.success) {
+                    alert("Avatar saved successfully!");
+                    location.reload(); // Reload to update profile picture
+                } else {
+                    console.error("Error response:", data);
+                    alert("Error saving avatar. Please try again.");
+                }
+            })
+            .catch(error => {
+                console.error("Fetch Error:", error);
+                alert("Network error: Unable to save avatar.");
+            });
+        };
     }, "image/png");
 });
