@@ -213,7 +213,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
 document.getElementById("download-button").addEventListener("click", function () {
     const saveAvatarUrl = document.getElementById("save-avatar-url").value;
-    const csrfToken = document.getElementById("csrf-token").value; // ✅ Get CSRF token
+    const csrfToken = document.getElementById("csrf-token").value;
 
     // Create a new canvas to merge all layers
     const finalCanvas = document.createElement("canvas");
@@ -233,23 +233,24 @@ document.getElementById("download-button").addEventListener("click", function ()
         const formData = new FormData();
         formData.append("avatar", blob, "avatar.png");
 
-        // ✅ Send the image to the Django backend with CSRF token
+        // Send the image to the Django backend
         fetch(saveAvatarUrl, {
             method: "POST",
             body: formData,
             headers: {
-                "X-CSRFToken": csrfToken,  // ✅ Include CSRF token
+                "X-CSRFToken": csrfToken,  // Ensure CSRF token is included
             },
         })
         .then(response => response.json())
         .then(data => {
             if (data.success) {
                 alert("Avatar saved successfully!");
-                location.reload(); // Reload to update the profile picture
+                location.reload(); // Reload to update profile picture
             } else {
+                console.error("Error response:", data);
                 alert("Error saving avatar.");
             }
         })
-        .catch(error => console.error("Error:", error));
+        .catch(error => console.error("Fetch Error:", error));
     }, "image/png");
 });

@@ -122,18 +122,13 @@ else:
 USE_CLOUDINARY = "DYNO" in os.environ  # Running on Heroku?
 
 if USE_CLOUDINARY:
-    CLOUDINARY_STORAGE = {
-        "CLOUD_NAME": config("CLOUDINARY_CLOUD_NAME", default=""),
-        "API_KEY": config("CLOUDINARY_API_KEY", default=""),
-        "API_SECRET": config("CLOUDINARY_API_SECRET", default=""),
-    }
     DEFAULT_FILE_STORAGE = "cloudinary_storage.storage.MediaCloudinaryStorage"
     MEDIA_URL = f"https://res.cloudinary.com/{config('CLOUDINARY_CLOUD_NAME', default='')}/"
 else:
     DEFAULT_FILE_STORAGE = "django.core.files.storage.FileSystemStorage"
     MEDIA_URL = "/media/"
     MEDIA_ROOT = os.path.join(BASE_DIR, "media")
-
+    
 # === EMAIL CONFIGURATION === #
 EMAIL_BACKEND = "django.core.mail.backends.smtp.EmailBackend"
 EMAIL_HOST = "mail.inleed.com"
