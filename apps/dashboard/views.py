@@ -44,32 +44,65 @@ def user_dashboard(request):
 @login_required
 def save_avatar(request):
     """Handles avatar uploads for both local and Cloudinary storage."""
-    if request.method == "POST" and request.FILES.get("avatar"):
-        user = request.user
-        avatar_file = request.FILES["avatar"]
+    user = request.user
 
-        try:
-            if "DYNO" in os.environ:  # Running on Heroku, use Cloudinary
-                cloudinary_response = upload(avatar_file, folder="avatars")
+    try:
+        if request.method == "POST":
+            avatar_file = request.FILES.get("avatar")  # File upload
+            avatar_base64 = request.POST.get("avatar_base64")  # Base64 upload
 
-                if "secure_url" in cloudinary_response:
-                    user.profile_picture = cloudinary_response["secure_url"]
+            if avatar_file:
+                logger.info("Received file upload for avatar.")
+
+                if "DYNO" in os.environ:  # Running on Heroku, use Cloudinary
+                    cloudinary_response = upload(avatar_file, folder="avatars")
+
+                    if "secure_url" in cloudinary_response:
+                        user.profile_picture = cloudinary_response["secure_url"]
+                        user.save()
+                        return JsonResponse({"success": True, "avatar_url": user.profile_picture})
+                    else:
+                        logger.error("Cloudinary upload failed, no secure_url in response")
+                        return JsonResponse({"success": False, "error": "Cloudinary upload failed"})
+
+                else:  # Running locally, save to media directory
+                    file_path = f"avatars/{user.id}.png"
+                    user.profile_picture.save(file_path, avatar_file)
                     user.save()
-                    return JsonResponse({"success": True, "avatar_url": user.profile_picture})
-                else:
-                    logger.error("Cloudinary upload failed, no secure_url in response")
-                    return JsonResponse({"success": False, "error": "Cloudinary upload failed"})
+                    logger.info(f"Avatar saved locally at: {user.profile_picture.url}")
+                    return JsonResponse({"success": True, "avatar_url": user.profile_picture.url})
 
-            else:  # Running locally, save to media directory
-                file_path = f"avatars/{user.id}.png"
-                user.profile_picture.save(file_path, avatar_file)
-                user.save()
+            elif avatar_base64:
+                logger.info("Received Base64 avatar upload.")
 
-                logger.info(f"Avatar saved locally at: {user.profile_picture.url}")
-                return JsonResponse({"success": True, "avatar_url": user.profile_picture.url})
+                # Decode Base64 image
+                format, img_str = avatar_base64.split(";base64,")
+                ext = format.split("/")[-1]  # Get file extension
+                decoded_img = base64.b64decode(img_str)
 
-        except Exception as e:
-            logger.error(f"Error saving avatar: {str(e)}", exc_info=True)
-            return JsonResponse({"success": False, "error": str(e)})
+                if "DYNO" in os.environ:  # Upload to Cloudinary
+                    cloudinary_response = upload(decoded_img, folder="avatars")
+
+                    if "secure_url" in cloudinary_response:
+                        user.profile_picture = cloudinary_response["secure_url"]
+                        user.save()
+                        return JsonResponse({"success": True, "avatar_url": user.profile_picture})
+                    else:
+                        logger.error("Cloudinary Base64 upload failed, no secure_url in response")
+                        return JsonResponse({"success": False, "error": "Cloudinary upload failed"})
+
+                else:  # Save locally
+                    file_name = f"avatars/{user.id}.{ext}"
+                    user.profile_picture.save(file_name, ContentFile(decoded_img))
+                    user.save()
+                    logger.info(f"Avatar saved locally at: {user.profile_picture.url}")
+                    return JsonResponse({"success": True, "avatar_url": user.profile_picture.url})
+
+            else:
+                return JsonResponse({"success": False, "error": "No avatar provided"})
+
+    except Exception as e:
+        logger.error(f"Error saving avatar: {str(e)}", exc_info=True)
+        return JsonResponse({"success": False, "error": str(e)})
 
     return JsonResponse({"success": False, "error": "Invalid request"})
