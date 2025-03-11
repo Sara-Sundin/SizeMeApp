@@ -47,3 +47,6 @@ def contact_success(request):
 
 def subscription_success(request):
     return render(request, 'pages/subscription_success.html')
+
+def under_construction(request):
+    return render(request, "pages/under_construction.html")

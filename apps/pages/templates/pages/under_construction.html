@@ -1,0 +1,31 @@
+{% extends 'base.html' %}
+
+{% load static %}
+
+{% block content %}
+
+ <!-- Under Construction Info -->
+ <section class="text-center transparent-box about-box">
+    <div class="container-success">
+        <i class="fa-solid fa-gears icon"></i>
+        <h1 class="construction-heading">SizeMeApp is currently under construction!</h1>
+        <p class="success-message">Please check back later or sign up to our newsletter for updates.</p>
+                    <!-- Newsletter Signup -->
+        <div class="newsletter text-center">
+            <div class="container">
+                <h2>Sign up to our newsletter!</h2>
+                <form class="newsletter-form" method="post" action="{% url 'index' %}">
+                    {% csrf_token %}
+                    <input type="email" name="email" class="form-control" 
+                        placeholder="Enter your email" required>
+                    <button type="submit" class="btn">Subscribe</button>
+                </form>        
+            </div>
+        </div>
+        <a href="/" class="btn-orange">Back to Home</a>
+    </div>
+</section>   
+
+ 
+
+{% endblock %}
