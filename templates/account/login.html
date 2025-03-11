@@ -16,6 +16,11 @@
                 Welcome back to SizeMeApp. To leave a comment or like a post, please log in.
                 If you have not created an account yet, then
                 <a class="link" href="{{ signup_url }}">sign up</a> first.
+                <small class="text-muted">
+                    <a href="{% url 'account_reset_password' %}" class="password-reset-link">
+                        Forgot your password?
+                    </a>
+                </small>
             </p>
         </div>
     </div>
