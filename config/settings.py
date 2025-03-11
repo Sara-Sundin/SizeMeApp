@@ -112,12 +112,11 @@ STATICFILES_DIRS = [os.path.join(BASE_DIR, "static")]
 STATIC_ROOT = os.path.join(BASE_DIR, "staticfiles")
 
 cloudinary.config( 
-    cloud_name=config("CLOUDINARY_CLOUD_NAME", default=""),
-    api_key=config("CLOUDINARY_API_KEY", default=""),
-    api_secret=config("CLOUDINARY_API_SECRET", default="")
+    cloud_name=config("CLOUDINARY_CLOUD_NAME"),
+    api_key=config("CLOUDINARY_API_KEY"),
+    api_secret=config("CLOUDINARY_API_SECRET")
 )
 
-# Make sure MEDIA storage is set properly
 DEFAULT_FILE_STORAGE = "cloudinary_storage.storage.MediaCloudinaryStorage"
 MEDIA_URL = f"https://res.cloudinary.com/{config('CLOUDINARY_CLOUD_NAME')}/"
 
@@ -128,15 +127,15 @@ EMAIL_HOST = "mail.inleed.com"
 EMAIL_PORT = 465
 EMAIL_USE_SSL = True
 EMAIL_USE_TLS = False
-EMAIL_HOST_USER = config("EMAIL_HOST_USER", default="")
-EMAIL_HOST_PASSWORD = config("EMAIL_HOST_PASSWORD", default="")
+EMAIL_HOST_USER = config("EMAIL_HOST_USER")
+EMAIL_HOST_PASSWORD = config("EMAIL_HOST_PASSWORD")
 
 # === PASSWORD VALIDATION === #
 AUTH_PASSWORD_VALIDATORS = [
     {"NAME": "django.contrib.auth.password_validation.UserAttributeSimilarityValidator"},
     {"NAME": "django.contrib.auth.password_validation.MinimumLengthValidator"},
-    {"NAME": "django.contrib.auth.password_validation.CommonPasswordValidator"},
-    {"NAME": "django.contrib.auth.password_validation.NumericPasswordValidator"},
+   # {"NAME": "django.contrib.auth.password_validation.CommonPasswordValidator"},
+   # {"NAME": "django.contrib.auth.password_validation.NumericPasswordValidator"},
 ]
 
 # === SECURITY SETTINGS === #
