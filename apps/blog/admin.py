@@ -16,8 +16,11 @@ class PostAdmin(SummernoteModelAdmin):
 
     def image_preview(self, obj):
         """Display an image preview in the admin panel if an image exists."""
-        if obj.image:
-            return format_html('<img src="{}" width="100" height="auto" style="border-radius:5px;" />', obj.image.url)
+        if obj.featured_image:
+            return format_html(
+                '<img src="{}" width="100" height="auto" style="border-radius:5px;" />',
+                obj.featured_image.url
+            )
         return "(No Image)"
 
     image_preview.short_description = "Image Preview"  # Customize column header
@@ -37,4 +40,3 @@ class CommentAdmin(admin.ModelAdmin):
         queryset.update(approved=True)
 
     approve_comments.short_description = "Approve selected comments"
-

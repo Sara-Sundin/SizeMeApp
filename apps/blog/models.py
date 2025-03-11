@@ -13,7 +13,7 @@ class Post(models.Model):
         related_name="blog_posts"
     )
     content = models.TextField()
-    image = CloudinaryField("blog_images", blank=True, null=True)  # Cloudinary field for images
+    featured_image = CloudinaryField("blog_images", blank=True, null=True)  # Cloudinary field for images
     created_on = models.DateTimeField(auto_now_add=True)
     updated_on = models.DateTimeField(auto_now=True)
     excerpt = models.TextField(blank=True)
