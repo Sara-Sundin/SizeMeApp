@@ -48,6 +48,8 @@ INSTALLED_APPS = [
     "apps.newsletter",
 ]
 
+CRISPY_TEMPLATE_PACK = "bootstrap5"
+
 # === AUTHENTICATION & USER MANAGEMENT === #
 SITE_ID = 1
 AUTH_USER_MODEL = "accounts.CustomUser"
