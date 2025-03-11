@@ -16,7 +16,7 @@ TEMPLATES_DIR = os.path.join(BASE_DIR, "templates")
 
 # === SECURITY === #
 SECRET_KEY = config("SECRET_KEY")
-DEBUG = True  # Set to False in production
+DEBUG = False  # Set to False in production
 ALLOWED_HOSTS = [".herokuapp.com", "localhost", "127.0.0.1"]
 
 # === INSTALLED APPS === #
