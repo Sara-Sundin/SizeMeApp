@@ -5,7 +5,6 @@
 {{ signup_url }}
 
 {% load static %}
-
 {% load i18n %}
 
 {% block head_title %}{% trans "Signup" %}{% endblock %}
@@ -24,7 +23,7 @@
           <a href="{% url 'account_reset_password' %}" class="password-reset-link">
               Forgot your password?
           </a>
-      </small>
+        </small>
       </p>
     </div>
   </div>
@@ -34,16 +33,29 @@
       <form class="signup" id="signup_form" method="post" action="{% url 'account_signup' %}">
         {% csrf_token %}
 
+        <!-- Display General Errors -->
+        {% if form.non_field_errors %}
+        <div class="alert alert-danger">
+          {{ form.non_field_errors.0 }}
+        </div>
+        {% endif %}
+
         <!-- Name Field -->
         <div class="form-group">
           {{ form.name.label_tag }}
           {{ form.name }}
+          {% if form.name.errors %}
+          <small class="text-danger">{{ form.name.errors.0 }}</small>
+          {% endif %}
         </div>
 
         <!-- Email Field -->
         <div class="form-group">
           {{ form.email.label_tag }}
           {{ form.email }}
+          {% if form.email.errors %}
+          <small class="text-danger">{{ form.email.errors.0 }}</small>
+          {% endif %}
         </div>
 
         <!-- Password Field with Toggle -->
@@ -56,6 +68,9 @@
               <span class="toggle-text">Show Password</span>
             </button>
           </div>
+          {% if form.password1.errors %}
+          <small class="text-danger">{{ form.password1.errors.0 }}</small>
+          {% endif %}
         </div>
 
         {% if redirect_field_value %}
