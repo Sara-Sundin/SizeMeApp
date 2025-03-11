@@ -198,6 +198,29 @@ h1 img {
     padding-top: 50px;
 }
 
+.team-container {
+    display: flex; /* Use flexbox */
+    justify-content: center; /* Center content horizontally */
+    align-items: center; /* Align items vertically */
+    flex-wrap: wrap; /* Allows stacking on smaller screens */
+    gap: 20px; /* Adds space between team members */
+}
+
+.team-member {
+    flex: 1; /* Allows equal spacing */
+    max-width: 400px; /* Prevents images from getting too large */
+    text-align: center; /* Centers text */
+    margin: 10px; /* Adds space around each member */
+}
+
+.team-member img {
+    width: 200px; /* Set fixed width */
+    height: 250px; /* Set fixed height */
+    object-fit: cover; /* Ensures uniform cropping */
+    border-radius: 10px; /* Optional: Rounds corners */
+    margin-bottom: 15px;
+}
+
 /* Contact Page Container */
 
 .contact-heading {
@@ -333,6 +356,13 @@ h1 img {
     background-color: rgba(255, 255, 255, 0.8) !important; /* Makes the background transparent */ 
 }
 
+.card-img-top {
+    width: 100%; /* Ensures the image takes the full width of its container */
+    height: 250px; /* Set a fixed height */
+    object-fit: cover; /* Ensures the image maintains aspect ratio while covering the space */
+    border-radius: 8px; /* Optional: Rounds the corners for a nicer look */
+}
+
 .image-container {
     position: relative;
 }
@@ -383,6 +413,13 @@ h1 img {
     -moz-transform: skew(15deg);
     transform: skew(15deg);
     z-index: 100;
+}
+
+.masthead img {
+    width: 100%; /* Ensures the image takes the full width of its container */
+    height: 250px; /* Set a fixed height */
+    object-fit: cover; /* Ensures the image maintains aspect ratio while covering the space */
+    border-radius: 8px; /* Optional: Rounds the corners for a nicer look */
 }
 
 .post-link {
@@ -728,6 +765,14 @@ h1 img {
         top: 0px;
     } 
 
+    .team-member {
+        margin-bottom: 30px; /* Adds extra space between items on smaller screens */
+    }      
+
+    .card {
+        min-height: 800px;
+    }
+
     .active-user {
         font-size: 1.1rem;
     }
@@ -798,6 +843,10 @@ h1 img {
     .about-page::before  {
         background-size: 50%;
         top: 0px; /* Moves the background image further down */
+    }
+
+    .card {
+        min-height: 650px;
     }
     
     .dashboard-container {
