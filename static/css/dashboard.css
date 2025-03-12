@@ -1,0 +1,247 @@
+/* Profile Box */
+.avatar-box {
+    text-align: center;
+}
+
+.profile-box {
+    width: 200px;
+    height: 200px;
+    border-radius: 10px;
+    background: #e0e0e0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap; /* Allow wrapping on smaller screens */
+    overflow: hidden;
+}
+
+.profile-box img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 10px;
+}
+
+/* Dashboard container */
+.dashboard-container {
+    margin: 0 auto;
+    padding: 20px;
+    text-align: center; /* Center align text */
+    margin-bottom: 30px;
+}
+
+/* Center-align header elements */
+.dashboard-header {
+    display: flex;
+    flex-direction: column; /* Stack elements vertically */
+    align-items: center;
+    justify-content: center;
+    gap: 15px;
+    margin-bottom: 20px;
+}
+
+/* Profile section */
+.profile-section {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+/* Logo Section */
+.sizemeapp-logo {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    padding-top: 50px;
+    padding-bottom: 30px;
+}
+
+.sizemeapp-logo img {
+    max-width: 150px;
+    height: auto;
+}
+
+.sizemeapp-logo button {
+    background-color: #616F82; 
+    color: white;
+    text-decoration: none;
+    padding: 12px 20px;
+    font-size: 1rem;
+    font-weight: bold;
+    border-radius: 5px;
+    border: none;
+    cursor: pointer;
+    transition: background 0.3s ease-in-out, transform 0.2s ease-in-out;
+}
+
+/* Background overlay to darken screen */
+.modal-overlay {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.4);
+    z-index: 1049; /* Just below modal */
+}
+
+/* Close button */
+.close-modal {
+    position: absolute;
+    top: 10px;
+    right: 15px;
+    font-size: 24px;
+    cursor: pointer;
+}
+
+/* Measurements Section (Hidden by Default) */
+.hidden {
+    display: none;
+}
+
+.measurement-intro {
+    padding-top: 30px;
+}
+
+/* Style the measurement form container */
+.measurements-container {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+/* Measurement Form Styling */
+.measurements-container form {
+    flex: 1;
+    max-width: 250px;
+    text-align: left;
+}
+
+/* Form Group Styling for Spacing */
+.measurements-container .form-group {
+    margin-bottom: 15px;
+}
+
+/* Measurement Image */
+.measurement-image img {
+    max-width: 250px;
+    border-radius: 8px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+}
+
+.dashboard-container {
+    max-width: 600px;
+}
+
+.dashboard-header {
+    flex-direction: column; 
+    justify-content: center;
+    align-items: center;
+}
+
+.profile-section {
+    flex-direction: column; /* Align profile image and info side-by-side */
+    align-items: center;
+    padding-top: 30px;
+    padding-bottom: 30px;
+}
+
+.measurements-container {
+    flex-direction: row; /* Place elements side by side */
+    align-items: center; /* Align them at the center */
+}
+
+.measurement-image {
+    flex: 1; /* Take equal width */
+    max-width: 50%; /* Prevent image from being too large */
+}
+
+.measurement-image img {
+    width: 100%; /* Make image responsive */
+    height: auto;
+    display: block;
+}
+
+@media  screen and (min-width: 768px){
+
+    .dashboard-container {
+        max-width: 600px;
+    }
+
+    .dashboard-header {
+        flex-direction: column; 
+        justify-content: center;
+        align-items: center;
+    }
+
+    .profile-section {
+        flex-direction: column; /* Align profile image and info side-by-side */
+        align-items: center;
+        padding-top: 30px;
+        padding-bottom: 30px;
+    }
+
+    .measurements-container {
+        flex-direction: row; /* Place elements side by side */
+        align-items: center; /* Align them at the center */
+    }
+
+    .measurement-image {
+        flex: 1; /* Take equal width */
+        max-width: 50%; /* Prevent image from being too large */
+    }
+
+    .measurement-image img {
+        width: 100%; /* Make image responsive */
+        height: auto;
+        display: block;
+    }
+
+    #avatar-modal {
+        max-width: 450px;
+        min-height: 700px;
+    }
+}
+
+@media  screen and (min-width: 1024px) {
+
+    .dashboard-container {
+        max-width: 900px;
+    }
+
+    .dashboard-header {
+        flex-direction: row; /* Align items in a row */
+        justify-content: space-between; /* Space them out */
+        text-align: center;
+    }
+
+    .profile-section {
+        flex-direction: row; /* Align profile image and info side-by-side */
+        align-items: center;
+        gap: 30px; /* Add spacing */
+    }
+
+    .measurements-container {
+        flex-direction: row; /* Place elements side by side */
+        align-items: center; /* Align them at the center */
+    }
+
+    .measurement-image img {
+        width: 100%; /* Make image responsive */
+        height: auto;
+        display: block;
+    }
+
+    #avatar-modal {
+        width: 90%;
+        max-width: 1000px;
+        min-height: 450px;
+    }
+}
+
+
+   
