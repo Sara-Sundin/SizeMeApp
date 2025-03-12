@@ -825,7 +825,7 @@ h1 img {
         padding: 12px 20px;
     }
 
-    .modal {
+    #avatar-modal {
         max-width: 450px;
         min-height: 700px;
     }
@@ -876,7 +876,7 @@ h1 img {
         display: block;
     }
 
-    .modal {
+    #avatar-modal {
         width: 90%;
         max-width: 1000px;
         min-height: 450px;
