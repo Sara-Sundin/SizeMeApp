@@ -1,47 +1,50 @@
-const editButtons = document.getElementsByClassName("btn-edit");
-const commentText = document.getElementById("id_body");
-const commentForm = document.getElementById("commentForm");
-const submitButton = document.getElementById("submitButton");
+document.addEventListener("DOMContentLoaded", function () {
+    // Ensure delete modal exists before initializing
+    let deleteModalElement = document.getElementById("deleteModal");
+    let deleteConfirm = document.getElementById("deleteConfirm");
 
-const deleteModal = new bootstrap.Modal(document.getElementById("deleteModal"));
-const deleteButtons = document.getElementsByClassName("btn-delete");
-const deleteConfirm = document.getElementById("deleteConfirm");
+    if (deleteModalElement) {
+        let deleteModal = new bootstrap.Modal(deleteModalElement, {
+            backdrop: "static", // Prevents accidental closing
+            keyboard: true      // Allows closing via keyboard
+        });
 
-/*
- * Initializes edit functionality for the provided edit buttons.
- * 
- * For each button in the `editButtons` collection:
- * - Retrieves the associated comment's ID upon click.
- * - Fetches the content of the corresponding comment.
- * - Populates the `commentText` input/textarea with the comment's content for editing.
- * - Updates the submit button's text to "Update".
- * - Sets the form's action attribute to the `edit_comment/{commentId}` endpoint.
- */
+        document.body.addEventListener("click", function (event) {
+            // Check if a delete button was clicked
+            if (event.target.classList.contains("btn-delete")) {
+                event.preventDefault();
 
-for (let button of editButtons) {
-    button.addEventListener("click", (e) => {
-        let commentId = e.target.getAttribute("comment_id");
-        let commentContent = document.getElementById(`comment${commentId}`).innerText;
-        commentText.value = commentContent;
-        submitButton.innerText = "Update";
-        commentForm.setAttribute("action", `edit_comment/${commentId}`);
-    });
-}
+                // Ensure we get the correct comment ID (handle event bubbling)
+                let commentId = event.target.getAttribute("comment_id") ||
+                                event.target.closest(".btn-delete").getAttribute("comment_id");
 
-/*
- * Initializes deletion functionality for the provided delete buttons.
- * 
- * For each button in the `deleteButtons` collection:
- * - Retrieves the associated comment's ID upon click.
- * - Updates the `deleteConfirm` link's href to point to the 
- * deletion endpoint for the specific comment.
- * - Displays a confirmation modal (`deleteModal`) to prompt 
- * the user for confirmation before deletion.
- */
- for (let button of deleteButtons) {
-    button.addEventListener("click", (e) => {
-        let commentId = e.target.getAttribute("comment_id");
-        deleteConfirm.href = `delete_comment/${commentId}`;
-        deleteModal.show();
-    });
-}
+                if (commentId) {
+                    deleteConfirm.href = `delete_comment/${commentId}`;
+                    deleteModal.show();
+                }
+            }
+        });
+    }
+
+    // Ensure edit functionality works properly
+    let editButtons = document.getElementsByClassName("btn-edit");
+    let commentText = document.getElementById("id_body");
+    let commentForm = document.getElementById("commentForm");
+    let submitButton = document.getElementById("submitButton");
+
+    for (let button of editButtons) {
+        button.addEventListener("click", function (event) {
+            event.preventDefault();
+            
+            let commentId = event.target.getAttribute("comment_id") ||
+                            event.target.closest(".btn-edit").getAttribute("comment_id");
+
+            let commentContentElement = document.getElementById(`comment${commentId}`);
+            if (commentContentElement && commentText) {
+                commentText.value = commentContentElement.innerText.trim();
+                submitButton.innerText = "Update";
+                commentForm.setAttribute("action", `edit_comment/${commentId}`);
+            }
+        });
+    }
+});
