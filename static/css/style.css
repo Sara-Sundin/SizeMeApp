@@ -519,7 +519,7 @@ h1 img {
     transition: background 0.3s ease-in-out, transform 0.2s ease-in-out;
 }
 
-.modal {
+#avatar-modal {
     display: none; /* Hidden by default */
     position: fixed;
     z-index: 1050; /* Higher than the navbar */
