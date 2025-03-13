@@ -1,6 +1,7 @@
 /* Profile Box */
 .avatar-box {
     text-align: center;
+    padding-bottom: 10px;
 }
 
 .profile-box {
@@ -45,6 +46,7 @@
     display: flex;
     flex-direction: column;
     align-items: center;
+    padding-top: 30px;
 }
 
 /* Logo Section */
@@ -53,13 +55,14 @@
     flex-direction: column;
     align-items: center;
     text-align: center;
-    padding-top: 50px;
-    padding-bottom: 30px;
+    padding-top: 10px;
+    padding-bottom: 20px;
 }
 
 .sizemeapp-logo img {
     max-width: 150px;
     height: auto;
+    padding-bottom: 10px;
 }
 
 .sizemeapp-logo button {
@@ -124,29 +127,24 @@
 /* Style the measurement form container */
 .measurements-container {
     display: flex;
+    flex-direction: column;
     align-items: center;
     gap: 20px;
     flex-wrap: wrap;
     justify-content: center;
+    padding-top: 20px;
 }
 
 /* Measurement Form Styling */
 .measurements-container form {
     flex: 1;
-    max-width: 250px;
+    max-width: 200px;
     text-align: left;
 }
 
 /* Form Group Styling for Spacing */
 .measurements-container .form-group {
     margin-bottom: 15px;
-}
-
-/* Measurement Image */
-.measurement-image img {
-    max-width: 250px;
-    border-radius: 8px;
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
 }
 
 .dashboard-container {
@@ -159,27 +157,19 @@
     align-items: center;
 }
 
-.profile-section {
-    flex-direction: column; /* Align profile image and info side-by-side */
-    align-items: center;
-    padding-top: 30px;
-    padding-bottom: 30px;
-}
-
-.measurements-container {
-    flex-direction: row; /* Place elements side by side */
-    align-items: center; /* Align them at the center */
-}
-
 .measurement-image {
     flex: 1; /* Take equal width */
-    max-width: 50%; /* Prevent image from being too large */
+    max-width: 70%; /* Prevent image from being too large */
 }
 
+/* Measurement Image */
 .measurement-image img {
     width: 100%; /* Make image responsive */
     height: auto;
     display: block;
+    max-width: 325px;
+    border-radius: 8px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
 }
 
 @media  screen and (min-width: 768px){
@@ -198,7 +188,6 @@
         flex-direction: column; /* Align profile image and info side-by-side */
         align-items: center;
         padding-top: 30px;
-        padding-bottom: 30px;
     }
 
     .measurements-container {
@@ -208,7 +197,7 @@
 
     .measurement-image {
         flex: 1; /* Take equal width */
-        max-width: 50%; /* Prevent image from being too large */
+        max-width: 65%; /* Prevent image from being too large */
     }
 
     .measurement-image img {
@@ -237,7 +226,7 @@
     .profile-section {
         flex-direction: row; /* Align profile image and info side-by-side */
         align-items: center;
-        gap: 30px; /* Add spacing */
+        gap: 50px; /* Add spacing */
     }
 
     .measurements-container {
