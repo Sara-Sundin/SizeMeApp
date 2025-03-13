@@ -38,11 +38,25 @@
         </div>
     </div>
 
-    <!-- Displaying count of comments -->
+<!-- Displaying count of comments -->
     <div class="row">
-        <div class="col-12">
+        <div class="col">
             <strong class="text-secondary" style="color: white !important;">
                 <i class="far fa-comments"></i> {{ comment_count }}
+            </strong>
+            <!-- Like Button -->
+            <strong class="text-secondary" style="color: white !important;">
+                <form action="{% url 'like_post' post.slug %}" method="POST" style="display: inline;">
+                    {% csrf_token %}
+                    <button id="like-button" type="submit" class="like-button" style="background: none; border: none; cursor: pointer;">
+                        {% if user in post.likes.all %}
+                            <i class="fas fa-heart" style="color: red;"></i>  <!-- Filled heart for liked -->
+                        {% else %}
+                            <i class="far fa-heart" style="color: white;"></i> <!-- Empty heart for not liked -->
+                        {% endif %}
+                    </button>
+                </form>
+                {{ post.likes.count }}
             </strong>
         </div>
         <div class="col-12">

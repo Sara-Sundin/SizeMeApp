@@ -1,4 +1,4 @@
-from django.shortcuts import render, get_object_or_404, reverse
+from django.shortcuts import render, get_object_or_404, reverse, redirect
 from django.views import generic
 from django.contrib import messages
 from django.http import HttpResponseRedirect
@@ -42,6 +42,23 @@ def post_detail(request, slug):
             "comment_form": comment_form,
         },
     )
+
+def like_post(request, slug):
+    """
+    Handles the like/unlike functionality and redirects back to the like button.
+    """
+    post = get_object_or_404(Post, slug=slug)
+
+    if request.user.is_authenticated:
+        if request.user in post.likes.all():
+            post.likes.remove(request.user)
+            messages.info(request, "You unliked this post.")
+        else:
+            post.likes.add(request.user)
+            messages.success(request, "You liked this post!")
+
+    # Redirect back to the like button
+    return redirect(reverse("post_detail", args=[slug]) + "#like-button")
 
 def comment_edit(request, slug, comment_id):
     """
