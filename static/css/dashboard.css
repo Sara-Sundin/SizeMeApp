@@ -230,7 +230,6 @@
     }
 
     .dashboard-header {
-        flex-direction: row; /* Align items in a row */
         justify-content: space-between; /* Space them out */
         text-align: center;
     }
