@@ -37,10 +37,11 @@
             </div>
         </div>
     </div>
+
     <!-- Displaying count of comments -->
     <div class="row">
         <div class="col-12">
-            <strong class="text-secondary">
+            <strong class="text-secondary" style="color: white !important;">
                 <i class="far fa-comments"></i> {{ comment_count }}
             </strong>
         </div>
@@ -49,11 +50,25 @@
         </div>
     </div>
     <!-- Displaying Comments -->
+    {% if messages %}
+        <div id="message-container">
+            {% for message in messages %}
+                <div class="message {{ message.tags }}" style="color: white;
+                background-color: #445261;
+                padding: 10px;">
+                    {{ message }}
+                    <span class="close-btn" onclick="this.parentElement.style.display='none';">&times;</span>
+                </div>
+            {% endfor %}
+        </div>
+    {% endif %}
+
     <div class="row">
         <div class="col-md-8 card mb-4  mt-3 ">
             <h3>Comments:</h3>
             <div class="card-body">
-                <!-- We want a for loop inside the empty control tags to iterate through each comment in comments -->
+
+    <!-- We want a for loop inside the empty control tags to iterate through each comment in comments -->
                 {% for comment in comments %}
                 <div
                     class="p-2 comments{% if not comment.approved and comment.author == user %} faded{% elif not comment.approved %} d-none{% endif %}">
