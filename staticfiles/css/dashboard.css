@@ -85,9 +85,8 @@
     left: 50%;
     top: 50%;
     transform: translate(-50%, -50%);
+    height: 80%;
     width: 90%;
-    max-width: 1000px;
-    max-height: 460px;
     background-color: white;
     padding: 20px;
     border-radius: 10px;
@@ -208,7 +207,6 @@
 
     #avatar-modal {
         max-width: 450px;
-        min-height: 700px;
     }
 }
 
@@ -241,9 +239,9 @@
     }
 
     #avatar-modal {
-        width: 90%;
+        
         max-width: 1000px;
-        min-height: 450px;
+        max-height: 460px;
     }
 }
 
