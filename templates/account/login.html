@@ -41,11 +41,20 @@
                 <div class="form-group">
                     {{ form.login.label_tag }}
                     {{ form.login }}
+                    
+                    <script>
+                        document.addEventListener("DOMContentLoaded", function () {
+                            let loginField = document.querySelector("[name='login']");
+                            if (loginField) {
+                                loginField.setAttribute("placeholder", "Email");  // JavaScript adds placeholder dynamically
+                            }
+                        });
+                    </script>
+
                     {% if form.login.errors %}
-                    <small class="text-danger">{{ form.login.errors.0 }}</small>
+                        <small class="text-danger">{{ form.login.errors.0 }}</small>
                     {% endif %}
                 </div>
-            
                 <!-- Password Field with Show/Hide Toggle -->
                 <div class="form-group">
                     {{ form.password.label_tag }}
