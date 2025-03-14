@@ -63,19 +63,22 @@
             <hr>
         </div>
     </div>
-    <!-- Displaying Comments -->
-    {% if messages %}
-        <div id="message-container">
-            {% for message in messages %}
-                <div class="message {{ message.tags }}" style="color: white;
-                background-color: #445261;
-                padding: 10px;">
-                    {{ message }}
-                    <span class="close-btn" onclick="this.parentElement.style.display='none';">&times;</span>
-                </div>
-            {% endfor %}
-        </div>
-    {% endif %}
+
+        <!-- Displaying Comments -->
+        {% if messages %}
+            <div id="message-container">
+                {% for message in messages %}
+                    {% if "comment" in message.tags %} 
+                    <div class="message {{ message.tags }}" style="color: white;
+                    background-color: #445261;
+                    padding: 10px;">
+                        {{ message }}
+                        <span class="close-btn" onclick="this.parentElement.style.display='none';">&times;</span>
+                    </div>
+                    {% endif %}
+                {% endfor %}
+            </div>
+        {% endif %}
 
     <div class="row">
         <div class="col-md-8 card mb-4  mt-3 ">

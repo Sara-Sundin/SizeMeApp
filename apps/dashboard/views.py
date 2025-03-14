@@ -19,7 +19,7 @@ def user_dashboard(request):
         form = CustomUserUpdateForm(request.POST, request.FILES, instance=user)
         if form.is_valid():
             form.save()
-            messages.success(request, "Profile updated successfully!")
+            messages.success(request, "Measurements updated!", extra_tags="profile")
             return redirect("dashboard")  # Ensure "dashboard" URL exists
     else:
         form = CustomUserUpdateForm(instance=user)

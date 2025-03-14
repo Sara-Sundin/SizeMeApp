@@ -26,7 +26,7 @@ def post_detail(request, slug):
             comment.author = request.user
             comment.post = post
             comment.save()
-            messages.success(request, "Comment submitted and awaiting approval.")
+            messages.success(request, "Comment submitted and awaiting approval.", extra_tags="comment")
             return HttpResponseRedirect(reverse("post_detail", args=[slug]) + "#message-container")
 
     else:
@@ -52,10 +52,10 @@ def like_post(request, slug):
     if request.user.is_authenticated:
         if request.user in post.likes.all():
             post.likes.remove(request.user)
-            messages.info(request, "You unliked this post.")
+            messages.info(request, "You unliked this post.", extra_tags="comment")
         else:
             post.likes.add(request.user)
-            messages.success(request, "You liked this post!")
+            messages.success(request, "You liked this post!", extra_tags="comment")
 
     # Redirect back to the like button
     return redirect(reverse("post_detail", args=[slug]) + "#like-button")
@@ -77,12 +77,12 @@ def comment_edit(request, slug, comment_id):
             comment.post = post
             comment.approved = False  # Require re-approval
             comment.save()
-            messages.success(request, "Comment updated successfully!")
+            messages.success(request, "Comment updated successfully!", extra_tags="comment")
 
             # Redirect to #message-container after updating
             return HttpResponseRedirect(reverse("post_detail", args=[slug]) + "#message-container")
         else:
-            messages.error(request, "Error updating comment!")
+            messages.error(request, "Error updating comment!", extra_tags="comment")
 
     # If GET request or form is invalid, redirect back to #commentForm
     return HttpResponseRedirect(reverse("post_detail", args=[slug]) + "#commentForm")
@@ -97,8 +97,8 @@ def comment_delete(request, slug, comment_id):
 
     if comment.author == request.user:
         comment.delete()
-        messages.success(request, "Comment deleted!")
+        messages.success(request, "Comment deleted!", extra_tags="comment")
     else:
-        messages.error(request, "You can only delete your own comments!")
+        messages.error(request, "You can only delete your own comments!", extra_tags="comment")
 
     return HttpResponseRedirect(reverse("post_detail", args=[slug]) + "#message-container")

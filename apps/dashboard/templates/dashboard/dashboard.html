@@ -71,6 +71,23 @@
     <div>
         <div> 
             <div>
+                
+                <!-- Displaying Comments -->
+                {% if messages %}
+                <div id="message-container">
+                    {% for message in messages %}
+                        {% if "profile" in message.tags %} 
+                        <div class="message {{ message.tags }}" style="color: white;
+                        background-color: #445261;
+                        padding: 10px;">
+                            {{ message }}
+                            <span class="close-btn" onclick="this.parentElement.style.display='none';">&times;</span>
+                        </div>
+                        {% endif %}    
+                    {% endfor %}
+                </div>
+                {% endif %}
+
                 <!-- Measurement Intro Text -->
                 <p class="measurement-intro">
                     {% if just_signed_up %}
@@ -79,13 +96,15 @@
                         Update your measurements anytime to improve your recommendations.
                     {% endif %}
                 </p>
+
                 <!-- Toggle Button for Measurements -->
-                <button id="toggle-measurements" class="btn btn-orange">Show Measurements</button>
+                <button id="toggle-measurements" class="btn btn-orange">Enter Measurements</button>
             </div>
 
             <!-- User Measurements (Hidden by Default) -->
             <div id="measurements-section" class="hidden">
                 <div class="measurements-container">
+
                     <!-- Measurement Guide Image -->
                     <div class="measurement-image">
                         <img src="{% static 'images/how_to_measure.jpg' %}" alt="Measurement Guide">
