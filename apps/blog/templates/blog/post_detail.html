@@ -115,11 +115,12 @@
                 {% if user.is_authenticated %}
                 <h3>Leave a comment:</h3>
                 <p>Posting as: {{ user.username }}</p>
-                <form id="commentForm" method="post" style="margin-top: 1.3em;">
-                    {{ comment_form | crispy }}
+                <form id="commentForm" method="post" data-post-slug="{{ post.slug }}" action="">
                     {% csrf_token %}
+                    {{ comment_form | crispy }}
                     <button id="submitButton" type="submit" class="btn btn-orange btn-lg">Submit</button>
                 </form>
+                
                 {% else %}
                 <div class="flex">
                     <p class="flex">Log in to leave a comment</p>
