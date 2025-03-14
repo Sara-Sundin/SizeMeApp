@@ -41,11 +41,11 @@ INSTALLED_APPS = [
     "rest_framework",
 
     # Local Apps
-    "apps.pages",
-    "apps.blog",
-    "apps.accounts",
-    "apps.dashboard",
-    "apps.newsletter",
+    "pages",
+    "blog",
+    "accounts",
+    "dashboard",
+    "newsletter",
 ]
 
 CRISPY_TEMPLATE_PACK = "bootstrap5"
@@ -60,7 +60,7 @@ ACCOUNT_USERNAME_REQUIRED = False
 ACCOUNT_EMAIL_REQUIRED = True
 ACCOUNT_EMAIL_VERIFICATION = "optional"
 ACCOUNT_SESSION_REMEMBER = True
-ACCOUNT_FORMS = {"signup": "apps.accounts.forms.CustomSignupForm"}
+ACCOUNT_FORMS = {"signup": "accounts.forms.CustomSignupForm"}
 
 AUTHENTICATION_BACKENDS = [
     "django.contrib.auth.backends.ModelBackend",

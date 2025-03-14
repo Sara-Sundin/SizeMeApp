@@ -1,7 +1,7 @@
 from django.shortcuts import render, redirect
 from django.core.mail import send_mail, BadHeaderError
 from django.contrib import messages
-from apps.newsletter.forms import SubscriberForm  # Import the form
+from newsletter.forms import SubscriberForm  # Import the form
 
 def index(request):
     form = SubscriberForm()  # Initialize form

@@ -23,10 +23,10 @@ urlpatterns = [
     path('admin/', admin.site.urls), 
     path("accounts/", include("allauth.urls")),
     path('summernote/', include('django_summernote.urls')),
-    path('', include('apps.pages.urls')),  # Connects home page to the pages app
-    path('blog/', include('apps.blog.urls'), name='blog-urls'),
-    path("dashboard/", include("apps.dashboard.urls")),
-    path('newsletter/', include('apps.newsletter.urls')),
+    path('', include('pages.urls')),  # Connects home page to the pages app
+    path('blog/', include('blog.urls'), name='blog-urls'),
+    path("dashboard/", include("dashboard.urls")),
+    path('newsletter/', include('newsletter.urls')),
 ]
 
 if settings.DEBUG:

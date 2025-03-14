@@ -7,7 +7,7 @@ from django.core.files.base import ContentFile
 import base64
 import tempfile
 from cloudinary.uploader import upload  # Cloudinary uploader
-from apps.accounts.forms import CustomUserUpdateForm
+from accounts.forms import CustomUserUpdateForm
 
 @login_required
 def user_dashboard(request):
