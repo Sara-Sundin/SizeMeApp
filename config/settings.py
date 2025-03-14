@@ -9,6 +9,7 @@ from pathlib import Path
 import cloudinary
 import cloudinary.uploader
 import cloudinary.api
+import sys
 
 # === BASE DIRECTORY === #
 BASE_DIR = Path(__file__).resolve().parent.parent
@@ -107,6 +108,9 @@ TEMPLATES = [
 DATABASES = {
     "default": dj_database_url.parse(config("DATABASE_URL"))
 }
+
+if 'test' in sys.argv:
+    DATABASES['default']['ENGINE'] = 'django.db.backends.sqlite3'
 
 # === STATIC FILES === #
 STATIC_URL = "/static/"
