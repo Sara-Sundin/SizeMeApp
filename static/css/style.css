@@ -573,6 +573,34 @@ h1 img {
     background-color: #cc3d14;
 }
 
+/* Password Reset Page Styling */
+.password-reset-card {
+    max-width: 500px;
+    margin: 0 auto;
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.password-reset-form {
+    margin-top: 20px;
+}
+
+.password-reset-card .btn-orange {
+    background-color: #ff7f50;
+    color: white;
+    border-radius: 5px;
+    padding: 10px 20px;
+}
+
+.password-reset-card .btn-orange:hover {
+    background-color: #e76b3d;
+}
+
+.password-reset-card p {
+    font-size: 14px;
+    margin-top: 10px;
+}
+
 .btn-like {
     color: #E84610;
     border: none;
