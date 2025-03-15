@@ -88,22 +88,6 @@
             </div>
             {% endif %}
 
-            <!-- Displaying Avatar Messages -->
-            {% if messages %}
-            <div id="avatar-message-container">
-                {% for message in messages %}
-                    {% if "avatar" in message.tags %} 
-                    <div class="avatar-message message {{ message.tags }}" style="color: white;
-                    background-color: #334455;
-                    padding: 10px;">
-                        {{ message }}
-                        <span class="close-btn" onclick="this.parentElement.style.display='none';">&times;</span>
-                    </div>
-                    {% endif %}
-                {% endfor %}
-            </div>
-            {% endif %}
-
                 <!-- Measurement Intro Text -->
                 <p class="measurement-intro">
                     {% if just_signed_up %}

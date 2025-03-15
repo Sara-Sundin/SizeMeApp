@@ -215,26 +215,22 @@ document.getElementById("download-button").addEventListener("click", function ()
     const saveAvatarUrl = document.getElementById("save-avatar-url").value;
     const csrfToken = document.getElementById("csrf-token").value;
 
-    // Create a new canvas to merge all layers
     const finalCanvas = document.createElement("canvas");
     finalCanvas.width = 400;
     finalCanvas.height = 400;
     const finalCtx = finalCanvas.getContext("2d");
 
-    // Draw all visible layers onto the final canvas
+    // Draw all layers onto the final canvas
     Object.keys(canvases).forEach((layer) => {
         if (layers[layer]) {
             finalCtx.drawImage(canvases[layer], 0, 0);
         }
     });
 
-    // Convert the final merged image to a Blob
+    // Convert to Blob
     finalCanvas.toBlob(function (blob) {
-        if (!blob) {
-            return;
-        }
+        if (!blob) return;
 
-        // Convert Blob to Base64 for Cloudinary support
         const reader = new FileReader();
         reader.readAsDataURL(blob);
         reader.onloadend = function () {
@@ -245,7 +241,6 @@ document.getElementById("download-button").addEventListener("click", function ()
             formData.append("avatar_base64", base64data);
             formData.append("csrfmiddlewaretoken", csrfToken);
 
-            // Send the image to the Django backend
             fetch(saveAvatarUrl, {
                 method: "POST",
                 body: formData,
@@ -256,13 +251,13 @@ document.getElementById("download-button").addEventListener("click", function ()
             .then(response => response.json())
             .then(data => {
                 if (data.success) {
+                    // Update avatar image without reloading the page
                     document.getElementById("user-avatar").src = data.avatar_url;
 
-                    // **🔹 Close the modal window automatically after saving**
-                    const modal = document.getElementById("avatar-modal"); // Change this to your actual modal ID
-                    if (modal) {
-                        modal.style.display = "none"; // Hide the modal
-                    }
+                    // Close the modal after a short delay
+                    setTimeout(() => {
+                        document.getElementById("avatar-modal").style.display = "none";
+                    }, 500);
                 }
             })
             .catch(error => {
@@ -271,4 +266,3 @@ document.getElementById("download-button").addEventListener("click", function ()
         };
     }, "image/png");
 });
-

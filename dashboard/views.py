@@ -40,10 +40,6 @@ def save_avatar(request):
     """Handles avatar uploads for Cloudinary storage."""
     user = request.user
 
-    # Clear previous messages to prevent them from persisting
-    storage = messages.get_messages(request)
-    list(storage)  # This will iterate over messages and clear them
-
     if request.method != "POST":
         return JsonResponse({"success": False, "error": "Invalid request method"})
 
@@ -58,8 +54,6 @@ def save_avatar(request):
             if secure_url:
                 user.profile_picture = secure_url
                 user.save()
-
-                messages.success(request, "Avatar updated!", extra_tags="avatar")
                 return JsonResponse({"success": True, "avatar_url": secure_url})
             else:
                 return JsonResponse({"success": False, "error": "Cloudinary upload failed"})
@@ -82,8 +76,6 @@ def save_avatar(request):
                 if secure_url:
                     user.profile_picture = secure_url
                     user.save()
-
-                    messages.success(request, "Avatar updated!", extra_tags="avatar")
                     return JsonResponse({"success": True, "avatar_url": secure_url})
                 else:
                     return JsonResponse({"success": False, "error": "Cloudinary upload failed"})
