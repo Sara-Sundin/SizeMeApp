@@ -33,51 +33,57 @@ def user_dashboard(request):
 
     return render(request, "dashboard/dashboard.html", context)
 
+from django.contrib import messages
+
 @login_required
 def save_avatar(request):
     """Handles avatar uploads for Cloudinary storage."""
     user = request.user
 
+    # Clear previous messages to prevent them from persisting
+    storage = messages.get_messages(request)
+    list(storage)  # This will iterate over messages and clear them
+
     if request.method != "POST":
         return JsonResponse({"success": False, "error": "Invalid request method"})
 
-    avatar_file = request.FILES.get("avatar")  # File upload
-    avatar_base64 = request.POST.get("avatar_base64")  # Base64 upload
+    avatar_file = request.FILES.get("avatar")
+    avatar_base64 = request.POST.get("avatar_base64")
 
     try:
         if avatar_file:
-            # Upload file directly to Cloudinary
             cloudinary_response = upload(avatar_file, folder="avatars")
             secure_url = cloudinary_response.get("secure_url")
 
             if secure_url:
                 user.profile_picture = secure_url
                 user.save()
+
+                messages.success(request, "Avatar updated!", extra_tags="avatar")
                 return JsonResponse({"success": True, "avatar_url": secure_url})
             else:
                 return JsonResponse({"success": False, "error": "Cloudinary upload failed"})
 
         elif avatar_base64:
-            # Ensure proper format
             if ";base64," not in avatar_base64:
                 return JsonResponse({"success": False, "error": "Invalid Base64 format"})
 
             format, img_str = avatar_base64.split(";base64,")
-            ext = format.split("/")[-1]  # Extract file extension (e.g., png, jpg)
+            ext = format.split("/")[-1]
             decoded_img = base64.b64decode(img_str)
 
-            # Save temporarily to handle Cloudinary upload
             with tempfile.NamedTemporaryFile(delete=True, suffix=f".{ext}") as temp_file:
                 temp_file.write(decoded_img)
-                temp_file.flush()  # Ensure data is written
+                temp_file.flush()
 
-                # Upload to Cloudinary
                 cloudinary_response = upload(temp_file.name, folder="avatars")
                 secure_url = cloudinary_response.get("secure_url")
 
                 if secure_url:
                     user.profile_picture = secure_url
                     user.save()
+
+                    messages.success(request, "Avatar updated!", extra_tags="avatar")
                     return JsonResponse({"success": True, "avatar_url": secure_url})
                 else:
                     return JsonResponse({"success": False, "error": "Cloudinary upload failed"})

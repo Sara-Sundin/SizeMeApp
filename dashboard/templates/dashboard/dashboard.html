@@ -15,14 +15,14 @@
     <!-- Profile -->
     <div class="dashboard-header">  
 
-        <!-- Profile Section (Left) -->
+            <!-- Profile Section (Left) -->
         <div class="profile-section">
             <div class="avatar-box">
                 <div class="profile-box">
                     {% if user.profile_picture %}
-                        <img src="{{ user.profile_picture.url }}" alt="Avatar" class="mini-avatar">
+                        <img id="user-avatar" src="{{ user.profile_picture.url }}" alt="Avatar" class="mini-avatar">
                     {% else %}
-                        <img src="{% static 'images/avatar_images/base.png' %}" alt="Avatar" class="mini-avatar">
+                        <img id="user-avatar" src="{% static 'images/avatar_images/base.png' %}" alt="Avatar" class="mini-avatar">
                     {% endif %}
                 </div>                
 
@@ -72,21 +72,37 @@
         <div> 
             <div>
                 
-                <!-- Displaying Comments -->
-                {% if messages %}
-                <div id="message-container">
-                    {% for message in messages %}
-                        {% if "profile" in message.tags %} 
-                        <div class="message {{ message.tags }}" style="color: white;
-                        background-color: #445261;
-                        padding: 10px;">
-                            {{ message }}
-                            <span class="close-btn" onclick="this.parentElement.style.display='none';">&times;</span>
-                        </div>
-                        {% endif %}    
-                    {% endfor %}
-                </div>
-                {% endif %}
+                <!-- Displaying Profile Messages -->
+            {% if messages %}
+            <div id="message-container">
+                {% for message in messages %}
+                    {% if "profile" in message.tags %} 
+                    <div class="profile-message message {{ message.tags }}" style="color: white;
+                    background-color: #445261;
+                    padding: 10px;">
+                        {{ message }}
+                        <span class="close-btn" onclick="this.parentElement.style.display='none';">&times;</span>
+                    </div>
+                    {% endif %}
+                {% endfor %}
+            </div>
+            {% endif %}
+
+            <!-- Displaying Avatar Messages -->
+            {% if messages %}
+            <div id="avatar-message-container">
+                {% for message in messages %}
+                    {% if "avatar" in message.tags %} 
+                    <div class="avatar-message message {{ message.tags }}" style="color: white;
+                    background-color: #334455;
+                    padding: 10px;">
+                        {{ message }}
+                        <span class="close-btn" onclick="this.parentElement.style.display='none';">&times;</span>
+                    </div>
+                    {% endif %}
+                {% endfor %}
+            </div>
+            {% endif %}
 
                 <!-- Measurement Intro Text -->
                 <p class="measurement-intro">

@@ -231,8 +231,6 @@ document.getElementById("download-button").addEventListener("click", function ()
     // Convert the final merged image to a Blob
     finalCanvas.toBlob(function (blob) {
         if (!blob) {
-            console.error("Failed to create avatar blob.");
-            alert("Error: Could not generate avatar.");
             return;
         }
 
@@ -240,12 +238,12 @@ document.getElementById("download-button").addEventListener("click", function ()
         const reader = new FileReader();
         reader.readAsDataURL(blob);
         reader.onloadend = function () {
-            const base64data = reader.result; // Base64 image string
+            const base64data = reader.result;
 
             const formData = new FormData();
             formData.append("avatar", blob, "avatar.png");
-            formData.append("avatar_base64", base64data);  // Cloudinary may require this
-            formData.append("csrfmiddlewaretoken", csrfToken); // Ensure CSRF token is included
+            formData.append("avatar_base64", base64data);
+            formData.append("csrfmiddlewaretoken", csrfToken);
 
             // Send the image to the Django backend
             fetch(saveAvatarUrl, {
@@ -258,17 +256,19 @@ document.getElementById("download-button").addEventListener("click", function ()
             .then(response => response.json())
             .then(data => {
                 if (data.success) {
-                    alert("Avatar saved successfully!");
-                    location.reload(); // Reload to update profile picture
-                } else {
-                    console.error("Error response:", data);
-                    alert("Error saving avatar. Please try again.");
+                    document.getElementById("user-avatar").src = data.avatar_url;
+
+                    // **🔹 Close the modal window automatically after saving**
+                    const modal = document.getElementById("avatar-modal"); // Change this to your actual modal ID
+                    if (modal) {
+                        modal.style.display = "none"; // Hide the modal
+                    }
                 }
             })
             .catch(error => {
                 console.error("Fetch Error:", error);
-                alert("Network error: Unable to save avatar.");
             });
         };
     }, "image/png");
 });
+
