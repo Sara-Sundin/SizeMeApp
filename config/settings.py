@@ -81,6 +81,8 @@ MIDDLEWARE = [
     "allauth.account.middleware.AccountMiddleware",
 ]
 
+X_FRAME_OPTIONS = "SAMEORIGIN"  # or "ALLOWALL" if needed
+
 # Root URL configuration
 ROOT_URLCONF = "config.urls"
 
