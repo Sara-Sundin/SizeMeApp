@@ -10,4 +10,4 @@ This website serves as the front-facing platform for SizeMeApp, an innovative so
 
 Explore the site to learn more about how SizeMeApp reduces returns, improves customer satisfaction, and enhances the online shopping experience through smart size recommendations. 
 
-![Screenshot of the website on multi devices](media\images_README\Multiscreen.png)
+![Screenshot of the website on multi devices](media/images_README/Multiscreen.png)
