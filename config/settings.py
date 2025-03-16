@@ -152,6 +152,7 @@ AUTH_PASSWORD_VALIDATORS = [
 CSRF_TRUSTED_ORIGINS = [
     "https://*.codeinstitute-ide.net/",
     "https://*.herokuapp.com",
+    "https://*.techsini.com",
 ]
 CSRF_USE_SESSIONS = True  # Ensures CSRF tokens match session authentication
 
