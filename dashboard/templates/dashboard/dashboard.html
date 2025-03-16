@@ -101,6 +101,8 @@
                 <button id="toggle-measurements" class="btn btn-orange">Body Measurements</button>
             </div>
 
+            <p>Add measurements in centimeters.</p>
+
             <!-- User Measurements (Hidden by Default) -->
             <div id="measurements-section" class="hidden">
                 <div class="measurements-container">
@@ -121,25 +123,28 @@
 
 
                         <div class="form-group">
-                            <label for="{{ form.chest.id_for_label }}">A. {{ form.chest.label }}</label>
+                            <label for="{{ form.chest.id_for_label }}">A. {{ form.chest.label }} (cm)</label>
                             {{ form.chest }}
                         </div>
                         
                         <div class="form-group">
-                            <label for="{{ form.waist.id_for_label }}">B. {{ form.waist.label }}</label>
+                            <label for="{{ form.waist.id_for_label }}">B. {{ form.waist.label }} (cm)</label>
                             {{ form.waist }}
                         </div>
                         
                         <div class="form-group">
-                            <label for="{{ form.hips.id_for_label }}">C. {{ form.hips.label }}</label>
+                            <label for="{{ form.hips.id_for_label }}">C. {{ form.hips.label }} (cm)</label>
                             {{ form.hips }}
                         </div>
                         
                         <div class="form-group">
-                            <label for="{{ form.shoulders.id_for_label }}">D. {{ form.shoulders.label }}</label>
+                            <label for="{{ form.shoulders.id_for_label }}">D. {{ form.shoulders.label }} (cm)</label>
                             {{ form.shoulders }}
-                        </div>                
-                        <button type="submit" class="btn btn-orange">Update Measurements</button>
+                        </div> 
+                        <div>              
+                            <button type="submit" class="btn btn-orange">Update Measurements</button>
+                            <button type="submit" class="btn btn-blue">Delete</button>
+                        </div> 
                     </form>
                 </div>
             </div>
