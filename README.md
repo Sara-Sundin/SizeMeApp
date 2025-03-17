@@ -395,4 +395,31 @@ In the development of SizeMeApp, I used a Kanban board to organize tasks and pri
 - [Structure of the website](#structure-of-the-website)
 - [Features](#features)
 
+## Colour Scheme
+![Colour Scheme](assets/images_readme/color_scheme_3.jpg)
+<br>
+<br>
+The SizeMeApp color scheme is carefully chosen to create a clean, modern, and user-friendly interface. It consists of four key colors:
+
+#616f82 (Muted Blue) – Used for the header, footer, and headings, this color establishes a professional and trustworthy feel. Blue is often associated with reliability, making it an ideal choice for a tool focused on accuracy in sizing.
+
+#878787 (Neutral Grey) – The primary background color, grey adds subtle depth while maintaining a neutral, sophisticated look. It helps separate sections without being too visually dominant.
+
+#ffffff (White) – Applied as a secondary background color, ensuring a clean and spacious layout. White provides contrast, improving readability and enhancing the minimalist aesthetic.
+
+#e84e1b (Vibrant Orange) – Used for buttons and highlights, orange draws attention to important interactive elements, such as calls to action. The warm tone energizes the interface and creates a sense of urgency and engagement.
+
+<hr>
+
+## Typography
+The chosen typography for SizeMeApp consists of Poppins for headings and Raleway for body text. Both are Google Fonts, carefully selected to balance a modern, professional aesthetic with optimal readability. This pairing enhances the user experience by ensuring a structured yet approachable interface that aligns with SizeMeApp’s goal of providing accuracy and ease in online shopping.
+
+![Fonts](assets/images_readme/fonts_3.jpg)
+
+Poppins: Poppins brings a clean, contemporary, and professional feel to the site. Its bold yet minimal design ensures clear hierarchy, making key sections such as headings, navigation, and CTAs stand out effectively.
+
+Raleway: Raleway is a lightweight, elegant sans-serif font designed for readability. Its subtle letter spacing and refined structure make it ideal for body text, ensuring smooth reading and a user-friendly experience. This complements the bold presence of Poppins, providing a well-balanced visual hierarchy.
+
+<hr>
+
 
