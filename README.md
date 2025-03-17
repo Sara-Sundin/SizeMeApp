@@ -362,3 +362,37 @@ aria-label="Connect on Whatsapp (opens in a new tab)"
 - aria-labelledby="sign-out-heading" (for page heading)
 - role="alert" (for confirmation message)
 - aria-label="Confirm sign out" (for sign-out button)
+
+
+[Back to Content Table](#content)
+
+<br>
+<br>
+<hr>
+<hr>
+<br>
+<br>
+
+# DESIGN PLANNING
+- [Design Planning](#design-planning)
+- [Kanban Board](#kanban-board)
+
+## Design Planning
+This diagram represents the planning phase of my SizeMeApp project, mapping out its core structure and functionality. It outlines how users register, log in, and manage their profiles, including updating measurements for accurate size recommendations. I designed a dashboard with an avatar generator, a blog with a comment system, and a newsletter feature. In the end I managed to implify all features of the diagram except the actual application SizeMeApp, making the site a front end user and marketing tool.
+
+![Planning Diagram](assets/images_readme/planning_project_3.jpg)
+
+## Kanban Board
+In the development of SizeMeApp, I used a Kanban board to organize tasks and prioritize development. By labeling features as Must-Have, Should-Have, Could-Have, and Wont-Have, I ensured a clear focus on essential components like user authentication, the dashboard, and measurement integration, while identifying non-critical elements for future development. This visual management tool helped me break down tasks into To Do, In Progress, and Completed, ensuring a clear overview of each design and development stage. I made sure all tasks required for the project were completed, while leaving some for future enhancements.
+
+![The Kanban Board in progress](#)
+
+# DESIGN
+- [Colour Scheme](#colour-scheme)
+- [Typography](#typography)
+- [Imagery](#imagery)
+- [Wire Frames](#wire-frames)
+- [Structure of the website](#structure-of-the-website)
+- [Features](#features)
+
+
