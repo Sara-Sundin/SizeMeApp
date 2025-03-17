@@ -526,6 +526,19 @@ h1 img {
     background-color: #cc3d14;
 }
 
+.btn-grey {
+    background-color: #878787;
+    color: white;
+    text-decoration: none;
+    font-size: 1.5rem;
+    padding: 12px 24px;
+    border: none;
+    border-radius: 8px;
+    display: block;
+    width: 100%;
+    text-align: center;
+}
+
 .link {
     color: #E84E1B;
     text-decoration: none;
