@@ -16,14 +16,12 @@ Explore the site to learn more about how SizeMeApp reduces returns, improves cus
 
 [DATABASE OVERVIEW](#repository-&-database-overview)
 - Database ERD Scheme
-<br>
 
 [USER EXPERIENCE (UX)](#user-experience)
 - The website across UX planes
 - User Stories
 - Accessibility
 - Aria labels
-<br>
 
 [DESIGN PLANNING](#design-planning)
 - Design Planning
@@ -35,7 +33,6 @@ Explore the site to learn more about how SizeMeApp reduces returns, improves cus
 - Imagery
 - Wire Frames
 - Features
-<br>
 
 [TECHNOLOGIES USED](#technologies-used)
 - Languages used to create the website
@@ -43,11 +40,9 @@ Explore the site to learn more about how SizeMeApp reduces returns, improves cus
 - Software
 - Automated Tools
 - ChatGPT
-<br>
 
 [DEPLOYMENT](#deployment)
 - Heroku
-<br>
 
 [TESTING](#testing)
 - Manual vs. Automated Testing
@@ -62,17 +57,14 @@ Explore the site to learn more about how SizeMeApp reduces returns, improves cus
 - Validators
 - Testing with Django
 - Bugs & Fixes
-<br>
 
 [REFERENCES](#references)
 - Media References
 - Content References
-<br>
 
 [CREDITS](#credits)
 - Images
 - Code
-<br>
 
 [PERSONAL NOTES](#personal-notes)
 
@@ -236,7 +228,7 @@ To ensure full CRUD coverage, additional user stories for managing blog posts, c
 
 CRUD implementation: Create (blog posts, comments, newsletters), Read (blog content, comments, measurements), Update (blog posts, profile), Delete (comments, user accounts).
 
-Full user stories and progress tracking are available on our **Kanban board**:  
+Full user stories and progress tracking are available on the **SizeMeApp Kanban board**:  
 [View the Kanban Board]()
 
 ## Accessibility
@@ -321,16 +313,16 @@ To ensure that the website is fully accessible and user-friendly for individuals
 - aria-label="Connect on Whatsapp (opens in a new tab)"
 
 ### Contact Page
-aria-labelledby="contact-form-heading" (for form association)
-aria-required="true" (for required input fields)
-aria-label="Send your message" (for the send message button)
-role="status" (for success message container)
-aria-label="Return to the homepage" (for back to home button)
-role="contentinfo" (for contact details)
-aria-hidden="true" (for decorative icons)
-aria-label="Visit our Instagram page (opens in a new tab)"
-aria-label="Visit our LinkedIn page (opens in a new tab)"
-aria-label="Connect on Whatsapp (opens in a new tab)"
+- aria-labelledby="contact-form-heading" (for form association)
+- aria-required="true" (for required input fields)
+- aria-label="Send your message" (for the send message button)
+- role="status" (for success message container)
+- aria-label="Return to the homepage" (for back to home button)
+- role="contentinfo" (for contact details)
+- aria-hidden="true" (for decorative icons)
+- aria-label="Visit our Instagram page (opens in a new tab)"
+- aria-label="Visit our LinkedIn page (opens in a new tab)"
+- aria-label="Connect on Whatsapp (opens in a new tab)"
 
 ### Under Construction Page
 - aria-hidden="true" (for decorative icon)
@@ -416,10 +408,58 @@ The chosen typography for SizeMeApp consists of Poppins for headings and Raleway
 
 ![Fonts](assets/images_readme/fonts_3.jpg)
 
-Poppins: Poppins brings a clean, contemporary, and professional feel to the site. Its bold yet minimal design ensures clear hierarchy, making key sections such as headings, navigation, and CTAs stand out effectively.
+### Poppins 
+Poppins brings a clean, contemporary, and professional feel to the site. Its bold yet minimal design ensures clear hierarchy, making key sections such as headings, navigation, and CTAs stand out effectively.
 
-Raleway: Raleway is a lightweight, elegant sans-serif font designed for readability. Its subtle letter spacing and refined structure make it ideal for body text, ensuring smooth reading and a user-friendly experience. This complements the bold presence of Poppins, providing a well-balanced visual hierarchy.
+### Raleway 
+Raleway is a lightweight, elegant sans-serif font designed for readability. Its subtle letter spacing and refined structure make it ideal for body text, ensuring smooth reading and a user-friendly experience. This complements the bold presence of Poppins, providing a well-balanced visual hierarchy.
 
 <hr>
+
+## Imagery
+The images used on this site are mainly generated using AI. The images for the blog posts and the male background template are generated through ChatGPT. The robot avatar outlines are created in Illustrator from a dighital.com icon pack. The logo images are created by myself using Illustrator.
+
+<hr>
+
+## Wire Frames
+The wireframes were created in Adobe Illustrator for mobile, tablet and desktop. I have developed and used my own toolkit for the wireframes. The outcome for the website looks slightly different than the initial wireframes but for the most part the page remained consistent to the wireframes. For the final website I created a separate contact page and an "under construction" page for the SizeMeApp application.
+
+<details open>
+  <summary>Wireframes Home Page</summary>
+
+  ![Wireframes Home Page](assets/images_readme/wireframes_home.jpg)
+
+</details>
+
+ <summary>Wireframes About & Contact Page</summary>
+
+  ![Wireframes About Page](assets/images_readme/wireframes_about.jpg)
+
+</details>
+
+</details>
+
+ <summary>Wireframes Dashboard Page</summary>
+
+  ![Wireframes Dashboard Page](assets/images_readme/wireframes_dashboard.jpg)
+
+</details>
+
+</details>
+
+ <summary>Wireframes Blog Page</summary>
+
+  ![Wireframes Blog Page](assets/images_readme/wireframes_blog.jpg)
+
+</details>
+
+</details>
+
+ <summary>Wireframes Post Page</summary>
+
+  ![Wireframes Post Page](assets/images_readme/wireframes_post.jpg)
+
+</details>
+
 
 
