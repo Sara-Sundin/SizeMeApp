@@ -239,4 +239,23 @@ CRUD implementation: Create (blog posts, comments, newsletters), Read (blog cont
 Full user stories and progress tracking are available on our **Kanban board**:  
 [View the Kanban Board]()
 
+## Accessibility
+The following measures has been taken to make sure the website is accessible.
+- Semantic Elements: Elements like header, main, and footer are used to provide clear structure, making it easier for screen readers to interpret content.
+- Descriptive Headings: Properly structured heading levels (e.g., h1, h2, h3) to create a logical document outline.
+- Alt Attributes: Every image includes meaningful alt text, ensuring visually impaired users understand the content.
+- Focusable Elements: Navigation links, buttons, and forms are fully accessible using only the keyboard (e.g., via tab and enter keys).
+- High Contrast: Text and background colors are chosen to meet the standards.
+- Flexible Layouts: The website is fully responsive, ensuring accessibility across various devices, including desktops, tablets, and smartphones.
+- Viewport Meta Tag: Ensures proper scaling and readability on mobile devices.
+- Labels for Form Fields: All form fields include <label> tags or appropriate aria-label attributes to guide users through form completion.
+- ARIA labels: Aria roles are added where necessary to define regions of the page for assistive technologies.
+- Readable Fonts: Fonts like "Lato" are legible with sufficient size and line spacing for comfortable reading.
+- Scalable Text: Text can be resized without loss of content or functionality.
+- Accessibility Testing Tools: Lighthouse and Django automated tools has been used to identify and address accessibility issues.
+
+<hr>
+
+
+
 
