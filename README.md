@@ -98,6 +98,6 @@ LikePost – Manages the many-to-many relationship between users and posts, trac
 Newsletter & Subscriber – Handles newsletter content and email subscriptions.
 The schema ensures clear relationships between users and content while maintaining scalability for future enhancements.
 
-![Database ERD Schema](media\images_README\Database ERD Diagram.jpg)
+![Database ERD Schema](media/images_README/Database ERD Diagram.jpg)
 
 
