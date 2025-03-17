@@ -143,15 +143,38 @@
                         </div> 
                         <div>              
                             <button type="submit" class="btn btn-blue-edit">Enter</button>
-                            <button type="submit" name="delete_measurements"  class="btn btn-orange-delete">Clear</button>
+                            <button type="button" class="btn btn-orange-delete" data-bs-toggle="modal" data-bs-target="#deleteMeasurementsModal">
+                                Clear
+                            </button>
                         </div> 
                     </form>
                 </div>
             </div>
         </div>    
-    </div>            
-           
-        
+    </div> 
+        <!-- Delete Measurements Confirmation Modal -->
+    <div class="modal fade" id="deleteMeasurementsModal" tabindex="-1" aria-labelledby="deleteMeasurementsLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="deleteMeasurementsLabel">Delete Measurements?</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    Are you sure you want to delete your measurements? This action cannot be undone.
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancel</button>
+
+                    <!-- Form to delete measurements -->
+                    <form method="post">
+                        {% csrf_token %}
+                        <button type="submit" name="delete_measurements" class="btn btn-danger">Delete</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
 
 {% block extra_js %}
     <script src="{% static 'js/dashboard.js' %}"></script>
