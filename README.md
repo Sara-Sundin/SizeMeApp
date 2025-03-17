@@ -14,9 +14,7 @@ Explore the site to learn more about how SizeMeApp reduces returns, improves cus
 
 # CONTENT
 
-[REPOSITORY & DATABASE OVERVIEW](#repository-&-database-overview)
-- Project Structure & Explanation
-- Repository Diagram
+[DATABASE OVERVIEW](#repository-&-database-overview)
 - Database ERD Scheme
 <br>
 
@@ -99,5 +97,144 @@ Newsletter & Subscriber – Handles newsletter content and email subscriptions.
 The schema ensures clear relationships between users and content while maintaining scalability for future enhancements.
 
 ![Database ERD Schema](assets/images_readme/database_erd_diagram.jpg)
+
+[Back to Content Table](#content)
+
+<hr>
+
+- # USER EXPERIENCE
+- [UX planes](#the-website-across-UX-planes)
+- [User Stories](#user-stories)
+- [Accessibility](#accessibility)
+- [Aria labels](#aria-labels-used)
+
+## The website across UX planes
+
+### Strategy Plane
+The primary goal of the SizeMeApp website is to provide users with clear, accessible information about the app’s functionality while guiding them toward signing up and using the service. The target audience includes online shoppers seeking accurate size recommendations, as well as retailers looking to reduce returns and improve customer satisfaction.
+
+The website meets user needs by:
+
+- Offering a clear explanation of how SizeMeApp works.
+- Providing calls-to-action that encourage users to sign up.
+- Showcasing business benefits for retailers and e-commerce brands.
+- Creating a seamless experience for users to explore the app's features.
+
+### Scope Plane
+The website includes essential features to educate and engage users:
+
+- A homepage that introduces SizeMeApp and its benefits.
+- A sign-up process that allows users to create an account.
+- An interactive “How It Works” page explaining the app’s technology.
+- A blog section where users can explore trends in fashion and sizing.
+- A contact page for user inquiries and business partnerships.
+
+Additional features, such as testimonials, success stories, and a retailer-focused section, enhance credibility and help potential users and businesses understand the impact of the app. This will be implemented in the future.
+
+### Structure Plane
+The website is structured to ensure smooth navigation and user engagement:
+
+- The homepage provides an overview with a strong call to action.
+- The "How It Works" page explains the sizing technology in an easy-to-understand format.
+- A user dashboard (for registered users) allows them to manage their profile and measurements.
+- The blog section offers informative content and allows registered users to engage via comments.
+
+This logical structure ensures that first-time visitors, returning users, and frequent users can easily find relevant content.
+
+### Skeleton Plane
+The website layout is designed for clarity and usability:
+
+- Navigation menus provide quick access to key sections.
+- Clear CTAs (e.g., "Sign Up," "Try Now") guide users toward important actions.
+- A well-structured blog page ensures easy reading and engagement.
+- The user dashboard presents stored measurements and recommendations in an intuitive format.
+- The contact page offers a simple, accessible form for inquiries.
+
+The layout is responsive, ensuring an optimized experience across desktop, tablet, and mobile devices.
+
+### Surface Plane
+The visual design of the SizeMeApp website is clean, modern, and user-friendly, emphasizing trust and functionality:
+
+- A neutral color palette combined with accent colors for CTAs enhances readability and usability.
+- Typography is professional and easy to read, reinforcing clarity.
+- High-quality visuals (icons, imaged) strengthen user engagement.
+- Hover effects improve interactivity without distracting from core content.
+
+Together, these design choices ensure that the website provides an engaging, informative, and intuitive experience for all visitors.
+
+<hr>
+
+## User Stories
+
+The development of the SizeMeApp website followed a structured user story framework, ensuring that each feature was designed with clear objectives, measurable success, and actionable development steps.
+
+### Example of User Story Implementation
+
+#### User Story:
+As a registered user, I want to update my measurements, so that I can keep my size data accurate as my body changes.
+
+#### Acceptance Criteria:
+- Users can edit and save new measurements.
+- Changes are updated in real time.
+
+#### Tasks:
+- Implement an “Edit Measurements” feature.
+- Ensure previous data is overwritten securely.
+- By following this structured approach for each feature, the website ensures a user-centered experience while maintaining development clarity and efficiency.
+
+The site follows the CRUD (Create, Read, Update, Delete) methodology to manage data efficiently. Each user story is structured to ensure that core functionalities align with CRUD operations, enabling seamless interaction with the system.
+
+The user stories for SizeMeApp are structured into three categories:
+
+- New Visitors – First-time users exploring the site to understand its purpose and decide whether to sign up.
+
+- Returning Users – Registered users who come back to interact with features such as storing measurements and commenting on blog posts.
+
+- Frequent Users – Engaged users who update their data, interact regularly, and receive personalized recommendations.
+
+### New Visitors (First-Time Users Exploring the Site)
+New visitors primarily engage with the site through reading and navigating content to understand SizeMeApp and its benefits.
+
+- Visitors want to quickly understand what SizeMeApp does, how it works, and whether it is relevant to them.
+- Clear call-to-action buttons guide users to sign up and test the application.
+- Information is provided for both individual shoppers and business owners, including benefits for reducing returns.
+- Blog posts and comments are accessible to all visitors to learn about online sizing and fashion technology.
+- A team page introduces the people behind SizeMeApp to build trust.
+- A contact form provides an easy way to ask questions or give feedback.
+
+CRUD implementation: Create (contact form submission), Read (blog posts, team page, testimonials).
+
+### Returning Visitors (Users Coming Back After Initial Engagement)
+Returning users have registered and now interact with the site by storing personal data and engaging with content.
+
+- Users can store their personal measurements in their profile for easier access while shopping online.
+- They can comment on blog posts to engage in discussions.
+- A simple and secure login process allows them to access stored measurements and interact with blog content.
+- Users can like blog posts to save their favorite content.
+
+CRUD implementation: Create (measurements, comments, likes), Read (stored data, blog posts), Update (profile details).
+
+### Frequent Visitors (Engaged Users Who Interact Regularly)
+Frequent users continue to refine their data and interact with advanced features.
+
+- Users can update their measurements as their body changes to ensure accuracy.
+- They remain logged in for convenience, reducing the need to re-enter credentials.
+- Based on stored measurements, users receive personalized recommendations.
+- Newsletters inform them about new features and updates.
+
+CRUD implementation: Read (recommendations, testimonials), Update (measurements, profile), Read/Delete (notifications).
+
+### Additional CRUD Features for Blog and Measurements
+To ensure full CRUD coverage, additional user stories for managing blog posts, comments, and user data are included:
+
+- Admins can create, edit, and delete blog posts to maintain relevant content.
+- Registered users can edit or delete their own comments.
+- Admins can moderate and delete inappropriate comments.
+- Users can delete their account if they choose to remove their data.
+
+CRUD implementation: Create (blog posts, comments, newsletters), Read (blog content, comments, measurements), Update (blog posts, profile), Delete (comments, user accounts).
+
+Full user stories and progress tracking are available on our **Kanban board**:  
+[View the Kanban Board]()
 
 
