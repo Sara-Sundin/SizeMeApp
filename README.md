@@ -10,7 +10,7 @@ This website serves as the front-facing platform for SizeMeApp, an innovative so
 
 Explore the site to learn more about how SizeMeApp reduces returns, improves customer satisfaction, and enhances the online shopping experience through smart size recommendations. 
 
-![Screenshot of the website on multi devices](media/images_README/Multiscreen.png)
+![Screenshot of the website on multi devices](media/images_readme/multiscreen.png)
 
 # CONTENT
 
@@ -98,6 +98,6 @@ LikePost – Manages the many-to-many relationship between users and posts, trac
 Newsletter & Subscriber – Handles newsletter content and email subscriptions.
 The schema ensures clear relationships between users and content while maintaining scalability for future enhancements.
 
-![Database ERD Schema](media/images_README/Database ERD Diagram.jpg)
+![Database ERD Schema](media/images_readme/database_erd_diagram.jpg)
 
 
