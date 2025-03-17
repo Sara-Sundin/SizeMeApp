@@ -428,37 +428,30 @@ The wireframes were created in Adobe Illustrator for mobile, tablet and desktop.
   <summary>Wireframes Home Page</summary>
 
   ![Wireframes Home Page](assets/images_readme/wireframes_home.jpg)
-
 </details>
 
+<details>
  <summary>Wireframes About & Contact Page</summary>
 
   ![Wireframes About Page](assets/images_readme/wireframes_about.jpg)
-
 </details>
 
-</details>
-
+<details>
  <summary>Wireframes Dashboard Page</summary>
 
   ![Wireframes Dashboard Page](assets/images_readme/wireframes_dashboard.jpg)
-
 </details>
 
-</details>
-
+<details>
  <summary>Wireframes Blog Page</summary>
-
-  ![Wireframes Blog Page](assets/images_readme/wireframes_blog.jpg)
-
+ 
+ ![Wireframes Blog Page](assets/images_readme/wireframes_blog.jpg)
 </details>
 
-</details>
-
+<details>
  <summary>Wireframes Post Page</summary>
 
-  ![Wireframes Post Page](assets/images_readme/wireframes_post.jpg)
-
+![Wireframes Post Page](assets/images_readme/wireframes_post.jpg)
 </details>
 
 
