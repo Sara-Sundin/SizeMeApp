@@ -11,29 +11,39 @@ from accounts.forms import CustomUserUpdateForm
 
 @login_required
 def user_dashboard(request):
-    """Handles user profile updates."""
+    """Handles user profile updates and measurement deletion."""
     user = request.user
     just_signed_up = request.session.pop("just_signed_up", False)  # Retrieve flag
 
     if request.method == "POST":
+        if "delete_measurements" in request.POST:
+            # Clear measurement fields
+            user.chest = None
+            user.waist = None
+            user.hips = None
+            user.shoulders = None
+            user.save()
+            messages.success(request, "Your measurements have been cleared.", extra_tags="profile")
+            return redirect("dashboard")  # Redirect to the dashboard after clearing
+
         form = CustomUserUpdateForm(request.POST, request.FILES, instance=user)
         if form.is_valid():
             form.save()
             messages.success(request, "Measurements updated!", extra_tags="profile")
-            return redirect("dashboard")  # Ensure "dashboard" URL exists
+            return redirect("dashboard")
+
     else:
         form = CustomUserUpdateForm(instance=user)
 
     context = {
         "form": form,
         "user": user,
-        "just_signed_up": just_signed_up,  # This is `True` only for new signups
+        "just_signed_up": just_signed_up,
         "signup_url": reverse("account_signup"),
     }
 
     return render(request, "dashboard/dashboard.html", context)
 
-from django.contrib import messages
 
 @login_required
 def save_avatar(request):
