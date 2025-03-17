@@ -256,6 +256,87 @@ The following measures has been taken to make sure the website is accessible.
 
 <hr>
 
+## ARIA Labels
+To ensure that the website is fully accessible and user-friendly for individuals using assistive technologies, the following ARIA attributes should be implemented. Some of these labels are already in place, while others need to be added to enhance accessibility further.
 
+### Base Template (all pages)
+- aria-controls="navbarNav" (for navbar toggler)
+- aria-expanded="false" (for navbar toggler)
+- aria-label="Toggle navigation" (for navbar toggler)
+- role="img" and aria-label="SizeMeApp Logo" (for logo)
+- aria-hidden="true" (for user avatar)
+- aria-current="page" (for active navigation links)
+- role="contentinfo" (for footer)
+
+### Blog Page
+- aria-label="{{ post.title }}" (for the image container)
+- aria-live="polite" (for the author name flash message)
+- aria-label="Read more about {{ post.title }}" (for the post link)
+- aria-label="Page navigation" (for the pagination navigation)
+- aria-label="Go to next page" (for the next page link)
+
+### Post Page
+- aria-label="{{ post.title }}" (for the featured image)
+- aria-label="Close" (for the close button in the delete confirmation modal)
+- aria-labelledby="deleteModalLabel" (for the delete confirmation modal)
+- aria-hidden="true" (for the delete confirmation modal when not active)
+
+### Dashboard Page
+- role="img" for user avatar and measurement guide image.
+- aria-label="User avatar" for the profile picture.
+- aria-labelledby="avatarModalTitle" for the avatar modal.
+- aria-labelledby="chestLabel" (and similar for waist, hips, shoulders) for measurement fields.
+- aria-label="Illustration showing how to take body measurements." for the measurement guide image.
+- aria-label="Delete measurements" for the delete button.
+- aria-expanded="false" on the measurement toggle button (should be dynamically updated).
+
+### Avatar Generator
+- aria-label="Select color [color name]" for swatches.
+- aria-label="Avatar preview" for the avatar canvas.
+- aria-label="Save your avatar" for the download button.
+- aria-label="Reset avatar settings" for the reset button.
+- aria-label="Go back to main thumbnails" for the back button in additional thumbnails.
+- role="img" for the avatar preview.
+- aria-expanded="false" for hidden thumbnail sections (should be updated dynamically).
+
+### Home Page
+- aria-label="SizeMeApp Logo" (for hero section logo)
+- aria-label="Sign up or go to dashboard" (for CTA button)
+- aria-label="Enter your email address" (for newsletter email input)
+- aria-label="Subscribe to newsletter" (for newsletter subscribe button)
+- role="status" (for success message container)
+- aria-label="Return to the homepage" (for back to home button)
+- aria-label="Learn more about Why SizeMeApp" (for icon buttons linking to about page)
+- aria-label="Visit our Instagram page (opens in a new tab)"
+- aria-label="Visit our LinkedIn page (opens in a new tab)"
+- aria-label="Connect on Whatsapp (opens in a new tab)"
+
+### About Page
+- aria-hidden="true" (for decorative icons)
+- role="img" and aria-label="Sara Sundin, Co-Founder & Fashion Tech Expert" (for team images)
+- aria-labelledby="sara-label" (for team descriptions)
+- aria-labelledby="why-title" (for section headings)
+- aria-label="Visit our Instagram page (opens in a new tab)"
+- aria-label="Visit our LinkedIn page (opens in a new tab)"
+- aria-label="Connect on Whatsapp (opens in a new tab)"
+
+### Contact Page
+aria-labelledby="contact-form-heading" (for form association)
+aria-required="true" (for required input fields)
+aria-label="Send your message" (for the send message button)
+role="status" (for success message container)
+aria-label="Return to the homepage" (for back to home button)
+role="contentinfo" (for contact details)
+aria-hidden="true" (for decorative icons)
+aria-label="Visit our Instagram page (opens in a new tab)"
+aria-label="Visit our LinkedIn page (opens in a new tab)"
+aria-label="Connect on Whatsapp (opens in a new tab)"
+
+### Under Construction Page
+- aria-hidden="true" (for decorative icon)
+- role="status" (for under construction message container)
+- aria-label="Enter your email address" (for newsletter email input)
+- aria-label="Subscribe to our newsletter" (for newsletter subscribe button)
+- aria-label="Return to the dashboard" (for back to dashboard button)
 
 
