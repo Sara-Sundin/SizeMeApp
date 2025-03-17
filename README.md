@@ -74,8 +74,6 @@ Explore the site to learn more about how SizeMeApp reduces returns, improves cus
 <br>
 <hr>
 <hr>
-<br>
-<br>
 
 # DATABASE OVERVIEW
 
@@ -94,6 +92,7 @@ The schema ensures clear relationships between users and content while maintaini
 
 [Back to Content Table](#content)
 
+<hr>
 <hr>
 
 - # USER EXPERIENCE
@@ -230,6 +229,8 @@ CRUD implementation: Create (blog posts, comments, newsletters), Read (blog cont
 
 Full user stories and progress tracking are available on the **SizeMeApp Kanban board**:  
 [View the Kanban Board]()
+
+<hr>
 
 ## Accessibility
 The following measures has been taken to make sure the website is accessible.
@@ -379,7 +380,16 @@ In the development of SizeMeApp, I used a Kanban board to organize tasks and pri
 
 ![The Kanban Board in progress](#)
 
-# DESIGN
+[Back to Content Table](#content)
+
+<br>
+<br>
+<hr>
+<hr>
+<br>
+<br>
+
+# VISUAL DESIGN IDENTITY
 - [Colour Scheme](#colour-scheme)
 - [Typography](#typography)
 - [Imagery](#imagery)
@@ -453,6 +463,110 @@ The wireframes were created in Adobe Illustrator for mobile, tablet and desktop.
 
 ![Wireframes Post Page](assets/images_readme/wireframes_post.jpg)
 </details>
+
+<hr>
+
+## Features
+
+### All pages
+
+#### Favicon
+
+#### Navigation
+
+#### Logged in - active user
+
+#### Social Media Icons
+
+#### Footer
+
+### Home Page
+
+#### Hero Section
+
+#### Intro Section - How It Works - Home page
+
+#### Newsletter Signup
+
+#### Succes Message Newsletter
+
+#### About Us Section - Home page
+
+### About Page
+
+#### Why SizeMeApp Section
+
+#### How it Works Section
+
+#### Start Shopping Section
+
+#### About Us Section
+
+### Contact Page
+
+#### Contact Intro
+
+#### Contact Form
+
+#### Success Message Contact Form
+
+#### Contact Details
+
+### Blog Page
+
+#### Blog Cards
+
+#### Post Page
+
+#### Blog Post
+
+#### Comment Count & Likes
+
+#### Comment Section (CRUD)
+
+### Account Details
+
+#### Register Form
+
+#### Login Form
+
+#### Logout
+
+#### Confirm Logout Message
+
+#### Forgot Password Form
+
+### Dashboard
+
+#### Dashboard View
+
+#### Avatar Maker
+
+#### Measurement Form (CRUD)
+
+### 404 Page
+
+### Future Pages
+
+<br>
+<br>
+<hr>
+<hr>
+<br>
+<br>
+
+# TECHNOLOGIES USED
+- [Languages used to create the website](#languages-used-to-create-the-website)
+- [Frameworks & Libraries](#frameworks-and-libraries)
+- [Software](#software)
+- [Automated Tools](#automated-tools)
+- [AI](#ai)
+
+
+
+
+
+
 
 
 
