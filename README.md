@@ -86,3 +86,18 @@ Explore the site to learn more about how SizeMeApp reduces returns, improves cus
 <hr>
 <br>
 <br>
+
+# DATABASE OVERVIEW
+
+The database schema for SizeMeApp is designed to efficiently manage user data, blog content, and user interactions. It consists of five main tables:
+
+CustomUser – Stores user details, including authentication and profile information.
+Post – Represents blog posts, which can only be created by admin users.
+Comment – Allows all users to comment on blog posts.
+LikePost – Manages the many-to-many relationship between users and posts, tracking likes.
+Newsletter & Subscriber – Handles newsletter content and email subscriptions.
+The schema ensures clear relationships between users and content while maintaining scalability for future enhancements.
+
+![Database ERD Schema](media\images_README\Database ERD Diagram.jpg)
+
+
