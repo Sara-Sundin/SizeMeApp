@@ -339,4 +339,26 @@ aria-label="Connect on Whatsapp (opens in a new tab)"
 - aria-label="Subscribe to our newsletter" (for newsletter subscribe button)
 - aria-label="Return to the dashboard" (for back to dashboard button)
 
+### Sign In Form
+- aria-labelledby="sign-in-heading" (for the page heading)
+- role="alert" (for error messages)
+- aria-label="Enter your email" (for login input)
+- aria-label="Enter your password" (for password input)
+- aria-label="Show or hide password" (for password toggle button)
+- aria-label="Reset your password" (for forgot password link)
+- aria-label="Sign in to your account" (for sign-in button)
 
+### Register Form
+- aria-labelledby="sign-up-heading" (for page heading)
+- role="alert" (for error messages)
+- aria-label="Enter your full name" (for name input)
+- aria-label="Enter your email address" (for email input)
+- aria-label="Enter your password" (for password input)
+- aria-label="Show or hide password" (for password toggle button)
+- aria-label="Reset your password" (for forgot password link)
+- aria-label="Create your account" (for sign-up button)
+
+### Log Out
+- aria-labelledby="sign-out-heading" (for page heading)
+- role="alert" (for confirmation message)
+- aria-label="Confirm sign out" (for sign-out button)
