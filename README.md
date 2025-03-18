@@ -555,7 +555,7 @@ After subscribing, users see a clear success message confirming their sign-up. I
 #### About Us Section - Home page
 The About section provides a brief introduction to SizeMeApp’s mission—revolutionizing online shopping with accurate size recommendations. A hover-effect icon and CTA link direct users to the About page, where they can explore more details about the technology, team, and benefits.
 
-![About Us Intro Section Tablet](assets/images_readme/about_us_section_home_tablet.jpg)
+![About Us Intro Section Tablet](assets/images_readme/about_section_home_tablet.jpg)
 
 ### About Page 
 - Why SizeMeApp Section
@@ -663,7 +663,8 @@ The logout link allows users to securely sign out of their account. Clicking it 
 The reset password form allows users to securely recover their account by entering their email. After submitting, a confirmation message appears, informing them that a reset link has been sent. This ensures a smooth and secure process, allowing users to regain access to their accounts effortlessly. 
 
 ![Reset Password Mobile](assets/images_readme/reset_password_mobile.jpg)
-![Confirm Reset Desktop](assets/images_readme/confirm_reset_reset_desktop.jpg)
+
+![Confirm Reset Desktop](assets/images_readme/confirm_reset_desktop.jpg)
 
 ### Dashboard
 The dashboard provides a centralized space for users to manage their measurements securely. The "Body Measurements" section, hidden by default for privacy, allows users to enter, update, and delete their size data. Additionally, the dashboard includes an avatar generator and a direct link to the SizeMeApp application for accurate size recommendations.
