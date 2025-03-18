@@ -472,82 +472,226 @@ The wireframes were created in Adobe Illustrator for mobile, tablet and desktop.
 ### All pages
 
 #### Favicon
+The favicon for SizeMeApp features a minimalist three-ring design, symbolizing balance, precision, and connection - key elements in finding the perfect fit when shopping online. The central, bold ring represents the core function of the app: accurate sizing, while the two smaller rings above and below convey adaptability and seamless user experience.
+
+This clean, geometric icon was designed to be simple yet recognizable, ensuring strong brand identity even at small sizes. The favicon enhances the visual consistency of the platform, aligning with the app’s modern and functional design.
+
+ ![Favicon](assets\images_readme\favicon_rings_32x32.png)
 
 #### Navigation
+The navigation bar in SizeMeApp is designed for easy access to key features while maintaining a clean and modern look. It provides clear navigation to sections such as Home, About, Blog, and Contact, ensuring users can quickly find what they need.
 
-#### Logged in - active user
+For logged-in users, the navbar offers a personalized experience by displaying their avatar alongside the text "Logged in as [Username]", reinforcing a sense of identity and engagement.
+
+This feature makes it easy for users to confirm their login status while navigating the site. The navbar also includes a Dashboard link for managing stored measurements and a Logout option for seamless account control.
+
+The design ensures a consistent user experience, adapting for different screen sizes with a responsive mobile-friendly layout with a toggle. 
+
+![Navigation Bar Desktop]()
+
+<details>
+  <summary>Navigation Bar - Mobile</summary>
+
+  ![Navigation Mobile]()
+
+</details>
 
 #### Social Media Icons
+SizeMeApp features Font Awesome social media icons for Instagram, LinkedIn, and WhatsApp, allowing users to easily connect with the brand. These icons include an interactive hover effect, where they expand and change color, providing visual feedback and enhancing user engagement. Their placement close to the footer ensures quick access to social platforms while maintaining a clean, modern design.
+
+![Social Media Icons Desktop]()
 
 #### Footer
+The footer in SizeMeApp provides a simple and professional closing element for the site. It contains a copyright notice displaying "© 2025 TechFit Solutions. All rights reserved.", reinforcing brand identity and legal protection. The footer maintains a minimalistic design, ensuring it doesn’t distract from the main content while offering a consistent visual structure across all pages.
+
+![Footer Desktop]()
 
 ### Home Page
 
 #### Hero Section
+The hero section serves as the visual centerpiece of SizeMeApp, immediately capturing attention with a clean, modern design. It prominently features the SizeMeApp logo, reinforcing brand recognition. In the background, a transparent, gridded human figure symbolizes precision, measurement, and technology, aligning with the app’s mission to provide accurate size recommendations. This striking visual sets the tone for a seamless user experience.
+
+![Hero Section Desktop]()
+
+<details>
+  <summary>Hero Section - Mobile</summary>
+
+  ![Hero Section Mobile]()
+
+</details>
 
 #### Intro Section - How It Works - Home page
+The intro and "How It Works" section provide users with a clear, engaging overview of SizeMeApp’s purpose and functionality. It features three interactive headings - "Why SizeMeApp," "How It Works," and "Start Shopping" - each accompanied by a hover-effect icon that changes color and expands when hovered over. These icons serve as visual navigation links to the About page, ensuring users can seamlessly explore more details about the app.
+
+![Intro Section Desktop]()
+
+<details>
+  <summary>Intro Section - Mobile</summary>
+
+  ![Intro Section Mobile]()
+
+</details>
 
 #### Newsletter Signup
+The newsletter section encourages users to stay updated with SizeMeApp’s latest features and news. It includes a simple, user-friendly sign-up form, allowing visitors to enter their email and subscribe. The CTA button ensures quick interaction, while the clean design keeps it visually appealing and accessible.
 
-#### Succes Message Newsletter
+![Newsletter Section Tablet]()
+
+<details>
+  <summary>Newsletter Section - Mobile</summary>
+
+  ![Intro Section Mobile]()
+
+</details>
+
+#### Success Message Newsletter
+After subscribing, users see a clear success message confirming their sign-up. It reassures them that they’ll receive updates and includes a "Back to Home" button for easy navigation.
+
+![Newsletter Success Message Tablet]()
 
 #### About Us Section - Home page
+The About section provides a brief introduction to SizeMeApp’s mission—revolutionizing online shopping with accurate size recommendations. A hover-effect icon and CTA link direct users to the About page, where they can explore more details about the technology, team, and benefits.
 
-### About Page
+![About Us Intro Section Tablet]()
 
-#### Why SizeMeApp Section
+### About Page 
+- Why SizeMeApp Section
+- How It Works Section
+- Start Shopping Section
 
-#### How it Works Section
+![About Page Sections Desktop]()
 
-#### Start Shopping Section
+<details>
+  <summary>About Page Sections - Mobile</summary>
+
+  ![About Page Sections Mobile]()
+
+</details>
 
 #### About Us Section
+The About Us section introduces the team behind SizeMeApp, highlighting their expertise in fashion tech and user experience. It features team photos and bios, giving users insight into the minds shaping the platform. This section builds trust and credibility, reinforcing the app’s mission.
+
+![About Us Section Tablet]()
+
+<details>
+  <summary>About Us Section - Mobile</summary>
+
+  ![About Us Section Mobile]()
+</details>
 
 ### Contact Page
+The Contact page provides an easy way for users to reach out with questions or feedback. It includes a contact form for direct messages, along with email, phone, and social media links. 
 
-#### Contact Intro
+![Contact Page Desktop]()
 
 #### Contact Form
+The contact form allows users to easily send messages by entering their name, email, and inquiry. A confirmation message appears after submission, ensuring users know their request was received.
+
+![Contact Form Mobile]()
 
 #### Success Message Contact Form
+After submitting a form, users see a clear success message, confirming their message was sent. It reassures them that the team will respond soon and includes a "Back to Home" button for easy navigation. 
 
-#### Contact Details
+![Success Message Contact Desktop]()
 
 ### Blog Page
+The Blog Page provides insights on online sizing, fashion tech, and shopping tips. Posts are well-organized, and logged-in users can like and comment, fostering engagement and discussion.
 
 #### Blog Cards
+The blog cards provide a clean and structured preview of each post, displaying the featured image, title, excerpt, author, and date. Each card ensures easy readability and includes a clickable link to the full post. The design is responsive, adapting seamlessly across different screen sizes. 
+
+![Blog Cards Desktop]()
+
+<details>
+  <summary>Blog Cards - Mobile</summary>
+
+  ![Blog Cards Mobile]()
+</details>
 
 #### Post Page
-
-#### Blog Post
+The Post Page presents each blog post in a clean, readable format, featuring the title, featured image, author, and date. Below the content, users can like and comment to engage with discussions. A structured layout ensures easy navigation, and responsive design makes it accessible on all devices. 
 
 #### Comment Count & Likes
+Each blog post displays comment counts and like totals, allowing users to see engagement at a glance. Logged-in users can like posts and leave comments, fostering interaction and discussion.
+
+![Comment Count & Likes Mobile]()
 
 #### Comment Section (CRUD)
+The comment section supports full CRUD functionality, allowing users to Create, Read, Update, and Delete their comments. Logged-in users can post, edit, or remove their comments, while all visitors can read discussions. The system ensures a smooth and interactive user experience.
+
+![Comment Section Desktop]()
+
+<details>
+  <summary>Comment Section - Mobile</summary>
+
+  ![Comment Section Mobile]()
+</details>
 
 ### Account Details
 
 #### Register Form
+The sign-up form offers a quick and secure registration process, collecting essential details like name, email, and password. A "Forgot your password?" link provides easy recovery. After signing up, users are automatically redirected to the dashboard, ensuring a seamless onboarding experience. 
+
+![Register Form Desktop]()
+
+<details>
+  <summary>Register Form - Mobile</summary>
+
+  ![Register Form Mobile]()
+</details>
 
 #### Login Form
+The login form offers a user-friendly experience with placeholder text for guidance and a password toggle for visibility control. After logging in, the avatar and "Logged in as [Username]" text appear in the navigation bar, enhancing personalization and usability. 
 
-#### Logout
+![Login Form Mobile]()
 
-#### Confirm Logout Message
+<details>
+  <summary>Login Form - Desktop</summary>
 
-#### Forgot Password Form
+  ![Login Form Desktop]()
+</details>
+
+#### Logout Confirm Message
+The logout link allows users to securely sign out of their account. Clicking it redirects them to a confirmation page with the message "Are you sure you want to sign out?", ensuring intentional logouts. This prevents accidental logouts and provides a seamless user experience. 
+
+![Logout Message Mobile]()
+
+#### Reset Password Form
+The reset password form allows users to securely recover their account by entering their email. After submitting, a confirmation message appears, informing them that a reset link has been sent. This ensures a smooth and secure process, allowing users to regain access to their accounts effortlessly. 
+
+![Reset Password Mobile]()
+![Confirm Reset Desktop]()
 
 ### Dashboard
+The dashboard provides a centralized space for users to manage their measurements securely. The "Body Measurements" section, hidden by default for privacy, allows users to enter, update, and delete their size data. Additionally, the dashboard includes an avatar generator and a direct link to the SizeMeApp application for accurate size recommendations.
 
-#### Dashboard View
+![Dashboard Desktop]()
 
 #### Avatar Maker
+The avatar generator lets users create a custom robot avatar, adding a unique and playful touch to their profile. Users can personalize features like head shape, eyes, mouth, and colors. The avatar can be saved and updated anytime, enhancing engagement while maintaining a futuristic, tech-inspired aesthetic. 
+
+![Avatar Tablet]()
+
+<details>
+  <summary>Avatar Generator - Desktop</summary>
+
+  ![Avatar Desktop]()
+</details>
 
 #### Measurement Form (CRUD)
+The measurements form allows users to enter, update, and delete their body measurements for accurate size recommendations. Hidden under the "Body Measurements" section for privacy, it includes fields for chest, waist, hips, and shoulders. The form ensures a secure and user-friendly experience, giving users full control over their data.
+
+![Measurement Form Tablet]()
+
+<details>
+  <summary>Measurement Form - Mobile</summary>
+
+  ![Measurement Form Mobile]()
+</details>
 
 ### 404 Page
 
-### Future Pages
+### Future Feature
 
 <br>
 <br>
