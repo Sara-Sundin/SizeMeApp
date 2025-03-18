@@ -695,12 +695,12 @@ The measurements form allows users to enter, update, and delete their body measu
 ### Mockup SizeMeApp Access
 The SizeMeApp button in your dashboard is currently a mockup for future development.
 
-![SizeMeApp Access]()
+![SizeMeApp Access](assets/images_readme/enter_application_tablet.jpg)
 
 ### Under Construction Message
 Clicking the SizeMeApp access button will take you to the under construction page, where we're building the SizeMeApp tool. Sign up for the newsletter for updates or follow the link to return to the dashboard.
 
-![Under Construction Page]()
+![Under Construction Page](assets/images_readme/under_construction_tablet.jpg)
 
 ### 404 Page
 Oops! You’ve landed on a 404 page, but don’t worry—you’re not lost alone! Your custom avatar is here to guide you back. The page you’re looking for doesn’t exist, but you can return to the dashboard or explore other sections of SizeMeApp to find what you need.
