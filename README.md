@@ -14,8 +14,8 @@ Explore the site to learn more about how SizeMeApp reduces returns, improves cus
 
 # CONTENT
 
-[DATABASE OVERVIEW](#repository-&-database-overview)
-- Database ERD Scheme
+[DATABASE OVERVIEW](#database-overview)
+- Database ERD Schema
 
 [USER EXPERIENCE (UX)](#user-experience)
 - The website across UX planes
@@ -76,6 +76,7 @@ Explore the site to learn more about how SizeMeApp reduces returns, improves cus
 <hr>
 
 # DATABASE OVERVIEW
+- [Database ERD Schema](#database-erd-schema)
 
 The database schema for SizeMeApp is designed to efficiently manage user data, blog content, and user interactions. It consists of six main tables:
 
@@ -88,6 +89,8 @@ The database schema for SizeMeApp is designed to efficiently manage user data, b
 
 The schema ensures clear relationships between users and content while maintaining scalability for future enhancements.
 
+## Database ERD Schema
+
 ![Database ERD Schema](assets/images_readme/database_erd_diagram.jpg)
 
 [Back to Content Table](#content)
@@ -95,7 +98,7 @@ The schema ensures clear relationships between users and content while maintaini
 <hr>
 <hr>
 
-- # USER EXPERIENCE
+# USER EXPERIENCE
 - [UX planes](#the-website-across-UX-planes)
 - [User Stories](#user-stories)
 - [Accessibility](#accessibility)
