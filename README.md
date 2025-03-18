@@ -692,9 +692,27 @@ The measurements form allows users to enter, update, and delete their body measu
   ![Measurement Form Mobile](assets/images_readme/measurements_mobile.jpg)
 </details>
 
-### 404 Page
+### Mockup SizeMeApp Access
+The SizeMeApp button in your dashboard is currently a mockup for future development.
 
-### Future Feature
+![SizeMeApp Access]()
+
+### Under Construction Message
+Clicking the SizeMeApp access button will take you to the under construction page, where we're building the SizeMeApp tool. Sign up for the newsletter for updates or follow the link to return to the dashboard.
+
+![Under Construction Page]()
+
+### 404 Page
+Oops! You’ve landed on a 404 page, but don’t worry—you’re not lost alone! Your custom avatar is here to guide you back. The page you’re looking for doesn’t exist, but you can return to the dashboard or explore other sections of SizeMeApp to find what you need.
+
+![404 Page]()
+
+### Future Features
+We’re taking SizeMeApp to the next level with an AI-powered application that ensures perfect fit recommendations. Soon, our site will feature a direct link to the SizeMeApp tool, making sizing effortless.
+
+Our advanced AI system will analyze user measurements, brand size charts, and past purchases for accurate, real-time recommendations. A community-driven review system will let shoppers share fit insights, helping others make informed choices.
+
+Retailers will be able to integrate SizeMeApp into their stores, reducing returns and waste. Future features include virtual try-ons and mobile measurement scanning, shaping a more personalized, sustainable shopping experience. Stay tuned!
 
 <br>
 <br>
