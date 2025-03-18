@@ -39,7 +39,7 @@ Explore the site to learn more about how SizeMeApp reduces returns, improves cus
 - Frameworks & Libraries
 - Software
 - Automated Tools
-- ChatGPT
+- AI
 
 [DEPLOYMENT](#deployment)
 - Heroku
@@ -734,6 +734,8 @@ The measurements form allows users to enter, update, and delete their body measu
 - JSHint (to validate and check the javascript code).
 - Techsini.com (for multidevice image and testing responsiveness).
 
+## AI
+
 [Back to Content Table](#content)
 
 <br>
@@ -743,30 +745,44 @@ The measurements form allows users to enter, update, and delete their body measu
 <br>
 <br>
 
-# DEPLOYMENT ON HEROKU
+# DEPLOYMENT ON HEROKU (With GitHub Integration)
 
-## Ensure your website files (HTML, CSS, JavaScript, etc.) are committed to a GitHub repository.
-- Go to Repository Settings
-- Navigate to the repository on GitHub.
-- Use the URL link for deployment in Heroku.
+## Prerequisites
+- GitHub repository containing your project files.
+- A Procfile (if needed) specifying the start command for your app.
+- A requirements.txt (for Python apps).
 
-## Create an account on Heroku, sign in and navigate to the dashboard.
-- Enable GitHub Pages.
-- Under "Deploy Branch," select the branch you want to deploy (typically main or master).
-- Click Save.
+## Create a Heroku Account and App
+- Go to Heroku and sign up (or log in if you already have an account).
+- Click "New" > "Create new app" from the Heroku dashboard.
+- Choose a unique App Name and select a region.
+- Click "Create App".
 
-## Access Your Website
-Heroku will generate a URL for your site (e.g., https://username.github.io/repository-name).
-Visit this URL to view your deployed website.
+![Heroku Deployment Add App](assets/images_readme/deploy_heroku_add-app.jpg)
 
-<details open>
-  <summary>Heroku Deployment Page</summary>
+## Connect GitHub Repository to Heroku
+- In the Deploy tab of your Heroku app, go to "Deployment Method".
+- Select "GitHub".
+- Click "Connect to GitHub" and authorize Heroku to access your repositories.
+- Search for your repository name and click "Connect".
 
-  ![Heroku Deployment](#)
+![Heroku Deployment Github](assets/images_readme/deploy_heroku_connect-github.jpg)
 
-</details>
+## Configure Environment Variables
+In the Settings tab, click "Reveal Config Vars" to add environment variables like API keys, database URLs, etc.
 
-[Back to Content Table](#content)
+![Heroku Deployment Config Vars](assets/images_readme/deploy_heroku_add-config_vars.jpg)
+
+## Deploy the App
+- Under "Manual Deploy", select the branch you want to deploy (main).
+- Click "Deploy Branch".
+- Wait for Heroku to build and deploy your app.
+
+## Check Your Deployed Website
+- Once the deployment is successful, Heroku will provide a URL (e.g., https://your-app-name.herokuapp.com/).
+- Click the URL (VIEW) to access your deployed website.
+
+![Heroku Deployment Add App](assets/images_readme/deploy_heroku_deploy-branch.jpg)
 
 <br>
 <br>
