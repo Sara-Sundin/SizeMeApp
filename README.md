@@ -42,7 +42,7 @@ Explore the site to learn more about how SizeMeApp reduces returns, improves cus
 - AI
 
 [DEPLOYMENT](#deployment)
-- Heroku
+- Heroku with Github Integration
 
 [TESTING](#testing)
 - Manual vs. Automated Testing
@@ -745,7 +745,8 @@ The measurements form allows users to enter, update, and delete their body measu
 <br>
 <br>
 
-# DEPLOYMENT ON HEROKU (With GitHub Integration)
+# DEPLOYMENT
+- [Heroku with GitHub Integration](#heroku-with-github-integration)
 
 ## Prerequisites
 - GitHub repository containing your project files.
