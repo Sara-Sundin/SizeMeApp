@@ -376,8 +376,8 @@ This diagram represents the planning phase of my SizeMeApp project, mapping out 
 ![Planning Diagram](assets/images_readme/planning_project_3.jpg)
 
 ## Kanban Board
-In the developme
-nt of SizeMeApp, I used a Kanban board to organize tasks and prioritize development. By labeling features as Must-Have, Should-Have, Could-Have, and Wont-Have, I ensured a clear focus on essential components like user authentication, the dashboard, and measurement integration, while identifying non-critical elements for future development. This visual management tool helped me break down tasks into To Do, In Progress, and Completed, ensuring a clear overview of each design and development stage. I made sure all tasks required for the project were completed, while leaving some for future enhancements.
+In the development of SizeMeApp, I used a Kanban board to organize tasks and prioritize development. By labeling features as Must-Have, Should-Have, Could-Have, and Wont-Have, I ensured a clear focus on essential components like user authentication, the dashboard, and measurement integration, while identifying non-critical elements for future development. This visual management tool helped me break down tasks into To Do, In Progress, and Completed, ensuring a clear overview of each design and development stage. I made sure all tasks required for the project were completed, while leaving some for future enhancements.
+<br>
 
 ![The Kanban Board in progress](assets/images_readme/kanban_board_in_progress.jpg)
 
@@ -399,9 +399,6 @@ nt of SizeMeApp, I used a Kanban board to organize tasks and prioritize developm
 - [Features](#features)
 
 ## Colour Scheme
-![Colour Scheme](assets/images_readme/color_scheme_3.jpg)
-<br>
-<br>
 The SizeMeApp color scheme is carefully chosen to create a clean, modern, and user-friendly interface. It consists of four key colors:
 
 #616f82 (Muted Blue) – Used for the header, footer, and headings, this color establishes a professional and trustworthy feel. Blue is often associated with reliability, making it an ideal choice for a tool focused on accuracy in sizing.
@@ -411,6 +408,9 @@ The SizeMeApp color scheme is carefully chosen to create a clean, modern, and us
 #ffffff (White) – Applied as a secondary background color, ensuring a clean and spacious layout. White provides contrast, improving readability and enhancing the minimalist aesthetic.
 
 #e84e1b (Vibrant Orange) – Used for buttons and highlights, orange draws attention to important interactive elements, such as calls to action. The warm tone energizes the interface and creates a sense of urgency and engagement.
+<br>
+
+![Colour Scheme](assets/images_readme/color_scheme_3.jpg)
 
 <hr>
 
@@ -562,6 +562,74 @@ The wireframes were created in Adobe Illustrator for mobile, tablet and desktop.
 - [Software](#software)
 - [Automated Tools](#automated-tools)
 - [AI](#ai)
+
+
+## Languages Used to Create the Website
+- HTML
+- CSS
+- JavaScript
+- Python
+
+## Frameworks and Libraries
+- Django (for development and testing).
+- Bootstrap (for responsive design and styling).
+- Font Awesome (for icons).
+- Google Fonts (for typography).
+- Iloveimg.com (to compress images for faster loading).
+
+## Software
+- Adobe Illustrator (for wireframes and image creation).
+- Adobe Photoshop (for image editing and optimization).
+- VS Code (for version control).
+- GitHub (to save and store the website's code and files).
+
+## Automated Tools
+- Chrome DevTools (for debugging and testing).
+- Lighthouse (to analyze performance, accessibility, and SEO).
+- W3C HTML & CSS Validator (to validate and check the html and css).
+- JSHint (to validate and check the javascript code).
+- Techsini.com (for multidevice image and testing responsiveness).
+
+[Back to Content Table](#content)
+
+<br>
+<br>
+<hr>
+<hr>
+<br>
+<br>
+
+# DEPLOYMENT ON HEROKU
+
+## Ensure your website files (HTML, CSS, JavaScript, etc.) are committed to a GitHub repository.
+- Go to Repository Settings
+- Navigate to the repository on GitHub.
+- Use the URL link for deployment in Heroku.
+
+## Create an account on Heroku, sign in and navigate to the dashboard.
+- Enable GitHub Pages.
+- Under "Deploy Branch," select the branch you want to deploy (typically main or master).
+- Click Save.
+
+## Access Your Website
+Heroku will generate a URL for your site (e.g., https://username.github.io/repository-name).
+Visit this URL to view your deployed website.
+
+<details open>
+  <summary>Heroku Deployment Page</summary>
+
+  ![Heroku Deployment](#)
+
+</details>
+
+[Back to Content Table](#content)
+
+<br>
+<br>
+<hr>
+<hr>
+<br>
+<br>
 
 
 
