@@ -1,4 +1,4 @@
-### Project 3 
+### Project 3
 
 # SizeMeApp Website 
 
@@ -227,8 +227,8 @@ To ensure full CRUD coverage, additional user stories for managing blog posts, c
 
 CRUD implementation: Create (blog posts, comments, newsletters), Read (blog content, comments, measurements), Update (blog posts, profile), Delete (comments, user accounts).
 
-Full user stories and progress tracking are available on the **SizeMeApp Kanban board**:  
-[View the Kanban Board]()
+Full user stories and progress tracking are available on the **SizeMeApp Kanban Board**:  
+[View the Kanban Board](https://github.com/users/Sara-Sundin/projects/10/views/1)
 
 <hr>
 
@@ -376,9 +376,10 @@ This diagram represents the planning phase of my SizeMeApp project, mapping out 
 ![Planning Diagram](assets/images_readme/planning_project_3.jpg)
 
 ## Kanban Board
-In the development of SizeMeApp, I used a Kanban board to organize tasks and prioritize development. By labeling features as Must-Have, Should-Have, Could-Have, and Wont-Have, I ensured a clear focus on essential components like user authentication, the dashboard, and measurement integration, while identifying non-critical elements for future development. This visual management tool helped me break down tasks into To Do, In Progress, and Completed, ensuring a clear overview of each design and development stage. I made sure all tasks required for the project were completed, while leaving some for future enhancements.
+In the developme
+nt of SizeMeApp, I used a Kanban board to organize tasks and prioritize development. By labeling features as Must-Have, Should-Have, Could-Have, and Wont-Have, I ensured a clear focus on essential components like user authentication, the dashboard, and measurement integration, while identifying non-critical elements for future development. This visual management tool helped me break down tasks into To Do, In Progress, and Completed, ensuring a clear overview of each design and development stage. I made sure all tasks required for the project were completed, while leaving some for future enhancements.
 
-![The Kanban Board in progress](#)
+![The Kanban Board in progress](assets/images_readme/kanban_board_in_progress.jpg)
 
 [Back to Content Table](#content)
 
