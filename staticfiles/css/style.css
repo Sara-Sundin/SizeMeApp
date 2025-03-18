@@ -144,10 +144,6 @@ h1 img {
     gap: 20px; /* Adds spacing between columns */
 }
 
-.how-it-works .row .col-md-3:nth-child(2) { 
-    margin-top: 60px; /* Moves the second column slightly down */
-}
-
 /* Newsletter Section */
 .newsletter {
     background-color: #616F82;
@@ -357,10 +353,12 @@ h1 img {
 }
 
 .card-img-top {
-    width: 100%; /* Ensures the image takes the full width of its container */
-    height: 250px; /* Set a fixed height */
-    object-fit: cover; /* Ensures the image maintains aspect ratio while covering the space */
-    border-radius: 8px; /* Optional: Rounds the corners for a nicer look */
+    width: 100%; /* Full width */
+    height: auto; /* Allows the image to scale dynamically */
+    max-height: 250px; /* Prevents it from being too tall */
+    min-height: 150px;
+    object-fit: cover; /* Keeps the aspect ratio */
+    border-radius: 8px;
 }
 
 .image-container {
@@ -399,6 +397,7 @@ h1 img {
 .masthead-image {
     position: relative;
     overflow: hidden;
+    min-height: 150px; /* Ensures the container has enough space */
 }
 
 .masthead-image:after {
@@ -416,10 +415,11 @@ h1 img {
 }
 
 .masthead img {
-    width: 100%; /* Ensures the image takes the full width of its container */
-    height: 250px; /* Set a fixed height */
-    object-fit: cover; /* Ensures the image maintains aspect ratio while covering the space */
-    border-radius: 8px; /* Optional: Rounds the corners for a nicer look */
+    width: 100%; /* Ensures full width */
+    height: auto; /* Allows dynamic scaling */
+    max-height: 250px; /* Prevents it from being too large */
+    object-fit: cover; /* Maintains aspect ratio */
+    border-radius: 8px;
 }
 
 .post-link {
@@ -652,6 +652,10 @@ h1 img {
     h1 img {
         max-width: 80%; /* Scales down the logo for tablets */
         padding-top: 140px;
+    }
+
+    .how-it-works .row .col-md-3:nth-child(2) { 
+        margin-top: 60px; /* Moves the second column slightly down */
     }
 
     .index-page::before,
