@@ -814,6 +814,87 @@ In the Settings tab, click "Reveal Config Vars" to add environment variables lik
 <br>
 <br>
 
+# TESTING
+- [Manual vs. Automated Testing](#manual-vs-automated-testing)
+- [Devices](#devices)
+- [Browsers](#browsers)
+- [User Story Testing](#user-story-testing)
+- [Testing Grid](#testing-grid)
+- [Chrome Dev Tools](#chrome-dev-tools)
+- [Lighthouse](#lighthouse)
+- [Validation](#validation)
+- [Testing with Django](#testing-with-django)
+- [Bugs & Fixes](#bugs-and-fixes)
+
+## Detailed Testing Documentation
+For detailed documentation on the testing process, refer to [TESTING.md](TESTING.md). This file contains images, test results, and analysis of the testing conducted on the project, providing insights into functionality, UI performance, and overall system behavior. 
+  
+## Manual vs Automated Testing
+Software testing ensures that applications work as expected, are free of critical bugs, and provide a good user experience. Testing can be done manually by human testers or automatically using scripts and testing frameworks. The choice between manual and automated testing depends on factors like project complexity, budget, and the need for speed and accuracy. Both manual and automated testing play crucial roles in software development. Manual testing is best for exploratory testing and user experience evaluation, while automated testing is essential for repetitive tasks and continuous testing in large projects. A combination of both approaches often provides the best results.
+
+The manual testing in this project has been done to check the responsiveness on different devices and browsers as well as the user experience both in terms of functionality and various workflows to find unexpected behavior. I have used a testing grid to make sure all components are being included.
+
+The automated testing have used frameworks and tools such as Lighthouse, W3C Validators, JSHint, and Django to run test cases, making it more efficient for large-scale and repetitive testing.
+
+<hr>
+
+## Devices
+
+### The testing on the site has been made on four different devices:
+Samsung Galaxy Mobile A25 <br>
+Apple IPad Mini <br>
+Apple IPad  <br>
+Lenovo Desktop 15"
+
+<hr>
+
+## Browsers
+### The different browsers used for testing:
+Google Chrome <br>
+Microsoft Edge <br>
+Safari <br>
+Firefox <br>
+Samsung Internet
+
+<hr>
+
+## User Story Testing
+I have included some examples of the manual testing conducted for the user stories in the [TESTING.md](TESTING.md). These tests ensure that the application meets user expectations by verifying functionality, usability, and responsiveness. Each user story is tested through real interactions, checking that the intended experience aligns with the actual behavior of the application.
+
+<hr>
+
+## Testing grid
+I have used a grid for testing all components of the website. After testing I have fixed any issues arising and put a note in the grid what has been done. See below dropdown menu for the grid that I created in an excel spreadsheet using a free template as base. [Link to excel spreadsheet]()
+
+![Testing Grid]()
+
+<hr>
+
+## Chrome Dev Tools
+I have used Chrome Dev Tools throughout the development of the website to test for responsiveness and troubleshooting.
+
+<hr>
+
+## Lighthouse
+I used Chrome Dev Tools Lightouse to help improve the website's performance, accessibility, SEO, and user experience. The first time I ran the testing I received messages for improvement that I have recorded in the [TESTING.md](TESTING.md). The Lighthouse tool provided actionable insights to optimize speed and fix issues. 
+
+<hr>
+
+## Validation
+The HTML, CSS, Javascript and Python code has been validated on below editors. The issues arising has been documented in the test file [TESTING.md](TESTING.md).
+
+- W3C HTML Validator
+- W3C CSS Validator
+- JSHint Validator
+
+## Testing with Django
+I have used Django's built-in testing framework to ensure the application's stability and functionality. Automated tests cover models, views, and forms and are located in the repository under each app, following the format test_forms.py or other relevant names. Django's framework is effective for automated testing as it provides an integrated test client, database isolation, and built-in assertions, allowing tests to simulate real user interactions and detect issues before deployment.
+
+## Bugs and Fixes
+Here I have recorded some issues that I spent excessive time solving with the solutions documented in the test file [TESTING.md](TESTING.md).
+
+<hr>
+
 
 
 
