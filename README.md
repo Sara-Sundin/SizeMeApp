@@ -708,12 +708,21 @@ Oops! You’ve landed on a 404 page, but don’t worry—you’re not lost alone
 
 ![404 Page]()
 
-### Future Features
+## Future Features
+
+### The SizeMeApp Tool
 We’re taking SizeMeApp to the next level with an AI-powered application that ensures perfect fit recommendations. Soon, our site will feature a direct link to the SizeMeApp tool, making sizing effortless.
 
 Our advanced AI system will analyze user measurements, brand size charts, and past purchases for accurate, real-time recommendations. A community-driven review system will let shoppers share fit insights, helping others make informed choices.
 
 Retailers will be able to integrate SizeMeApp into their stores, reducing returns and waste. Future features include virtual try-ons and mobile measurement scanning, shaping a more personalized, sustainable shopping experience. Stay tuned!
+
+### Social Media Account Login
+In future development, we will integrate social media and Google login, allowing users to sign in seamlessly with their existing accounts. This will enhance user experience, security, and accessibility, making registration faster while reducing password fatigue. Due to this I have left these fields in the admin page to be incorporated at a later stage.
+
+### Newsletter Template Admin 
+We will set up a custom admin template for the newsletter featuring a Cloudinary-hosted image to enhance the admin interface. This will allow for a more visually appealing and branded experience while ensuring efficient image handling. The integration will streamline media management and improve the overall admin user experience with easy handling of the newsletters.
+
 
 <br>
 <br>
@@ -834,7 +843,7 @@ Software testing ensures that applications work as expected, are free of critica
 
 The manual testing in this project has been done to check the responsiveness on different devices and browsers as well as the user experience both in terms of functionality and various workflows to find unexpected behavior. I have used a testing grid to make sure all components are being included.
 
-The automated testing have used frameworks and tools such as Lighthouse, W3C Validators, JSHint, and Django to run test cases, making it more efficient for large-scale and repetitive testing.
+The automated testing have used frameworks and tools such as Lighthouse, W3C Validators, JSHint, and Django testing framework to run test cases, making it more efficient for large-scale and repetitive testing.
 
 <hr>
 
