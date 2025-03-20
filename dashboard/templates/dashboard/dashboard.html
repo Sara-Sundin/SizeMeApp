@@ -62,100 +62,97 @@
         <div class="sizemeapp-logo">
             <img src="{% static 'images/sizemeapp-logo.png' %}" alt="SizeMeApp Logo">
             <p>Enter after adding your <br> measurements.</p>
-            <a href="{% url 'under_construction' %}">
-                <button>Let's go!</button>
-            </a>
-        </div> 
+            <button onclick="window.location.href='{% url 'under_construction' %}'">Let's go!</button>
+        </div>        
     </div> 
      
-    <div>
-        <div> 
-            <div>
-                
-                <!-- Displaying Profile Messages -->
-            {% if messages %}
-            <div id="message-container">
-                {% for message in messages %}
-                    {% if "profile" in message.tags %} 
-                    <div class="profile-message message {{ message.tags }}" style="color: white;
-                    background-color: #0d6efd;
-                    padding: 10px;">
-                        {{ message }}
-                        <span class="close-btn" onclick="this.parentElement.style.display='none';">&times;</span>
-                    </div>
-                    {% endif %}
-                {% endfor %}
-            </div>
-            {% endif %}
+    <div>       
+       <!-- Displaying Profile Messages -->
+       {% if messages %}
+       <div id="message-container">
+           {% for message in messages %}
+               {% if "profile" in message.tags %} 
+               <div class="profile-message message {{ message.tags }}" style="color: white;
+               background-color: #0d6efd;
+               padding: 10px;">
+                   {{ message }}
+                   <span class="close-btn" onclick="this.parentElement.style.display='none';">&times;</span>
+               </div>
+               {% endif %}
+           {% endfor %}
+       </div>
+       {% endif %}
 
-                <!-- Measurement Intro Text -->
-                <p class="measurement-intro">
-                    {% if just_signed_up %}
-                        Enter your measurements to start personalizing your experience.
-                    {% else %}
-                        Update your measurements anytime to improve your recommendations.
-                    {% endif %}
-                </p>
-                <p>Feeling uncertain how to measure? Check out this <a href="{% url 'post_detail' slug='how-to-measure-yourself-correctly-for-the-perfect-fit-online' %}">blog post.</a></p>
+           <!-- Measurement Intro Text -->
+           <p class="measurement-intro">
+               {% if just_signed_up %}
+                   Enter your measurements to start personalizing your experience.
+               {% else %}
+                   Update your measurements anytime to improve your recommendations.
+               {% endif %}
+           </p>
+           <p>Feeling uncertain how to measure? Check out this 
+            <a href="{% url 'post_detail' slug='how-to-measure-yourself-correctly-for-the-perfect-fit-online' %}">blog post.</a>
+           </p>
 
-                <!-- Toggle Button for Measurements -->
-                <button id="toggle-measurements" class="btn btn-orange"
-                onclick="location.href='#toggle-measurements';">
-                Body Measurements
-                </button>
-            </div>
+           <!-- Toggle Button for Measurements -->
+           <button id="toggle-measurements" class="btn btn-orange"
+           onclick="location.href='#toggle-measurements';">
+           Body Measurements
+           </button>
+       </div>
 
-            <p>Add measurements in centimeters.</p>
+       <p>Add measurements in centimeters.</p>
 
-            <!-- User Measurements (Hidden by Default) -->
-            <div id="measurements-section" class="hidden">
-                <div class="measurements-container">
+       <!-- User Measurements (Hidden by Default) -->
+       <div id="measurements-section" class="hidden">
+           <div class="measurements-container">
 
-                    <!-- Measurement Guide Image -->
-                    <div class="measurement-image">
-                        <img src="{% static 'images/how_to_measure.jpg' %}" alt="Measurement Guide">
-                    </div>
+               <!-- Measurement Guide Image -->
+               <div class="measurement-image">
+                   <img src="{% static 'images/how_to_measure.jpg' %}" alt="Measurement Guide">
+               </div>
 
-                    <!-- Measurement Form -->
-                    <form method="post" enctype="multipart/form-data">
-                        {% csrf_token %}
+               <!-- Measurement Form -->
+               <form method="post" enctype="multipart/form-data">
+                   {% csrf_token %}
 
-                                            <!-- Hidden Fields to Ensure Data Retention -->
-                        <input type="hidden" name="profile_picture" value="{{ user.profile_picture }}">
-                        <input type="hidden" name="name" value="{{ user.name }}">
-                        <input type="hidden" name="email" value="{{ user.email }}">
+                                       <!-- Hidden Fields to Ensure Data Retention -->
+                   <input type="hidden" name="profile_picture" value="{{ user.profile_picture }}">
+                   <input type="hidden" name="name" value="{{ user.name }}">
+                   <input type="hidden" name="email" value="{{ user.email }}">
 
 
-                        <div class="form-group">
-                            <label for="{{ form.chest.id_for_label }}">A. {{ form.chest.label }} (cm)</label>
-                            {{ form.chest }}
-                        </div>
-                        
-                        <div class="form-group">
-                            <label for="{{ form.waist.id_for_label }}">B. {{ form.waist.label }} (cm)</label>
-                            {{ form.waist }}
-                        </div>
-                        
-                        <div class="form-group">
-                            <label for="{{ form.hips.id_for_label }}">C. {{ form.hips.label }} (cm)</label>
-                            {{ form.hips }}
-                        </div>
-                        
-                        <div class="form-group">
-                            <label for="{{ form.shoulders.id_for_label }}">D. {{ form.shoulders.label }} (cm)</label>
-                            {{ form.shoulders }}
-                        </div> 
-                        <div>              
-                            <button type="submit" class="btn btn-blue-edit">Enter</button>
-                            <button type="button" class="btn btn-orange-delete" data-bs-toggle="modal" data-bs-target="#deleteMeasurementsModal">
-                                Clear
-                            </button>
-                        </div> 
-                    </form>
-                </div>
-            </div>
-        </div>    
-    </div> 
+                   <div class="form-group">
+                       <label for="{{ form.chest.id_for_label }}">A. {{ form.chest.label }} (cm)</label>
+                       {{ form.chest }}
+                   </div>
+                   
+                   <div class="form-group">
+                       <label for="{{ form.waist.id_for_label }}">B. {{ form.waist.label }} (cm)</label>
+                       {{ form.waist }}
+                   </div>
+                   
+                   <div class="form-group">
+                       <label for="{{ form.hips.id_for_label }}">C. {{ form.hips.label }} (cm)</label>
+                       {{ form.hips }}
+                   </div>
+                   
+                   <div class="form-group">
+                       <label for="{{ form.shoulders.id_for_label }}">D. {{ form.shoulders.label }} (cm)</label>
+                       {{ form.shoulders }}
+                   </div> 
+                   <div>              
+                       <button type="submit" class="btn btn-blue-edit">Enter</button>
+                       <button type="button" class="btn btn-orange-delete" data-bs-toggle="modal" data-bs-target="#deleteMeasurementsModal">
+                           Clear
+                       </button>
+                   </div> 
+               </form>
+           </div>
+       </div>
+   </div> 
+
         <!-- Delete Measurements Confirmation Modal -->
     <div class="modal fade" id="deleteMeasurementsModal" tabindex="-1" aria-labelledby="deleteMeasurementsLabel" aria-hidden="true">
         <div class="modal-dialog">

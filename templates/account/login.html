@@ -65,10 +65,14 @@
                             <span class="toggle-text">Show Password</span>
                         </button>
                     </div>
+                    <!-- Add this missing help text element -->
+                    <small id="id_password_helptext" class="form-text text-muted">
+                        Your password must be at least 8 characters long.
+                    </small>
                     {% if form.password.errors %}
-                    <small class="text-danger">{{ form.password.errors.0 }}</small>
+                        <small class="text-danger">{{ form.password.errors.0 }}</small>
                     {% endif %}
-                </div>
+                </div>                
             
                 {% if redirect_field_value %}
                   <input type="hidden" name="{{ redirect_field_name }}" value="{{ redirect_field_value }}" />

@@ -213,8 +213,7 @@ h1 img {
     width: 200px; /* Set fixed width */
     height: 250px; /* Set fixed height */
     object-fit: cover; /* Ensures uniform cropping */
-    border-radius: 10px; /* Optional: Rounds corners */
-    margin-bottom: 15px;
+    border-radius: 10px; /*Rounds corners */
 }
 
 /* Contact Page Container */

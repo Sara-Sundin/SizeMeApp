@@ -665,6 +665,11 @@ h1 img {
         background-color: #e65100;
     }
 
+    /* Remove bootstrap label */
+    #id_password[aria-describedby="id_password_helptext"] {
+        aria-describedby: none !important;
+    }    
+
 /* Responsive behavior */
 @media (max-width: 576px) {
     .newsletter-form {
