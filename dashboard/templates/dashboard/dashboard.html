@@ -96,14 +96,16 @@
                         Update your measurements anytime to improve your recommendations.
                     {% endif %}
                 </p>
+                <p>Feeling uncertain how to measure? Check out this <a href="{% url 'post_detail' slug='how-to-measure-yourself-correctly-for-the-perfect-fit-online' %}">blog post.</a></p>
 
                 <!-- Toggle Button for Measurements -->
-                <button id="toggle-measurements" class="btn btn-orange">Body Measurements</button>
+                <button id="toggle-measurements" class="btn btn-orange"
+                onclick="location.href='#toggle-measurements';">
+                Body Measurements
+                </button>
             </div>
 
             <p>Add measurements in centimeters.</p>
-            <p>Feeling uncertain how to measure? Check out this <a href="{% url 'post_detail' slug='how-to-measure-yourself-correctly-for-the-perfect-fit-online' %}">blog post.</a></p>
-
 
             <!-- User Measurements (Hidden by Default) -->
             <div id="measurements-section" class="hidden">
