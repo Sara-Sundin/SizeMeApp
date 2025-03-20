@@ -84,30 +84,33 @@
        {% endif %}
 
            <!-- Measurement Intro Text -->
-           <p class="measurement-intro">
+           <div class="measurement-intro">
                {% if just_signed_up %}
                    Enter your measurements to start personalizing your experience.
                {% else %}
                    Update your measurements anytime to improve your recommendations.
                {% endif %}
-           </p>
-           <p>Feeling uncertain how to measure? Check out this 
+           </div>
+
+           <div class="section">Feeling uncertain how to measure? Check out this 
             <a href="{% url 'post_detail' slug='how-to-measure-yourself-correctly-for-the-perfect-fit-online' %}">blog post.</a>
-           </p>
+           </div>
 
-           <!-- Toggle Button for Measurements -->
-           <button id="toggle-measurements" class="btn btn-orange"
-           onclick="location.href='#toggle-measurements';">
-           Body Measurements
-           </button>
-       </div>
-
-       <p>Add measurements in centimeters.</p>
+            <!-- Toggle Button for Measurements -->
+            <div>
+                <button id="toggle-measurements" class="btn btn-orange"
+                onclick="location.href='#toggle-measurements';">
+                Body Measurements
+                </button>                                           
+            </div>
 
        <!-- User Measurements (Hidden by Default) -->
        <div id="measurements-section" class="hidden">
-           <div class="measurements-container">
-
+            <div class="section">
+                <p>Add measurements in centimeters.</p>
+            </div>
+            <div class="measurements-container">
+                
                <!-- Measurement Guide Image -->
                <div class="measurement-image">
                    <img src="{% static 'images/how_to_measure.jpg' %}" alt="Measurement Guide">
