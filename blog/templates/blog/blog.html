@@ -35,11 +35,11 @@
                                     <p class="author">Author: {{ post.author }}</p>
                                 </div>
                             </div>
-                            <a href="{% url 'post_detail' post.slug %}" class="post-link">
+                            <div class="post-card">
                                 <h2 class="card-title">{{ post.title }}</h2>
                                 <p class="card-text">{{ post.excerpt }}</p>
-                            </a>
-                
+                                <a href="{% url 'post_detail' post.slug %}" class="btn btn-grey">Read More</a>
+                            </div>                            
                             <hr>
                             <p class="card-text text-muted h6">{{ post.created_on}}</p>
                         </div>
