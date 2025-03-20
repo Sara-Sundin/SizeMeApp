@@ -1,3 +1,5 @@
+/* jshint esversion: 9 */
+
 document.addEventListener("DOMContentLoaded", function() {
     let modal = document.getElementById("avatar-modal");
     let openLink = document.getElementById("open-avatar-modal");

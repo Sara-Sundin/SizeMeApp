@@ -1,3 +1,5 @@
+/* jshint esversion: 9 */
+
 document.addEventListener("DOMContentLoaded", function() {
     const toggleButton = document.getElementById("toggle-measurements");
     const measurementsSection = document.getElementById("measurements-section");
