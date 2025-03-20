@@ -11,21 +11,18 @@ def index(request):
     If the form is submitted via POST and is valid, the user is
     subscribed to the newsletter, and a success message is shown.
     """
-
-    form = SubscriberForm()  # Initialize form
-
     if request.method == "POST":
         form = SubscriberForm(request.POST)
         if form.is_valid():
             form.save()
             messages.success(
-                request,
-                "You have successfully subscribed to our newsletter!"
+                request, "You have successfully subscribed to our newsletter!"
             )
             return redirect("subscription_success")  # Redirect after success
+    else:
+        form = SubscriberForm()  # Initialize form only if GET request
 
     return render(request, "pages/index.html", {"form": form})
-
 
 def about(request):
     """
@@ -95,3 +92,7 @@ def under_construction(request):
     Display the Under Construction page.
     """
     return render(request, "pages/under_construction.html")
+
+def custom_404(request, exception):
+    """Render the custom 404 error page."""
+    return render(request, "404.html", status=404)

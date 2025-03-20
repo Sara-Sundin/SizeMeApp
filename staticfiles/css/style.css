@@ -640,6 +640,31 @@ h1 img {
     color: rgb(222, 146, 168);
 }
 
+/* 404 Page Styling*/
+    .error-page {
+        margin-top: 50px;
+        text-align: center;
+    }
+
+    .error-avatar {
+        width: 150px;
+        height: auto;
+        margin-bottom: 20px;
+    }
+
+    .btn-orange {
+        background-color: #f57c00;
+        color: white;
+        padding: 10px 20px;
+        border-radius: 5px;
+        text-decoration: none;
+        font-weight: bold;
+    }
+
+    .btn-orange:hover {
+        background-color: #e65100;
+    }
+
 /* Responsive behavior */
 @media (max-width: 576px) {
     .newsletter-form {
