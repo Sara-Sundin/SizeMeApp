@@ -3,22 +3,46 @@ from django.core.mail import send_mail, BadHeaderError
 from django.contrib import messages
 from newsletter.forms import SubscriberForm  # Import the form
 
+
 def index(request):
+    """
+    Display the home page with a newsletter subscription form.
+
+    If the form is submitted via POST and is valid, the user is
+    subscribed to the newsletter, and a success message is shown.
+    """
+
     form = SubscriberForm()  # Initialize form
 
     if request.method == "POST":
         form = SubscriberForm(request.POST)
         if form.is_valid():
             form.save()
-            messages.success(request, "You have successfully subscribed to our newsletter!")
-            return redirect('subscription_success')  # Redirect after successful subscription
+            messages.success(
+                request,
+                "You have successfully subscribed to our newsletter!"
+            )
+            return redirect("subscription_success")  # Redirect after success
 
-    return render(request, 'pages/index.html', {'form': form})
+    return render(request, "pages/index.html", {"form": form})
+
 
 def about(request):
-    return render(request, 'pages/about.html')
+    """
+    Display the About page.
+    """
+    return render(request, "pages/about.html")
+
 
 def contact(request):
+    """
+    Handle contact form submissions.
+
+    If a POST request is received with a valid name, email,
+    and message, the email is sent to the administrator. If
+    an error occurs, an error message is displayed.
+    """
+
     if request.method == "POST":
         name = request.POST.get("name")
         email = request.POST.get("email")
@@ -28,25 +52,46 @@ def contact(request):
             try:
                 send_mail(
                     subject=f"New Contact Form Submission from {name}",
-                    message=f"Name: {name}\nEmail: {email}\n\nMessage:\n{message}",
+                    message=(
+                        f"Name: {name}\nEmail: {email}\n\n"
+                        f"Message:\n{message}"
+                    ),
                     from_email="noreply@sizemeapp.se",
-                    recipient_list=['sara@sizemeapp.se'],  # Your email
+                    recipient_list=["sara@sizemeapp.se"],  # Your email
                     fail_silently=False,
                 )
-                return redirect('contact_success')  # Redirect to success page
+                return redirect("contact_success")  # Redirect to success page
             except BadHeaderError:
-                messages.error(request, "Invalid header found. Please try again.")
-            except Exception as e:
-                messages.error(request, "An error occurred while sending your message. Please try again later.")
+                messages.error(
+                    request,
+                    "Invalid header found. Please try again."
+                )
+            except Exception:
+                messages.error(
+                    request,
+                    "An error occurred while sending your message. "
+                    "Please try again later."
+                )
 
     return render(request, "pages/contact.html")
 
+
 def contact_success(request):
-    """ This function renders the contact success page """
-    return render(request, "pages/contact_success.html")  # Ensure this template exists
+    """
+    Display the Contact Success page after a successful submission.
+    """
+    return render(request, "pages/contact_success.html")
+
 
 def subscription_success(request):
-    return render(request, 'pages/subscription_success.html')
+    """
+    Display the Subscription Success page after successful signup.
+    """
+    return render(request, "pages/subscription_success.html")
+
 
 def under_construction(request):
+    """
+    Display the Under Construction page.
+    """
     return render(request, "pages/under_construction.html")
