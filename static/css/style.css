@@ -664,6 +664,10 @@ h1 img {
         background-color: #e65100;
     }
 
+    [aria-describedby] {
+        display: none !important;
+    }    
+
 /* Responsive behavior */
 @media (max-width: 576px) {
     .newsletter-form {
