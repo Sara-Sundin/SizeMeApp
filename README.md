@@ -721,7 +721,7 @@ Retailers will be able to integrate SizeMeApp into their stores, reducing return
 In future development, we will integrate social media and Google login, allowing users to sign in seamlessly with their existing accounts. This will enhance user experience, security, and accessibility, making registration faster while reducing password fatigue. Due to this I have left these fields in the admin page to be incorporated at a later stage.
 
 ### Newsletter Template Admin 
-We will set up a custom admin template for the newsletter featuring a Cloudinary-hosted image to enhance the admin interface. This will allow for a more visually appealing and branded experience while ensuring efficient image handling. The integration will streamline media management and improve the overall admin user experience with easy handling of the newsletters.
+We will set up a custom admin template for the newsletter with summernote featuring a Cloudinary-hosted image to enhance the admin interface. This will allow for a more visually appealing and branded experience while ensuring efficient image handling. The integration will streamline media management and improve the overall admin user experience when sending the newsletters.
 
 
 <br>
@@ -885,7 +885,7 @@ I have used Chrome Dev Tools throughout the development of the website to test f
 <hr>
 
 ## Lighthouse
-I used Chrome Dev Tools Lightouse to help improve the website's performance, accessibility, SEO, and user experience. The first time I ran the testing I received messages for improvement that I have recorded in the [TESTING.md](TESTING.md). The Lighthouse tool provided actionable insights to optimize speed and fix issues. 
+I used Chrome Dev Tools Lightouse to help improve the website's performance, accessibility, SEO, and user experience. The first time I ran the testing I received messages for improvement that I have recorded in the [TESTING.md](TESTING.md). After fixing the issues I received a full score on all components. The Lighthouse tool provided actionable insights to optimize speed and fix issues. 
 
 <hr>
 
@@ -895,9 +895,10 @@ The HTML, CSS, Javascript and Python code has been validated on below editors. T
 - W3C HTML Validator
 - W3C CSS Validator
 - JSHint Validator
+- CI Python Linter
 
 ## Testing with Django
-I have used Django's built-in testing framework to ensure the application's stability and functionality. Automated tests cover models, views, and forms and are located in the repository under each app, following the format test_forms.py or other relevant names. Django's framework is effective for automated testing as it provides an integrated test client, database isolation, and built-in assertions, allowing tests to simulate real user interactions and detect issues before deployment.
+I have used Django's built-in testing framework to ensure the application's stability and functionality. Automated tests cover models, views, and forms and are located in the repository's root in a folder called tests, following the format test_blog_forms.py or other relevant names with reference to the app tested. Django's framework is effective for automated testing as it provides an integrated test client, database isolation, and built-in assertions, allowing tests to simulate real user interactions and detect issues before deployment.
 
 ## Bugs and Fixes
 Here I have recorded some issues that I spent excessive time solving with the solutions documented in the test file [TESTING.md](TESTING.md).
