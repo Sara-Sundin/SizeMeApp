@@ -7,37 +7,40 @@ from .models import CustomUser
 class CustomSignupForm(SignupForm):
     """
     Custom Signup Form that requires name, email,
-    and password, with name first.
+    and password, with name first and styled inputs.
     """
 
     name = forms.CharField(
         max_length=255,
         required=True,
         label="Name",
-        widget=forms.TextInput(
-            attrs={
-                "class": "form-control",
-                "placeholder": "Enter your full name",
-            }
-        ),
+        widget=forms.TextInput(attrs={
+            "class": "form-control",
+            "placeholder": "Enter your full name",
+        }),
     )
 
     def __init__(self, *args, **kwargs):
         super().__init__(*args, **kwargs)
 
-        # Force placeholders for all fields
-        self.fields["email"].widget.attrs["placeholder"] = "Enter your email"
-        self.fields["password1"].widget.attrs["placeholder"] = (
-            "Password (must be at least 8 characters)"
-        )
-        self.fields["password1"].widget.attrs["class"] = "form-control"
+        # Add styling and placeholders
+        self.fields["email"].widget.attrs.update({
+            "class": "form-control",
+            "placeholder": "Enter your email"
+        })
 
-        # Reordering fields so that 'name' appears first
-        self.fields = {
-            "name": self.fields["name"],
-            "email": self.fields["email"],
-            "password1": self.fields["password1"],
-        }
+        self.fields["password1"].widget.attrs.update({
+            "class": "form-control",
+            "placeholder": "Password (must be at least 8 characters)"
+        })
+
+        self.fields["password2"].widget.attrs.update({
+            "class": "form-control",
+            "placeholder": "Confirm your password"
+        })
+
+        # Reorder the fields to show 'name' first
+        self.order_fields(["name", "email", "password1", "password2"])
 
     def save(self, request):
         """Save user and store their name."""
@@ -48,7 +51,12 @@ class CustomSignupForm(SignupForm):
 
 
 class CustomUserUpdateForm(UserChangeForm):
-    """Form for updating user profile without changing password."""
+    """
+    A form for updating user profile details.
+
+    This form allows users to edit their profile information,
+    excluding the password field to prevent unintended changes.
+    """
 
     password = None  # Hide password field in the form
 
@@ -63,3 +71,12 @@ class CustomUserUpdateForm(UserChangeForm):
             "hips",
             "shoulders",
         ]
+        widgets = {
+            "profile_picture": forms.ClearableFileInput(attrs={"class": "form-control"}),
+            "name": forms.TextInput(attrs={"class": "form-control"}),
+            "email": forms.EmailInput(attrs={"class": "form-control"}),
+            "chest": forms.NumberInput(attrs={"class": "form-control"}),
+            "waist": forms.NumberInput(attrs={"class": "form-control"}),
+            "hips": forms.NumberInput(attrs={"class": "form-control"}),
+            "shoulders": forms.NumberInput(attrs={"class": "form-control"}),
+        }
