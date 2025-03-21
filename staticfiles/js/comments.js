@@ -1,3 +1,7 @@
+/* jshint esversion: 9 */
+/* global bootstrap */
+
+
 document.addEventListener("DOMContentLoaded", function () {
     console.log("JavaScript Loaded!"); // Debugging log
 
