@@ -31,6 +31,9 @@
     <!-- Style CSS -->
     <link rel="stylesheet" href="{% static 'css/style.css' %}">
 
+    <!-- Cookie Consent -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/cookieconsent@3/build/cookieconsent.min.css" />
+    <script src="https://cdn.jsdelivr.net/npm/cookieconsent@3/build/cookieconsent.min.js"></script>
 </head>
 <body class=" body {% block body_class %}{% endblock %}">
 
@@ -134,6 +137,28 @@
             
     {% block extras %}
     {% endblock %}
+
+    <!-- Cookie Consent Initialization -->
+    <script>
+        window.addEventListener("load", function () {
+          window.cookieconsent.initialise({
+            palette: {
+              popup: { background: "#000" },
+              button: { background: "#f1d600" }
+            },
+            theme: "classic",
+            position: "bottom-right",
+            type: "opt-in",
+            content: {
+              message: "We use cookies to improve your experience.",
+              allow: "Allow cookies",
+              deny: "Decline",
+              link: "Learn more",
+              href: "/privacy-policy"
+            }
+          });
+        });
+      </script>
 
 </body>
 </html>
