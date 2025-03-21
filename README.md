@@ -766,6 +766,7 @@ We will set up a custom admin template for the newsletter with summernote featur
 - Techsini.com (for multidevice image and testing responsiveness).
 
 ## AI
+I am a big fan of AI tools like ChatGPT and Perplexity and have used them both throughout my work on SizeMeApp. These platforms have supported everything from technical troubleshooting and coding to refining UX and brainstorming product features. AI has accelerated my workflow, offered new perspectives, and helped me make more informed decisions at every stage of the project. For me it's like having an always-available creative and technical partner.
 
 [Back to Content Table](#content)
 
