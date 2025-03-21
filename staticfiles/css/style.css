@@ -1,5 +1,5 @@
 body {
-    background-color: #878787;
+    background-color: #d4d7db;
     font-family: "Raleway",sans-serif;
     margin-top: 100px;
 }
@@ -70,7 +70,7 @@ h1 img {
     opacity: 0.5; /* Only the background image is transparent */
     z-index: -1; /*  Keeps it behind the content */
     bottom: 0; 
-    height: 800px;
+    height: 2000px;
     background-size: 100%;
     top: 0px; 
 }
@@ -129,7 +129,7 @@ h1 img {
 }
 
 .transparent-box {
-    background-color: rgba(255, 255, 255, 0.8); /* Makes only the background transparent */
+    background-color: rgba(255, 255, 255, 0.85); /* Makes only the background transparent */
     padding: 20px;
     border-radius: 8px; /* Optional: adds rounded corners */
     max-width: 100%;
@@ -308,6 +308,10 @@ h1 img {
     padding-top: 50px;
 }
 
+.contact-details a {
+    color: black;
+}
+
 /* Social Icons Container */
 .social-icons {
     display: flex;
@@ -346,6 +350,8 @@ h1 img {
     position: relative;
 }
 
+/* Blog */ 
+
 .card {
     border: none;
     background-color: rgba(255, 255, 255, 0.8) !important; /* Makes the background transparent */ 
@@ -353,9 +359,7 @@ h1 img {
 
 .card-img-top {
     width: 100%; /* Full width */
-    height: auto; /* Allows the image to scale dynamically */
-    max-height: 250px; /* Prevents it from being too tall */
-    min-height: 150px;
+    height: 200px;
     object-fit: cover; /* Keeps the aspect ratio */
     border-radius: 8px;
 }
@@ -529,7 +533,7 @@ h1 img {
     background-color: #878787;
     color: white;
     text-decoration: none;
-    font-size: 1.5rem;
+    font-size: 1.2rem;
     padding: 12px 24px;
     border: none;
     border-radius: 8px;
@@ -697,8 +701,8 @@ h1 img {
         margin-bottom: 30px; /* Adds extra space between items on smaller screens */
     }      
 
-    .card {
-        min-height: 800px;
+    .card-body {
+        min-height: 940px;
     }
 
     .active-user {
@@ -735,7 +739,7 @@ h1 img {
         top: 0px; /* Moves the background image further down */
     }
 
-    .card {
-        min-height: 650px;
+    .card-body {
+        min-height: 720px;
     }
 }
