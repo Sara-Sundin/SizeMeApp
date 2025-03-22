@@ -668,9 +668,9 @@ h1 img {
         background-color: #e65100;
     }
 
-    [aria-describedby] {
-        display: none !important;
-    }    
+    [aria-describedby*="_helptext"] {
+        display: none;
+    }      
 
 /* Responsive behavior */
 @media (max-width: 576px) {

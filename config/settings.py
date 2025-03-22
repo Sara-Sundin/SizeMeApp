@@ -40,6 +40,7 @@ INSTALLED_APPS = [
     "crispy_bootstrap5",
     "django_summernote",
     "rest_framework",
+    'widget_tweaks',
 
     # Local Apps
     "pages",
@@ -61,7 +62,10 @@ ACCOUNT_USERNAME_REQUIRED = False
 ACCOUNT_EMAIL_REQUIRED = True
 ACCOUNT_EMAIL_VERIFICATION = "optional"
 ACCOUNT_SESSION_REMEMBER = True
-ACCOUNT_FORMS = {"signup": "accounts.forms.CustomSignupForm"}
+ACCOUNT_FORMS = {
+    'signup': 'accounts.forms.CustomSignupForm',
+    'login': 'accounts.forms.CustomLoginForm',
+}
 
 AUTHENTICATION_BACKENDS = [
     "django.contrib.auth.backends.ModelBackend",
@@ -144,8 +148,6 @@ DEFAULT_FROM_EMAIL = EMAIL_HOST_USER
 AUTH_PASSWORD_VALIDATORS = [
     {"NAME": "django.contrib.auth.password_validation.UserAttributeSimilarityValidator"},
     {"NAME": "django.contrib.auth.password_validation.MinimumLengthValidator"},
-   # {"NAME": "django.contrib.auth.password_validation.CommonPasswordValidator"},
-   # {"NAME": "django.contrib.auth.password_validation.NumericPasswordValidator"},
 ]
 
 # === SECURITY SETTINGS === #
