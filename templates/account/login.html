@@ -8,83 +8,78 @@
 {% block content %}
 
 <div class="container transparent-box about-box">
-    <div class="row">
-        <div class="col-md-8 mt-3 offset-md-2">
-            <h1>{% trans "Login" %}</h1>
+  <div class="row">
+    <div class="col-md-8 mt-3 offset-md-2">
+      <h1>{% trans "Login" %}</h1>
 
-            <p>
-                Welcome back to SizeMeApp. To leave a comment or like a post, please log in.
-                If you have not created an account yet, then
-                <a class="link" href="{{ signup_url }}">sign up</a> first.
-                <small class="text-muted">
-                    <a href="{% url 'account_reset_password' %}" class="password-reset-link">
-                        Forgot your password?
-                    </a>
-                </small>
-            </p>
-        </div>
+      <p>
+        Welcome back to SizeMeApp. To leave a comment or like a post, please log in.
+        If you have not created an account yet, then
+        <a class="link" href="{{ signup_url }}">sign up</a> first.
+        <small class="text-muted">
+          <a href="{% url 'account_reset_password' %}" class="password-reset-link">
+            Forgot your password?
+          </a>
+        </small>
+      </p>
     </div>
+  </div>
 
-    <div class="row">
-        <div class="col-md-8 mt-3 offset-md-2">
-            <form class="login-form" method="POST" action="{% url 'account_login' %}">
-                {% csrf_token %}
-            
-                <!-- Display Non-Field Errors (like incorrect email/password) -->
-                {% if form.non_field_errors %}
-                    <div class="alert alert-danger">
-                        {{ form.non_field_errors.0 }}
-                    </div>
-                {% endif %}
-            
-                <!-- Username/Email Field -->
-                <div class="form-group">
-                    {{ form.login.label_tag }}
-                    {{ form.login }}
-                    
-                    <script>
-                        document.addEventListener("DOMContentLoaded", function () {
-                            let loginField = document.querySelector("[name='login']");
-                            if (loginField) {
-                                loginField.setAttribute("placeholder", "Email");  // JavaScript adds placeholder dynamically
-                            }
-                        });
-                    </script>
-
-                    {% if form.login.errors %}
-                        <small class="text-danger">{{ form.login.errors.0 }}</small>
-                    {% endif %}
-                </div>
-                <!-- Password Field with Show/Hide Toggle -->
-                <div class="form-group">
-                    {{ form.password.label_tag }}
-                    <div class="input-group">
-                        {{ form.password }}
-                        <button type="button" class="btn toggle-password" onclick="togglePassword('{{ form.password.id_for_label }}')">
-                            <i class="fa fa-eye"></i>
-                            <span class="toggle-text">Show Password</span>
-                        </button>
-                    </div>
-                    <!-- Add this missing help text element -->
-                    <small id="id_password_helptext" class="form-text text-muted">
-                        Your password must be at least 8 characters long.
-                    </small>
-                    {% if form.password.errors %}
-                        <small class="text-danger">{{ form.password.errors.0 }}</small>
-                    {% endif %}
-                </div>                
-            
-                {% if redirect_field_value %}
-                  <input type="hidden" name="{{ redirect_field_name }}" value="{{ redirect_field_value }}" />
-                {% endif %}
-            
-                <button class="btn btn-orange right" type="submit">{% trans "Log In" %}</button>
-            </form>            
+  <div class="row">
+    <div class="col-md-8 mt-3 offset-md-2">
+      <form class="login-form" method="POST" action="{% url 'account_login' %}">
+        {% csrf_token %}
+ <!-- Display Non-Field Errors (like incorrect email/password) -->
+        {% if form.non_field_errors %}
+        <div class="alert alert-danger">
+          {{ form.non_field_errors.0 }}
         </div>
+        {% endif %}
+
+        <!-- Username/Email Field -->      <div class="form-group">
+          {{ form.login.label_tag }}
+          {{ form.login }}
+
+          <script>
+            document.addEventListener("DOMContentLoaded", function () {
+              let loginField = document.querySelector("[name='login']");
+              if (loginField) {
+                loginField.setAttribute("placeholder", "Email");
+              }
+            });
+          </script>
+
+          {% if form.login.errors %}
+          <small class="text-danger">{{ form.login.errors.0 }}</small>
+          {% endif %}
+        </div>
+
+        <!-- Password Field with Show/Hide Toggle -->
+        <div class="form-group">
+          {{ form.password.label_tag }}
+          <div class="input-group">
+            {{ form.password }}
+            <button type="button" class="btn toggle-password" onclick="togglePassword('{{ form.password.id_for_label }}')">
+              <i class="fa fa-eye"></i>
+              <span class="toggle-text">Show Password</span>
+            </button>
+          </div>
+          {% if form.password.errors %}
+          <small class="text-danger">{{ form.password.errors.0 }}</small>
+          {% endif %}
+        </div>
+
+        {% if redirect_field_value %}
+        <input type="hidden" name="{{ redirect_field_name }}" value="{{ redirect_field_value }}" />
+        {% endif %}
+
+        <button class="btn btn-orange right" type="submit">{% trans "Log In" %}</button>
+      </form>
     </div>
+  </div>
 </div>
 
-<!-- Password Toggle Script -->
+<!-- Password Toggle Script -->s
 <script>
   function togglePassword(fieldId) {
     var passwordField = document.getElementById(fieldId);

@@ -1,15 +1,14 @@
 from django import forms
 from django.contrib.auth.forms import UserChangeForm
 from allauth.account.forms import SignupForm
+from allauth.account.forms import LoginForm
 from .models import CustomUser
-
 
 class CustomSignupForm(SignupForm):
     """
     Custom Signup Form that requires name, email,
     and password, with name first and styled inputs.
     """
-
     name = forms.CharField(
         max_length=255,
         required=True,
@@ -20,10 +19,11 @@ class CustomSignupForm(SignupForm):
         }),
     )
 
+    password2 = None  # This disables the second password field
+
     def __init__(self, *args, **kwargs):
         super().__init__(*args, **kwargs)
 
-        # Add styling and placeholders
         self.fields["email"].widget.attrs.update({
             "class": "form-control",
             "placeholder": "Enter your email"
@@ -34,21 +34,31 @@ class CustomSignupForm(SignupForm):
             "placeholder": "Password (must be at least 8 characters)"
         })
 
-        self.fields["password2"].widget.attrs.update({
-            "class": "form-control",
-            "placeholder": "Confirm your password"
-        })
-
-        # Reorder the fields to show 'name' first
-        self.order_fields(["name", "email", "password1", "password2"])
+        self.order_fields(["name", "email", "password1"])
 
     def save(self, request):
-        """Save user and store their name."""
         user = super().save(request)
         user.name = self.cleaned_data.get("name")
         user.save()
         return user
 
+class CustomLoginForm(LoginForm):
+    """
+    Custom Login Form that requires email
+    and password. 
+    """
+    def __init__(self, *args, **kwargs):
+        super().__init__(*args, **kwargs)
+
+        self.fields["login"].widget.attrs.update({
+            "class": "form-control",
+            "placeholder": "Email",
+        })
+
+        self.fields["password"].widget.attrs.update({
+            "class": "form-control",
+            "placeholder": "Password (must be at least 8 characters)"
+        })
 
 class CustomUserUpdateForm(UserChangeForm):
     """

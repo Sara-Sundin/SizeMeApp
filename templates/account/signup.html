@@ -1,9 +1,5 @@
 {% extends "base.html" %}
 
-{{ request.path }}
-
-{{ signup_url }}
-
 {% load static %}
 {% load i18n %}
 
@@ -17,13 +13,8 @@
 
       <h3>Welcome to SizeMeApp.</h3>
       <p>
-          Do you already have an account? Then please
-          <a class="link" href="/dashboard/accounts/login/">log in</a> instead.
-      </p>
-      <p>
-        <small id="id_password1_helptext" class="form-text text-muted">
-          Your password must be at least 8 characters long and contain letters and numbers.
-      </small>      
+        Do you already have an account? Then please
+        <a class="link" href="/dashboard/accounts/login/">log in</a> instead.
       </p>
     </div>
   </div>
@@ -49,7 +40,7 @@
           {% endif %}
         </div>
 
-        <!-- Email Field -->
+         <!-- Email Field -->
         <div class="form-group">
           {{ form.email.label_tag }}
           {{ form.email }}
@@ -74,7 +65,7 @@
         </div>
 
         {% if redirect_field_value %}
-          <input type="hidden" name="{{ redirect_field_name }}" value="{{ redirect_field_value }}" />
+        <input type="hidden" name="{{ redirect_field_name }}" value="{{ redirect_field_value }}" />
         {% endif %}
 
         <button class="btn btn-orange right" type="submit">
@@ -106,5 +97,4 @@
     }
   }
 </script>
-
 {% endblock %}
