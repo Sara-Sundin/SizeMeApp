@@ -431,7 +431,7 @@ Raleway is a lightweight, elegant sans-serif font designed for readability. Its 
 <hr>
 
 ## Imagery
-The images used on this site are mainly generated using AI. The images for the blog posts and the male background template are generated through ChatGPT. The robot avatar outlines are created in Illustrator from a dighital.com icon pack. The logo images are created by myself using Illustrator.
+SizeMeApp uses an AI-generated human body illustration as a clean and inclusive background for measurement guidance. Throughout the site, icons are used as contextual images to support navigation and user actions. The visual style is minimal, functional, and intentionally neutral to keep focus on usability and personal fit.
 
 <hr>
 
@@ -951,7 +951,7 @@ https://dighital.com/icon-pack/icons/flat-icons/robot-avatar-icons/
 - [Code](#code)
 
 ## Images
-All images are created by myself in Adobe Illustrator.
+The images used on this site are mainly generated using AI. The images for the blog posts and the male background template are generated through ChatGPT. The robot avatar outlines are created in Illustrator from a dighital.com icon pack. The logo images are created by myself using Illustrator.
 
 ## Code
 
