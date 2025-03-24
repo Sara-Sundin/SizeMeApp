@@ -14,7 +14,7 @@
             </div>
             <div class="d-none d-md-block col-md-6 masthead-image">
                 {% if post.featured_image and post.featured_image.url and "placeholder" not in post.featured_image.url %}
-                <img class="card-img-top cloudinary-img" data-src="{{ post.featured_image.url }}" alt="{{ post.title }}">
+                <img class="card-img-top cloudinary-img" src="{{ post.featured_image.url }}" alt="{{ post.title }}">
                 {% else %}
                 <img class="card-img-top" src="{% static 'images/female_measurement_body.jpg' %}" alt="Default Image">
                 {% endif %}
