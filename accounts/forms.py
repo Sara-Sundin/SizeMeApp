@@ -1,7 +1,6 @@
 from django import forms
 from django.contrib.auth.forms import UserChangeForm
-from allauth.account.forms import SignupForm
-from allauth.account.forms import LoginForm
+from allauth.account.forms import SignupForm, LoginForm
 from .models import CustomUser
 
 class CustomSignupForm(SignupForm):
@@ -19,10 +18,12 @@ class CustomSignupForm(SignupForm):
         }),
     )
 
-    password2 = None  # This disables the second password field
-
     def __init__(self, *args, **kwargs):
         super().__init__(*args, **kwargs)
+
+        # Remove password2 field from the form if it exists
+        if "password2" in self.fields:
+            del self.fields["password2"]
 
         self.fields["email"].widget.attrs.update({
             "class": "form-control",
@@ -42,17 +43,17 @@ class CustomSignupForm(SignupForm):
         user.save()
         return user
 
+
 class CustomLoginForm(LoginForm):
     """
-    Custom Login Form that requires email
-    and password. 
+    Custom Login Form using email and password.
     """
     def __init__(self, *args, **kwargs):
         super().__init__(*args, **kwargs)
 
         self.fields["login"].widget.attrs.update({
             "class": "form-control",
-            "placeholder": "Email",
+            "placeholder": "Email"
         })
 
         self.fields["password"].widget.attrs.update({
@@ -60,12 +61,10 @@ class CustomLoginForm(LoginForm):
             "placeholder": "Password (must be at least 8 characters)"
         })
 
+
 class CustomUserUpdateForm(UserChangeForm):
     """
     A form for updating user profile details.
-
-    This form allows users to edit their profile information,
-    excluding the password field to prevent unintended changes.
     """
 
     password = None  # Hide password field in the form
