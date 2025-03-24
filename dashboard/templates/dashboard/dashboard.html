@@ -17,14 +17,14 @@
 
             <!-- Profile Section (Left) -->
         <div class="profile-section">
-            <div class="avatar-box">
+            <div class="avatar-box" width="200" height="200">
                 <div class="profile-box">
                     {% if user.profile_picture %}
-                        <img id="user-avatar" src="{{ user.profile_picture.url }}" alt="Avatar" class="mini-avatar">
+                        <img id="user-avatar" src="{{ user.profile_picture.url }}" alt="Avatar" class="mini-avatar" width="200" height="200">
                     {% else %}
-                        <img id="user-avatar" src="{% static 'images/avatar_images/base.png' %}" alt="Avatar" class="mini-avatar">
+                        <img id="user-avatar" src="{% static 'images/avatar_images/base.png' %}" alt="Avatar" class="mini-avatar" width="200" height="200">
                     {% endif %}
-                </div>                
+                </div>                               
 
                  <!-- Hidden input to store the save_avatar URL -->
                 <input type="hidden" id="save-avatar-url" value="{% url 'save_avatar' %}">
@@ -54,7 +54,7 @@
             {% endif %}
             <br>
             <!-- Link to Avatar generator-->
-         <a href="#" id="open-avatar-modal" class="open-modal-link">Create Avatar</a>
+         <a href="#" id="open-avatar-modal" class="open-modal-link blue-link">Create Avatar</a>
          <hr>
         </div>
 
@@ -90,10 +90,9 @@
                {% else %}
                    Update your measurements anytime to improve your recommendations.
                {% endif %}
-           </div>
-
-           <div class="section">Feeling uncertain how to measure? Check out this 
-            <a href="{% url 'post_detail' slug='how-to-measure-yourself-correctly-for-the-perfect-fit-online' %}">blog post.</a>
+               <div class="section">Feeling uncertain how to measure? Check out this 
+                <a href="{% url 'post_detail' slug='how-to-measure-yourself-correctly-for-the-perfect-fit-online' %}" class="blue-link">blog post.</a>
+               </div>
            </div>
 
             <!-- Toggle Button for Measurements -->
