@@ -531,7 +531,7 @@ h1 img {
     background-color: #E84E1B;
     color: white;
     text-decoration: none;
-    font-size: 1.5rem;
+    font-size: 1.2rem;
     padding: 12px 24px;
     border: none;
     border-radius: 8px;
@@ -619,14 +619,14 @@ h1 img {
     margin-top: 20px;
 }
 
-.password-reset-card .btn-orange {
+.password-reset-card {
     background-color: #e84e1b;
     color: white;
     border-radius: 5px;
     padding: 10px 20px;
 }
 
-.password-reset-card .btn-orange:hover {
+.password-reset-card {
     background-color: #e76b3d;
 }
 
@@ -671,19 +671,6 @@ h1 img {
         width: 150px;
         height: auto;
         margin-bottom: 20px;
-    }
-
-    .btn-orange {
-        background-color: #e84e1b;
-        color: white;
-        padding: 10px 20px;
-        border-radius: 5px;
-        text-decoration: none;
-        font-weight: bold;
-    }
-
-    .btn-orange:hover {
-        background-color: #f18e16;
     }
 
     [aria-describedby*="_helptext"] {
