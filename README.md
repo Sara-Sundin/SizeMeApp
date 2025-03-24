@@ -902,9 +902,97 @@ The HTML, CSS, Javascript and Python code has been validated on below editors. T
 I have used Django's built-in testing framework to ensure the application's stability and functionality. Automated tests cover models, views, and forms and are located in the repository's root in a folder called tests, following the format test_blog_forms.py or other relevant names with reference to the app tested. Django's framework is effective for automated testing as it provides an integrated test client, database isolation, and built-in assertions, allowing tests to simulate real user interactions and detect issues before deployment.
 
 ## Bugs and Fixes
-Here I have recorded some issues that I spent excessive time solving with the solutions documented in the test file [TESTING.md](TESTING.md).
+Here I have recorded some issues that I spent excessive time solving with the solutions indicated below.
+
+### Lighthouse 3rd party cookies
+When running the lighthouse tests I received a cookies warning for Best Practices due to Cloudinary. I implemented a cookie consent window but I still could not remove the warning. This comes up on all pages that uses Cloudinary Images. After checking with the school I decided to let the warnings be since it is not a major issue.
+
+![Image Bug](assets/images_readme/bug_lighthouse_cloudinary.jpg)
+
+### Bug
+
+#### Solution
+
+[Back to Content Table](#content)
+
+<br>
+<br>
+<hr>
+<hr>
+<br>
+<br>
+
+# REFERENCES
+- [Media References](#media-references)
+- [Content References](#content-references)
+
+## Media References
+https://docs.djangoproject.com/en/5.1/topics/async/<br>
+https://peps.python.org/pep-0008/
+- Slack Community and information
+- Stand Ups with Kay
+
+## Content References
+https://dighital.com/icon-pack/icons/flat-icons/robot-avatar-icons/
+- Free Download Template for website checking from https://www.hubspot.com
+- Code Institute Tutorials and Learning Content
+
+[Back to Content Table](#content)
+
+<br>
+<br>
+<hr>
+<hr>
+<br>
+<br>
+
+# CREDITS
+- [Images](#images)
+- [Code](#code)
+
+## Images
+All images are created by myself in Adobe Illustrator.
+
+## Code
+
+### Cookie Consent
+I used Osano for making the cookie consent code:
+https://www.osano.com/cookieconsent
+
+### AI
+I have used AI throughout the process as a sparring partner for ideas, troubleshooting, and problem-solving. I have asked AI on solutions with the HTML, styling CSS and solutions for Javascript and Python code that I have followed in either writing or copied snippets of code into the IDE.
+
+<br>
+<br>
+<hr>
+<hr>
+<br>
+<br>
+
+# PERSONAL NOTES
+This project was a fun yet challenging deep dive into canvas-based rendering, allowing users to customize avatars by layering different facial features, clothing, and accessories. My goal was to create an intuitive, interactive experience with a clean UI and smooth interactions.  While there’s always room for improvement, I’m happy with what I was able to accomplish.
+
+Throughout this process, I not only came to understand event-driven JavaScript but also refined my experience with HTML, CSS, and Chrome Developer Tools. There were moments when I genuinely doubted I would be able to finish due to JavaScript syntax. But working through those challenges made the process all the more rewarding.
+ 
+One personal touch I added was the red and blue color scheme in the shape selection - a subtle nod to the iconic red pill vs. blue pill scene in The Matrix. Just as Neo’s choice symbolized stepping into the unknown, tackling this project pushed me beyond my comfort zone, forcing me to confront challenges head on. And in the end, that’s what growth is all about - choosing to keep going, even when the code feels like the Matrix’s cascading green symbols, leaving me wondering if I’ll ever fully decode it.
+
+![Red and Blue Pill](assets/images/images_read_me/red_blue_pill.jpg)
 
 <hr>
+
+# ACKNOWLEDGMENTS
+I want to thank my mentor Rory Patrick for always being so supporting and engaging in showing me new tips and tricks. Also a big thank you to the Slack community at Code Institute and the peers who are always eager to help out.
+
+[Back to Content Table](#content)
+
+
+<br>
+<br>
+<hr>
+<hr>
+<br>
+<br>
+
 
 
 
