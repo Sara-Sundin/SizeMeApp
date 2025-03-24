@@ -91,18 +91,130 @@ The feature successfully meets the user story criteria, providing users with an 
  ![Test User Story 4 Mobile]()
 
 ## Lighthouse
+I have recorded the first and final run with Lighthouse for all pages with images and warning messages below. I found since many of the pages are connected and have the same base.html and are connected to backend, some warnings appear that would probably not be present in a static website. 
 
-### First run with Lighthouse
+### Home Page
 
-![Lighthouse 1st run]()
+#### First run with Lighthouse - Home page
+
+![Lighthouse Home 1st run](assets/images_readme/lighthouse_home_first.jpg)
 
 Improvement messages: 
-- Organise the headings for better accessability.
+- Icon links do not have text for screen readers.
 - Missing meta tag for description.
+- Uses third-party cookies - 5 cookies found.
   
-### Second run with Lighthouse - after fixing the issues.
+#### Second run with Lighthouse (Home page) - after fixing the issues.
 
-![Lighthouse 2nd run]()
+![Lighthouse Home 2nd run](assets/images_readme/lighthouse_home_final.jpg)
+
+### About Page
+
+#### First run with Lighthouse - About page
+
+![Lighthouse About 1st run](assets/images_readme/lighthouse_about_first.jpg)
+
+Improvement messages: 
+- Avoid large layout shifts 2 layout shifts found.
+- Document does not have a meta description.
+  
+#### Second run with Lighthouse (About page) - after fixing the issues.
+
+![Lighthouse About 2nd run](assets/images_readme/lighthouse_about_final.jpg)
+
+### Contact Page
+
+#### First run with Lighthouse - Contact page
+
+![Lighthouse Contact 1st run](assets/images_readme/lighthouse_contact_first.jpg)
+
+Improvement messages: 
+- Background and foreground colors do not have a sufficient contrast ratio.
+- Heading elements are not in a sequentially-descending order.
+- Document does not have a meta description.
+  
+#### Second run with Lighthouse (Contact page) - after fixing the issues.
+
+![Lighthouse Contact 2nd run](assets/images_readme/lighthouse_contact_final.jpg)
+
+### Blog Page
+
+#### First run with Lighthouse - Blog page
+
+![Lighthouse Blog 1st run](assets/images_readme/lighthouse_blog_first.jpg)
+
+Improvement messages: 
+- Properly size images.
+- No CSP found in enforcement mode.
+- Uses third-party cookies - 5 cookies found.
+- No HSTS header found.
+- Document does not have a meta description.
+- Links do not have descriptive text - 3 links found.
+  
+#### Second run with Lighthouse (Blog page) - after fixing the issues.
+
+![Lighthouse Blog 2nd run](assets/images_readme/lighthouse_blog_final.jpg)
+
+### Sign Up Page
+
+#### First run with Lighthouse - Sign Up page
+
+![Lighthouse Signup 1st run](assets/images_readme/lighthouse_signup_first.jpg)
+
+Improvement messages: 
+- Background and foreground colors do not have a sufficient contrast ratio.
+- Heading elements are not in a sequentially-descending order.
+- Document does not have a meta description.
+  
+#### Second run with Lighthouse (Sign Up page) - after fixing the issues.
+
+![Lighthouse Signup 2nd run](assets/images_readme/lighthouse_signup_final.jpg)
+
+### Login Page
+
+#### First run with Lighthouse - Login page
+
+Improvement messages: 
+- Background and foreground colors do not have a sufficient contrast ratio.
+- Document does not have a meta description
+  
+#### Second run with Lighthouse (Login page) - after fixing the issues.
+
+![Lighthouse Login 2nd run](assets/images_readme/lighthouse_login_final.jpg)
+
+### Dashboard Page
+
+#### First run with Lighthouse - Dashboard page
+
+![Lighthouse Dashboard 1st run](assets/images_readme/lighthouse_dashboard_first.jpg)
+
+Improvement messages: 
+- Background and foreground colors do not have a sufficient contrast ratio.
+- Uses third-party cookies - 5 cookies found.
+- Enable text compression.
+- Document does not have a meta description.
+- Preconnect to required origins.
+  
+#### Second run with Lighthouse (Dashboard page) - after fixing the issues.
+
+![Lighthouse Login 2nd run](assets/images_readme/lighthouse_dashboard_final.jpg)
+
+### Logout Page
+
+#### First run with Lighthouse - Logout page
+
+![Lighthouse Logout 1st run](assets/images_readme/lighthouse_logout_first.jpg)
+
+Improvement messages: 
+- Eliminate render-blocking resources.
+- Preconnect to required origins.
+- Background and foreground colors do not have a sufficient contrast ratio.
+- Uses third-party cookies - 5 cookies found.
+- Document does not have a meta description.
+  
+#### Second run with Lighthouse (Logout page) - after fixing the issues.
+
+![Lighthouse Logout 2nd run](assets/images_readme/lighthouse_logout_final.jpg)
 
 ### W3C HTML Validator
 I have included screenprints of the first and final validation of the HTML with W3C validation.
@@ -110,36 +222,99 @@ I have included screenprints of the first and final validation of the HTML with 
 
 #### Home Page HTML- Initial Check
 
-  ![Validation HTML Index 1st]()
-
-#### Messages
-- space on text for image favicon - removed<br>
-- missing heading for gallery section - added.
-  
+  ![Validation HTML Index 1st](assets\images_readme\home_html_check_first.jpg)
+ 
 #### Home Page HTML- Final Check
 
-  ![Validation HTML Index Final]()
+  ![Validation HTML Index Final](assets\images_readme\home_html_check_final.jpg)
+
+#### About Page HTML- Initial Check
+
+  ![Validation HTML About 1st](assets\images_readme\about_html_check_first.jpg)
+  
+#### About Page HTML- Final Check
+
+  ![Validation HTML About Final](assets\images_readme\about_html_check_final.jpg)
+
+#### Contact Page HTML- Initial Check
+
+  ![Validation HTML Contact 1st](assets\images_readme\contact_html_check_first.jpg)
+  
+#### Contact Page HTML- Final Check
+
+  ![Validation HTML Contact Final](assets\images_readme\contact_html_check_final.jpg)
+
+#### Blog Page HTML- Initial Check
+
+  ![Validation HTML Blog 1st](assets\images_readme\blog_html_check_first.jpg)
+  
+#### Blog Page HTML- Final Check
+
+  ![Validation HTML Blog Final](assets\images_readme\blog_html_check_final.jpg)
+
+#### Signup Page HTML- Initial Check
+
+  ![Validation HTML Signup 1st](assets\images_readme\signup_html_check_first.jpg)
+  
+#### Signup Page HTML- Final Check
+
+  ![Validation HTML Signup Final](assets\images_readme\signup_html_check_final.jpg)
+
+#### Login Page HTML- Initial Check
+
+  ![Validation HTML Login 1st](assets\images_readme\login_html_check_first.jpg)
+  
+#### Login Page HTML- Final Check
+
+  ![Validation HTML Login Final](assets\images_readme\login_html_check_final.jpg)
+
+#### Dashboard Page HTML- Initial Check
+
+  ![Validation HTML Dashboard 1st](assets\images_readme\dashboard_html_check_first.jpg)
+  
+#### Dashboard Page HTML- Final Check
+
+  ![Validation HTML Dashboard Final](assets\images_readme\dashboard_html_check_final.jpg)
+
+#### Logout Page HTML- Initial Check
+
+  ![Validation HTML Logout 1st](assets\images_readme\logout_html_check_first.jpg)
+  
+#### Logout Page HTML- Final Check
+
+  ![Validation HTML Logout Final](assets\images_readme\logout_html_check_final.jpg)
+
+#### Under Construction Page HTML- Initial Check
+
+  ![Validation HTML Construction 1st](assets\images_readme\under_construction_html_check_first.jpg)
 
 ### W3C CSS Validator
 The CSS was succesfully validated for all pages.
 
-![Screenshot of the CSS Validation]()
+![Screenshot of the CSS Validation](assets/images_readme/about_css_check_final.jpg)
 
 ### JSHint Validator
 I have included screenprints of the first and final validation for each script validated with JSHint.
 
 #### Avatar Script- Initial Check
 
-![Avatar Script JSHint Check]()
-
-#### Fixes
-
-- use  esversion: 6 - included /* jshint esversion: 6 */ to enforce ES6 syntax in JSHint.<br>
-- added aria-hidden forcement function after first check.
+![Avatar Script JSHint Check](assets/images_readme/avatar_js_check_JSHint_first.jpg)
   
 #### Avatar Script- Final Check
 
-  ![Avatar Script JSHint Final Check]()
+  ![Avatar Script JSHint Final Check](assets/images_readme/avatar_js_check_JSHint_final.jpg)
+
+#### Comments Script- Initial and Final Check
+
+![Comments Script JSHint Check](assets/images_readme/comments_js_check_JSHint_final.jpg)
+
+#### Dashboard Script- Initial and Final Check
+
+![Dashboard Script JSHint Check](assets/images_readme/dashboard_js_check_JSHint_final.jpg)
+
+#### Modal Script- Initial and Final Check
+
+![Modal Script JSHint Check](assets/images_readme/modal_js_check_JSHint_final.jpg)
 
 ### CI Python Linter
 The CI Python Linter helps ensure that our code is clean, maintainable, and error-free, improving the overall development workflow and reducing potential bugs before deployment.
@@ -155,23 +330,51 @@ Tools used:
 - Black – Automatically formats code to follow best practices.
 - Pylint – Provides detailed code analysis and improvement suggestions.
 
-I ran all my Python code through the Python Linter with the following results. The final check for all code files were without errors:
+I ran all my Python code through the Python Linter with the following results. The final check for all code files were without errors. For more images tested on all apps see the [Read Me Images](assets/images_readme) folder.
 
 ### Accounts App
 #### Accounts forms.py- Initial Check
-![Validation CI Python Linter First Check]()
+![Validation CI Python Linter First Check](assets/images_readme/accounts_forms_linting_test_first.jpg)
 
 #### Accounts forms.py- Final Check
-![Validation CI Python Linter Final Check]()
+![Validation CI Python Linter Final Check](assets/images_readme/accounts_forms_linting_test_final.jpg)
+
+#### Accounts admin.py- Initial Check
+![Validation CI Python Linter First Check](assets/images_readme/accounts_admin_linting_test.jpg)
+
+#### Accounts admin.py- Final Check
+![Validation CI Python Linter Final Check](assets/images_readme/accounts_admin_linting_test_final.jpg)
+
+#### Accounts apps.py- Initial Check
+![Validation CI Python Linter First Check](assets/images_readme/accounts_apps_linting_test.jpg)
+
+#### Accounts apps.py- Final Check
+![Validation CI Python Linter Final Check](assets/images_readme/accounts_apps_linting_test_final.jpg)
+
+#### Accounts models.py- Initial Check
+![Validation CI Python Linter First Check](assets/images_readme/accounts_models_linting_test.jpg)
+
+#### Accounts models.py- Final Check
+![Validation CI Python Linter Final Check](assets/images_readme/accounts_models_linting_test_final.jpg)
+
+#### Accounts signals.py- Initial Check
+![Validation CI Python Linter First Check](assets/images_readme/accounts_signals_linting_test.jpg)
+
+#### Accounts signals.py- Final Check
+![Validation CI Python Linter Final Check](assets/images_readme/accounts_signals_linting_test_final.jpg)
 
 ## Bugs and Fixes
 Here I have recorded some issues that I spent excessive time solving with the solutions indicated below.
 
+### Lighthouse 3rd party cookies
+When running the lighthouse tests I received a cookies warning for Best Practices due to Cloudinary. I implemented a cookie consent window but I still could not remove the warning. This comes up on all pages that uses Cloudinary Images. After checking with the school I decided to let the warnings be since it is not a major issue.
+
+![Image Bug](assets/images_readme/bug_lighthouse_cloudinary.jpg)
+
 ### Bug
 
-![Image Bug]()
-
 #### Solution
+
 [Back to Content Table](#content)
 
 <br>
@@ -180,3 +383,75 @@ Here I have recorded some issues that I spent excessive time solving with the so
 <hr>
 <br>
 <br>
+
+# REFERENCES
+- [Media References](#media-references)
+- [Content References](#content-references)
+
+## Media References
+https://docs.djangoproject.com/en/5.1/topics/async/<br>
+https://peps.python.org/pep-0008/
+- Slack Community and information
+- Stand Ups with Kay
+
+## Content References
+https://dighital.com/icon-pack/icons/flat-icons/robot-avatar-icons/
+- Free Download Template for website checking from https://www.hubspot.com
+- Code Institute Tutorials and Learning Content
+
+[Back to Content Table](#content)
+
+<br>
+<br>
+<hr>
+<hr>
+<br>
+<br>
+
+# CREDITS
+- [Images](#images)
+- [Code](#code)
+
+## Images
+All images are created by myself in Adobe Illustrator.
+
+## Code
+
+### Cookie Consent
+I used Osano for making the cookie consent code:
+https://www.osano.com/cookieconsent
+
+### AI
+I have used AI throughout the process as a sparring partner for ideas, troubleshooting, and problem-solving. I have asked AI on solutions with the HTML, styling CSS and solutions for Javascript and Python code that I have followed in either writing or copied snippets of code into the IDE.
+
+<br>
+<br>
+<hr>
+<hr>
+<br>
+<br>
+
+# PERSONAL NOTES
+This project was a fun yet challenging deep dive into canvas-based rendering, allowing users to customize avatars by layering different facial features, clothing, and accessories. My goal was to create an intuitive, interactive experience with a clean UI and smooth interactions.  While there’s always room for improvement, I’m happy with what I was able to accomplish.
+
+Throughout this process, I not only came to understand event-driven JavaScript but also refined my experience with HTML, CSS, and Chrome Developer Tools. There were moments when I genuinely doubted I would be able to finish due to JavaScript syntax. But working through those challenges made the process all the more rewarding.
+ 
+One personal touch I added was the red and blue color scheme in the shape selection - a subtle nod to the iconic red pill vs. blue pill scene in The Matrix. Just as Neo’s choice symbolized stepping into the unknown, tackling this project pushed me beyond my comfort zone, forcing me to confront challenges head on. And in the end, that’s what growth is all about - choosing to keep going, even when the code feels like the Matrix’s cascading green symbols, leaving me wondering if I’ll ever fully decode it.
+
+![Red and Blue Pill](assets/images/images_read_me/red_blue_pill.jpg)
+
+<hr>
+
+# ACKNOWLEDGMENTS
+I want to thank my mentor Rory Patrick for always being so supporting and engaging in showing me new tips and tricks. Also a big thank you to the Slack community at Code Institute and the peers who are always eager to help out.
+
+[Back to Content Table](#content)
+
+
+<br>
+<br>
+<hr>
+<hr>
+<br>
+<br>
+
