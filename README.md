@@ -970,13 +970,8 @@ I have used AI throughout the process as a sparring partner for ideas, troublesh
 <br>
 
 # PERSONAL NOTES
-This project was a fun yet challenging deep dive into canvas-based rendering, allowing users to customize avatars by layering different facial features, clothing, and accessories. My goal was to create an intuitive, interactive experience with a clean UI and smooth interactions.  While there’s always room for improvement, I’m happy with what I was able to accomplish.
 
-Throughout this process, I not only came to understand event-driven JavaScript but also refined my experience with HTML, CSS, and Chrome Developer Tools. There were moments when I genuinely doubted I would be able to finish due to JavaScript syntax. But working through those challenges made the process all the more rewarding.
- 
-One personal touch I added was the red and blue color scheme in the shape selection - a subtle nod to the iconic red pill vs. blue pill scene in The Matrix. Just as Neo’s choice symbolized stepping into the unknown, tackling this project pushed me beyond my comfort zone, forcing me to confront challenges head on. And in the end, that’s what growth is all about - choosing to keep going, even when the code feels like the Matrix’s cascading green symbols, leaving me wondering if I’ll ever fully decode it.
-
-![Red and Blue Pill](assets/images/images_read_me/red_blue_pill.jpg)
+![Personal Image]()
 
 <hr>
 
