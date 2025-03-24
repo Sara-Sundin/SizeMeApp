@@ -898,7 +898,8 @@ The HTML, CSS, Javascript and Python code has been validated on below editors. T
 - JSHint Validator
 - CI Python Linter
 
-To ensure stability and reliability, I’ve implemented automated tests using Django’s built-in testing framework. Tests are organized within each app’s directory and cover models, views, and forms. Django’s test suite provides an integrated test client, database isolation, and robust assertions, making it easy to simulate real user interactions and catch potential issues before deployment.
+## Testing with Django
+To ensure stability and reliability, I’ve implemented automated tests using Django’s built-in testing framework. Tests are organized within the blog app directory and cover models, views, and forms. Django’s test suite provides an integrated test client, database isolation, and robust assertions, making it easy to simulate real user interactions and catch potential issues before deployment.
 
 ## Bugs and Fixes
 Here I have recorded some issues that I spent excessive time solving with the solutions indicated below.
