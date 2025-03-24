@@ -1,8 +1,9 @@
 /* Profile Box */
-
 .avatar-box {
     text-align: center;
     padding-bottom: 10px;
+    width: 200px;
+    height: 200px;
 }
 
 .profile-box {
@@ -17,7 +18,7 @@
     overflow: hidden;
 }
 
-#user-avatar {
+.profile-box img {
     width: 200px;
     height: 200px;
     object-fit: cover;
@@ -26,6 +27,8 @@
 
 /* Dashboard container */
 .dashboard-container {
+    width: 310px;
+    max-height: 1860px;
     margin: 0 auto;
     padding: 20px;
     text-align: center; /* Center align text */
@@ -58,11 +61,13 @@
     text-align: center;
     padding-top: 10px;
     padding-bottom: 20px;
+    width: 200px;
+    height: 225px;
 }
 
 .sizemeapp-logo img {
-    max-width: 150px;
-    height: auto;
+    width: 150px;
+    height: 81.93px;
     padding-bottom: 10px;
 }
 
@@ -77,6 +82,10 @@
     border: none;
     cursor: pointer;
     transition: background 0.3s ease-in-out, transform 0.2s ease-in-out;
+}
+
+.blue-link {
+    color: #004c99;
 }
 
 #avatar-modal {
@@ -147,25 +156,16 @@
     margin-bottom: 15px;
 }
 
-.dashboard-container {
-    max-width: 600px;
-}
-
 .dashboard-header {
     flex-direction: column; 
     justify-content: center;
     align-items: center;
 }
 
-.measurement-image {
-    flex: 1; /* Take equal width */
-    max-width: 70%; /* Prevent image from being too large */
-}
-
 /* Measurement Image */
 .measurement-image img {
-    width: 100%; /* Make image responsive */
-    height: auto;
+    width: 300px;
+    height: 403.92px;
     display: block;
     max-width: 325px;
     border-radius: 8px;
@@ -203,7 +203,8 @@
 @media  screen and (min-width: 768px){
 
     .dashboard-container {
-        max-width: 600px;
+        width: 600px;
+        max-height: 1370px;
     }
 
     .dashboard-header {
@@ -223,17 +224,6 @@
         align-items: center; /* Align them at the center */
     }
 
-    .measurement-image {
-        flex: 1; /* Take equal width */
-        max-width: 65%; /* Prevent image from being too large */
-    }
-
-    .measurement-image img {
-        width: 100%; /* Make image responsive */
-        height: auto;
-        display: block;
-    }
-
     #avatar-modal {
         max-width: 450px;
     }
@@ -242,7 +232,8 @@
 @media  screen and (min-width: 1024px) {
 
     .dashboard-container {
-        max-width: 900px;
+        width: 900px;
+        max-height: 980px;
     }
 
     .dashboard-header {
@@ -261,14 +252,7 @@
         align-items: center; /* Align them at the center */
     }
 
-    .measurement-image img {
-        width: 100%; /* Make image responsive */
-        height: auto;
-        display: block;
-    }
-
-    #avatar-modal {
-        
+    #avatar-modal {   
         max-width: 1000px;
         max-height: 460px;
     }
