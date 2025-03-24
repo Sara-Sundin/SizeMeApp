@@ -93,11 +93,11 @@ h1 img {
 }
 
 .nav-link:hover {
-    color: #FF5000;
+    color: #e84e1b;
 }
 
 .nav-link.active {
-    color: #FF5000 !important;
+    color: #e84e1b !important;
     font-size: 130%;
     font-weight: bold;
 }
@@ -130,6 +130,15 @@ h1 img {
 
 .transparent-box {
     background-color: rgba(255, 255, 255, 0.85); /* Makes only the background transparent */
+    padding: 20px;
+    border-radius: 8px; /* Optional: adds rounded corners */
+    max-width: 100%;
+    margin: 0 auto; /* Centers the section horizontally */
+    min-width: 220px;
+}
+
+.grey-box {
+    background-color: #f2f2f2;
     padding: 20px;
     border-radius: 8px; /* Optional: adds rounded corners */
     max-width: 100%;
@@ -543,8 +552,7 @@ h1 img {
 }
 
 .link {
-    color: #E84E1B;
-    text-decoration: none;
+    color: #a63f03;
     text-transform: uppercase;
 }
 
@@ -589,6 +597,10 @@ h1 img {
     background-color: #cc3d14;
 }
 
+.password-reset-link {
+    color: #004c99;
+}
+
 /* Password Reset Page Styling */
 .password-reset-card {
     max-width: 500px;
@@ -602,7 +614,7 @@ h1 img {
 }
 
 .password-reset-card .btn-orange {
-    background-color: #ff7f50;
+    background-color: #e84e1b;
     color: white;
     border-radius: 5px;
     padding: 10px 20px;
@@ -656,7 +668,7 @@ h1 img {
     }
 
     .btn-orange {
-        background-color: #f57c00;
+        background-color: #e84e1b;
         color: white;
         padding: 10px 20px;
         border-radius: 5px;
@@ -665,7 +677,7 @@ h1 img {
     }
 
     .btn-orange:hover {
-        background-color: #e65100;
+        background-color: #f18e16;
     }
 
     [aria-describedby*="_helptext"] {
