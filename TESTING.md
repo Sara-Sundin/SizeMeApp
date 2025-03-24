@@ -222,71 +222,71 @@ I have included screenprints of the first and final validation of the HTML with 
 
 #### Home Page HTML- Initial Check
 
-  ![Validation HTML Index 1st](assets\images_readme\home_html_check_first.jpg)
+  ![Validation HTML Index 1st](assets/images_readme/home_html_check_first.jpg)
  
 #### Home Page HTML- Final Check
 
-  ![Validation HTML Index Final](assets\images_readme\home_html_check_final.jpg)
+  ![Validation HTML Index Final](assets/images_readme/home_html_check_final.jpg)
 
 #### About Page HTML- Initial Check
 
-  ![Validation HTML About 1st](assets\images_readme\about_html_check_first.jpg)
+  ![Validation HTML About 1st](assets/images_readme/about_html_check_first.jpg)
   
 #### About Page HTML- Final Check
 
-  ![Validation HTML About Final](assets\images_readme\about_html_check_final.jpg)
+  ![Validation HTML About Final](assets/images_readme/about_html_check_final.jpg)
 
 #### Contact Page HTML- Initial Check
 
-  ![Validation HTML Contact 1st](assets\images_readme\contact_html_check_first.jpg)
+  ![Validation HTML Contact 1st](assets/images_readme/contact_html_check_first.jpg)
   
 #### Contact Page HTML- Final Check
 
-  ![Validation HTML Contact Final](assets\images_readme\contact_html_check_final.jpg)
+  ![Validation HTML Contact Final](assets/images_readme/contact_html_check_final.jpg)
 
 #### Blog Page HTML- Initial Check
 
-  ![Validation HTML Blog 1st](assets\images_readme\blog_html_check_first.jpg)
+  ![Validation HTML Blog 1st](assets/images_readme/blog_html_check_first.jpg)
   
 #### Blog Page HTML- Final Check
 
-  ![Validation HTML Blog Final](assets\images_readme\blog_html_check_final.jpg)
+  ![Validation HTML Blog Final](assets/images_readme/blog_html_check_final.jpg)
 
 #### Signup Page HTML- Initial Check
 
-  ![Validation HTML Signup 1st](assets\images_readme\signup_html_check_first.jpg)
+  ![Validation HTML Signup 1st](assets/images_readme/signup_html_check_first.jpg)
   
 #### Signup Page HTML- Final Check
 
-  ![Validation HTML Signup Final](assets\images_readme\signup_html_check_final.jpg)
+  ![Validation HTML Signup Final](assets/images_readme/signup_html_check_final.jpg)
 
 #### Login Page HTML- Initial Check
 
-  ![Validation HTML Login 1st](assets\images_readme\login_html_check_first.jpg)
+  ![Validation HTML Login 1st](assets/images_readme/login_html_check_first.jpg)
   
 #### Login Page HTML- Final Check
 
-  ![Validation HTML Login Final](assets\images_readme\login_html_check_final.jpg)
+  ![Validation HTML Login Final](assets/images_readme/login_html_check_final.jpg)
 
 #### Dashboard Page HTML- Initial Check
 
-  ![Validation HTML Dashboard 1st](assets\images_readme\dashboard_html_check_first.jpg)
+  ![Validation HTML Dashboard 1st](assets/images_readme/dashboard_html_check_first.jpg)
   
 #### Dashboard Page HTML- Final Check
 
-  ![Validation HTML Dashboard Final](assets\images_readme\dashboard_html_check_final.jpg)
+  ![Validation HTML Dashboard Final](assets/images_readme/dashboard_html_check_final.jpg)
 
 #### Logout Page HTML- Initial Check
 
-  ![Validation HTML Logout 1st](assets\images_readme\logout_html_check_first.jpg)
+  ![Validation HTML Logout 1st](assets/images_readme/logout_html_check_first.jpg)
   
 #### Logout Page HTML- Final Check
 
-  ![Validation HTML Logout Final](assets\images_readme\logout_html_check_final.jpg)
+  ![Validation HTML Logout Final](assets/images_readme/logout_html_check_final.jpg)
 
 #### Under Construction Page HTML- Initial Check
 
-  ![Validation HTML Construction 1st](assets\images_readme\under_construction_html_check_first.jpg)
+  ![Validation HTML Construction 1st](assets/images_readme/under_construction_html_check_first.jpg)
 
 ### W3C CSS Validator
 The CSS was succesfully validated for all pages.
