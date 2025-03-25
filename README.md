@@ -162,7 +162,7 @@ Together, these design choices ensure that the website provides an engaging, inf
 
 ## User Stories
 
-The development of the SizeMeApp website followed a structured user story framework, ensuring that each feature was designed with clear objectives, measurable success, and actionable development steps.
+The development of the SizeMeApp website follows a structured user story framework, ensuring that each feature is designed with clear objectives, measurable success, and actionable development steps.
 
 The site follows the CRUD (Create, Read, Update, Delete) methodology to manage data efficiently. Each user story is structured to ensure that core functionalities align with CRUD operations, enabling seamless interaction with the system.
 
@@ -396,7 +396,6 @@ In the development of SizeMeApp, I used a Kanban board to organize tasks and pri
 - [Typography](#typography)
 - [Imagery](#imagery)
 - [Wire Frames](#wire-frames)
-- [Structure of the website](#structure-of-the-website)
 - [Features](#features)
 
 ## Colour Scheme
@@ -780,7 +779,7 @@ I often use AI tools like ChatGPT and Perplexity and have used them both through
 <br>
 
 # DEPLOYMENT
-- [Heroku with GitHub Integration](#heroku-with-github-integration)
+The website is deployed on Heroku with GitHub Integration.
 
 ## Prerequisites
 - GitHub repository containing your project files.
@@ -818,6 +817,8 @@ In the Settings tab, click "Reveal Config Vars" to add environment variables lik
 - Click the URL (VIEW) to access your deployed website.
 
 ![Heroku Deployment Add App](assets/images_readme/deploy_heroku_deploy-branch.jpg)
+
+[Back to Content Table](#content)
 
 <br>
 <br>
@@ -876,9 +877,9 @@ I have included some examples of the manual testing conducted for the user stori
 <hr>
 
 ## Testing grid
-I have used a grid for testing all components of the website. After testing I have fixed any issues arising and put a note in the grid what has been done. See below dropdown menu for the grid that I created in an excel spreadsheet using a free template as base. [Link to excel spreadsheet]()
+I have used a grid for testing all components of the website. After testing I have fixed any issues arising and put a note in the grid what has been done. See below dropdown menu for the grid that I created in an excel spreadsheet using a free template as base. [Link to excel spreadsheet](assets/docs/test_checklist_project-3.xlsx)
 
-![Testing Grid]()
+![Testing Grid](assets/images_readme/checklist_3.jpg)
 
 <hr>
 
