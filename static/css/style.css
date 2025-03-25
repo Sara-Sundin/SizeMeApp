@@ -235,6 +235,10 @@ h1 img {
     border-radius: 10px; /*Rounds corners */
 }
 
+.team-description {
+    padding-top: 10px;
+}
+
 /* Contact Page Container */
 
 .contact-heading {
