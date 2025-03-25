@@ -15,7 +15,7 @@ h4 {
 }
 
 .blue-text {
-    color: #445261;
+    color: #616f82;
 }
 
 .section {
@@ -407,7 +407,7 @@ h1 img {
 }
 
 .masthead-text {
-    background-color: #445261;
+    background-color: #616f82;
     color: white;
     position: relative;
 }
@@ -425,7 +425,7 @@ h1 img {
     right: 90%;
     height: 100%;
     width: 150%;
-    background: #445261;
+    background: #616f82;
     -webkit-transform: skew(15deg);
     -moz-transform: skew(15deg);
     transform: skew(15deg);
@@ -442,7 +442,7 @@ h1 img {
 
 .post-link {
     text-decoration: none;
-    color: #445261;
+    color: #616f82;
 }
 
 .post-link:hover,
@@ -564,7 +564,7 @@ h1 img {
 
 .link:hover,
 .link:active {
-    color: #445261;
+    color: #616f82;
     text-decoration: underline;
 }
 
