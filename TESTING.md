@@ -2,7 +2,6 @@
 - [User Story Testing](#user-story-testing)
 - [Lighthouse](#lighthouse)
 - [Validation](#validation)
-- [Bugs & Fixes](#bugs-and-fixes)
 
 ## User Story Testing
 
@@ -216,6 +215,8 @@ Improvement messages:
 
 ![Lighthouse Logout 2nd run](assets/images_readme/lighthouse_logout_final.jpg)
 
+## Validation
+
 ### W3C HTML Validator
 I have included screenprints of the first and final validation of the HTML with W3C validation.
 <br>
@@ -273,6 +274,7 @@ I have included screenprints of the first and final validation of the HTML with 
   ![Validation HTML Dashboard 1st](assets/images_readme/dashboard_html_check_first.jpg)
   
 #### Dashboard Page HTML- Final Check
+I could not find the trailing slash in the code. I think it comes up due to the many layout shifts on this page. Since it does not disturb the functionality I left this comment.
 
   ![Validation HTML Dashboard Final](assets/images_readme/dashboard_html_check_final.jpg)
 
@@ -334,7 +336,7 @@ I ran all my Python code through the Python Linter with the following results. T
 
 ### Accounts App
 #### Accounts forms.py- Initial Check
-![Validation CI Python Linter First Check](assets/images_readme/accounts_forms_linting_test_first.jpg)
+![Validation CI Python Linter First Check](assets/images_readme/accounts_forms_linting_test.jpg)
 
 #### Accounts forms.py- Final Check
 ![Validation CI Python Linter Final Check](assets/images_readme/accounts_forms_linting_test_final.jpg)
