@@ -243,8 +243,12 @@ h1 img {
 }
 
 .contact-sub-heading {
-    text-align: left;
     padding-bottom: 20px;
+}
+
+.contact-form .form-group label {
+    text-align: left;
+    display: block; /* Ensures the label takes up full width */
 }
 
 .contact-intro {
