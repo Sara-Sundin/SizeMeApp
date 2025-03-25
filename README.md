@@ -1004,7 +1004,7 @@ One of the biggest lessons I’ve learned from SizeMeApp is how every little det
 
 There’s still a lot I’d like to do - add 3D previews, integrate with real sizing APIs, and make this tool something that could plug into fashion e-commerce platforms. But for now, I’m proud of what this represents: a hands-on, full-stack solution built from the ground up with the user in mind.
 
-                              ![Personal Image](assets/images_readme/avatar_notes.jpg)
+![Personal Image](assets/images_readme/avatar_notes.jpg)
 
 <hr>
 
