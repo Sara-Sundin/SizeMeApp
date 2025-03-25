@@ -912,9 +912,37 @@ I have implemented automated tests using Django’s built-in testing framework f
 ## Bugs and Fixes
 Here I have recorded some issues that I spent excessive time solving with the solutions indicated below.
 
-### Bug
+### Bug: Modal Window Freeze
+When attempting to delete a comment using the modal window in the post detail view, the entire page would freeze and become unresponsive.
+
+![Bug 1](assets/images_readme/bug_modal.jpg)
 
 #### Solution
+The issue stemmed from a conflict between two Bootstrap modals:
+- One used in the commenting form
+- One used in the dashboard avatar editor
+
+Both shared the same Bootstrap class name: class="modal", which caused unexpected behavior. I resolved the issue by isolating the CSS for dashboard.html into a separate stylesheet. Once this separation was in place, the modals no longer conflicted, and both could operate independently without freezing the page.
+
+### Bug: Measurement Form Not Functional
+The form for the measurements in the dashboard was not functional and I could not enter, update or delete measurements.
+
+#### Solution
+The form is initially hidden by default for privacy reasons, which prevented some of the required fields in the CustomUser model from being registered properly. Because Django forms require all model fields to be accounted for (even if not visible), the form was silently failing. 
+
+To fix this, I added the missing required fields as hidden inputs at the top of the form. This ensured that all necessary data was passed and validated, making the form fully functional again.
+
+![Bug 2](assets/images_readme/bug_measurement_form.jpg)
+
+### Bug: Signup Form Not Submitting
+When attempting to register a new user, the signup form silently reloaded without displaying any error messages or creating an account. This caused confusion and made the form appear broken.
+
+#### Solution
+I wanted to simplify the signup process by removing the second password field (password2). Initially, I tried disabling it by setting password2 = None at the class level. However, this had no effect because the password2 field was already being added by the parent class (SignupForm) during the form’s initialization.
+
+The correct approach was to remove the password2 field dynamically within the __init__ method, after the parent form had initialized all fields. This ensured the field was cleanly removed and the form processed correctly. Once this fix was applied, the signup form worked as intended — allowing users to register with just one password field, and all validations and redirects functioned normally.
+
+![Bug 3](assets/images_readme/bug_signup_form.jpg)
 
 [Back to Content Table](#content)
 
@@ -950,8 +978,6 @@ https://stackoverflow.com/questions
 <br>
 
 # CREDITS
-- [Images](#images)
-- [Code](#code)
 
 ## Images
 The male background image used on this site and the images for the blog posts are generated through ChatGPT. The robot avatar outlines are created in Illustrator from a dighital.com icon pack. The logo images are created by myself using Illustrator.
