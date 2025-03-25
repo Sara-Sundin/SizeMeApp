@@ -21,8 +21,8 @@ the following tests were conducted:
   
 The feature successfully meets the user story criteria, allowing users to store, manage, and use their measurements efficiently and securely. 
 
- ![Test User Story 1 Desktop]()
- ![Test User Story 1 Mobile]()
+ ![Test User Story 1 Desktop](assets/images_readme/user_story_measurements_desktop.jpg)
+ ![Test User Story 1 Mobile](assets/images_readme/user_story_measurements_mobile.jpg)
 
 ### User Story - Simple and Secure Login Process.
 As a user, I want a simple and secure login process,
@@ -42,8 +42,8 @@ the following tests were conducted:
 
 The feature successfully meets the user story criteria, providing users with a simple, secure, and accessible login experience. 
 
- ![Test User Story 2 Desktop]()
- ![Test User Story 2 Mobile]()
+ ![Test User Story 2 Desktop](assets/images_readme/user_story_login_desktop.jpg)
+ ![Test User Story 2 Mobile](assets/images_readme/user_story_login_mobile.jpg)
 
 ### User Story - Comment on Blog Posts.
 As a registered user, I want to comment on blog posts,
@@ -63,8 +63,8 @@ and secure, the following tests were conducted:
   
 The feature successfully meets the user story criteria, allowing users to comment, engage in discussions, and manage their own comments securely.
 
- ![Test User Story 3 Desktop]()
- ![Test User Story 3 Mobile]()
+ ![Test User Story 3 Desktop](assets/images_readme/user_story_comment_desktop.jpg)
+ ![Test User Story 3 Mobile](assets/images_readme/user_story_comment_mobile.jpg)
 
 ### User Story - Seamless Navigation Throughout the Site.
 As a user, I want intuitive navigation across SizeMeApp,
@@ -87,8 +87,8 @@ and visually responsive, the following tests were conducted:
 
 The feature successfully meets the user story criteria, providing users with an intuitive, responsive, and accessible navigation experience throughout SizeMeApp.
 
-![Test User Story 4 Desktop]()
- ![Test User Story 4 Mobile]()
+![Test User Story 4 Desktop](assets/images_readme/user_story_navigation_desktop.jpg)
+ ![Test User Story 4 Mobile](assets/images_readme/user_story_navigation_mobile.jpg)
 
 ## Lighthouse
 I have recorded the first and final run with Lighthouse for all pages with images and warning messages below. I found since many of the pages are connected and have the same base.html and are connected to backend, some warnings appear that would probably not be present in a static website. 
