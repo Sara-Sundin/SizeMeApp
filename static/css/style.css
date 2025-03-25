@@ -1,4 +1,9 @@
-body {
+:root {
+    --brand-orange: #E84E1B;
+    --brand-blue: var(--brand-blue); 
+  }
+  
+  body {
     background-color: #d4d7db;
     font-family: "Raleway",sans-serif;
     margin-top: 100px;
@@ -15,7 +20,7 @@ h4 {
 }
 
 .blue-text {
-    color: #616f82;
+    color: var(--brand-blue);
 }
 
 .section {
@@ -45,7 +50,6 @@ h4 {
     background-repeat: no-repeat;
     background-position: top center;
     background-attachment: scroll;
-    min-height: 100vh;
     position: relative; /* Ensures content is positioned correctly */
     min-height: 100vh;
 }
@@ -67,7 +71,7 @@ h4 {
 }
 
 .navbar {
-    background-color: #616F82;
+    background-color: var(--brand-blue);
     --bs-navbar-toggler-icon-bg: url("data:image/svg+xml;charset=UTF8,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 30 30'%3E%3Cpath stroke='white' stroke-width='2' stroke-linecap='round' stroke-miterlimit='10' d='M4 7h22M4 15h22M4 23h22'/%3E%3C/svg%3E");
 } 
 
@@ -84,11 +88,11 @@ h4 {
 }
 
 .nav-link:hover {
-    color: #e84e1b;
+    color: var(--brand-orange);
 }
 
 .nav-link.active {
-    color: #e84e1b !important;
+    color: var(--brand-orange) !important;
     font-size: 130%;
     font-weight: bold;
 }
@@ -110,7 +114,7 @@ h1 img {
 
 .icon {
     font-size: 80px;
-    color: #616F82;
+    color: var(--brand-blue);
     padding-bottom: 20px;
 }
 
@@ -121,17 +125,17 @@ h1 img {
 
 /* Hover Effect */
 .icon:hover {
-    color: #E84E1B; /* Change color on hover */
+    color: var(--brand-orange); /* Change color on hover */
     transform: scale(1.2); /* Slightly enlarge on hover */
     transition: transform 0.3s ease-in-out;
 }
 
 .info-icon-primary {
-    color: #616F82; 
+    color: var(--brand-blue); 
 }
 
 .info-icon-secondary {
-    color: #E84E1B;
+    color: var(--brand-orange);
 }
 
 .transparent-box {
@@ -161,7 +165,7 @@ h1 img {
 
 /* Newsletter Section */
 .newsletter {
-    background-color: #616F82;
+    background-color: var(--brand-blue);
     color: white;
     padding: 40px 20px;
     border-radius: 8px;
@@ -189,7 +193,7 @@ h1 img {
 
 /* Subscribe button */
 .newsletter-form button[type="submit"] {
-    background-color: #E84E1B; 
+    background-color: var(--brand-orange); 
     color: white;
     text-decoration: none;
     padding: 12px 20px;
@@ -290,7 +294,7 @@ h1 img {
 
 /* Buttons - Uses SizeMeApp styles */
 .contact-form button {
-    background-color: #E84E1B;
+    background-color: var(--brand-orange);
     color: white;
     font-size: 1.5rem;
     padding: 12px 24px;
@@ -344,7 +348,7 @@ h1 img {
 
 /* Hover Effect */
 .social-icons a:hover {
-    color: #E84E1B; /* Change color on hover */
+    color: var(--brand-orange); /* Change color on hover */
     transform: scale(1.2); /* Slightly enlarge on hover */
 }
 
@@ -356,7 +360,7 @@ h1 img {
 }
 
 .footer {
-    background-color: #616F82;
+    background-color: var(--brand-blue);
     color: white;
     text-align: center;
     padding: 20px 0;
@@ -388,7 +392,7 @@ h1 img {
     bottom: 5%;
     min-width: 30%;
     left: -2px;
-    background-color: #616F82;
+    background-color: var(--brand-blue);
 }
 
 .author {
@@ -407,7 +411,7 @@ h1 img {
 }
 
 .masthead-text {
-    background-color: #616f82;
+    background-color: var(--brand-blue);
     color: white;
     position: relative;
 }
@@ -425,7 +429,7 @@ h1 img {
     right: 90%;
     height: 100%;
     width: 150%;
-    background: #616f82;
+    background: var(--brand-blue);
     -webkit-transform: skew(15deg);
     -moz-transform: skew(15deg);
     transform: skew(15deg);
@@ -442,7 +446,7 @@ h1 img {
 
 .post-link {
     text-decoration: none;
-    color: #616f82;
+    color: var(--brand-blue);
 }
 
 .post-link:hover,
@@ -528,7 +532,7 @@ h1 img {
 
 /* Buttons */
 .btn-orange {
-    background-color: #E84E1B;
+    background-color: var(--brand-orange);
     color: white;
     text-decoration: none;
     font-size: 1.2rem;
@@ -564,7 +568,7 @@ h1 img {
 
 .link:hover,
 .link:active {
-    color: #616f82;
+    color: var(--brand-blue);
     text-decoration: underline;
 }
 
@@ -588,7 +592,7 @@ h1 img {
 
 /* Ensure logout button matches login/signup */
 .logout-button {
-    background-color: #E84E1B;
+    background-color: var(--brand-orange);
     color: white;
     font-size: 1.2rem;
     padding: 10px 20px;
@@ -613,26 +617,18 @@ h1 img {
     margin: 0 auto;
     border-radius: 10px;
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-}
-
-.password-reset-form {
-    margin-top: 20px;
-}
-
-.password-reset-card {
-    background-color: #e84e1b;
+    background-color: #e76b3d; /* Final one wins */
     color: white;
-    border-radius: 5px;
     padding: 10px 20px;
-}
-
-.password-reset-card {
-    background-color: #e76b3d;
 }
 
 .password-reset-card p {
     font-size: 14px;
     margin-top: 10px;
+}
+
+.password-reset-form {
+    margin-top: 20px;
 }
 
 .btn-like {
