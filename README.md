@@ -940,7 +940,7 @@ When attempting to register a new user, the signup form silently reloaded withou
 #### Solution
 I wanted to simplify the signup process by removing the second password field (password2). Initially, I tried disabling it by setting password2 = None at the class level. However, this had no effect because the password2 field was already being added by the parent class (SignupForm) during the form’s initialization.
 
-The correct approach was to remove the password2 field dynamically within the __init__ method, after the parent form had initialized all fields. This ensured the field was cleanly removed and the form processed correctly. Once this fix was applied, the signup form worked as intended — allowing users to register with just one password field, and all validations and redirects functioned normally.
+The correct approach was to remove the password2 field dynamically within the __init__ method, after the parent form had initialized all fields. This ensured the field was cleanly removed and the form processed correctly. Once this fix was applied, the signup form worked as intended - allowing users to register with just one password field, and all validations and redirects functioned normally.
 
 ![Bug 3](assets/images_readme/bug_signup_form.jpg)
 
@@ -996,8 +996,15 @@ https://www.osano.com/cookieconsent
 <br>
 
 # PERSONAL NOTES
+SizeMeApp started as an idea rooted in frustration - shopping online and constantly second-guessing size guides, returns, and fit. As someone with a background in garment construction with grading sizes and working with measurement lists, I wanted to explore how tech could help users feel more confident about sizing without needing to try clothes on.
 
-![Personal Image]()
+This project became a playground for learning and problem-solving. I built the app in Django, customizing the user model to include body measurements, developing an avatar-based dashboard, and integrating login and signup flows with clarity and style. I also made UX choices like hiding the measurement form for privacy and using modals to edit avatars, which led to interesting bugs and workarounds I’ve documented here.
+
+One of the biggest lessons I’ve learned from SizeMeApp is how every little detail matters - from a missing form field breaking the whole experience, to how layout shifts affect perceived performance. It’s also been rewarding to see how something quite technical can be made user-friendly and even fun to interact with.
+
+There’s still a lot I’d like to do - add 3D previews, integrate with real sizing APIs, and make this tool something that could plug into fashion e-commerce platforms. But for now, I’m proud of what this represents: a hands-on, full-stack solution built from the ground up with the user in mind.
+
+                              ![Personal Image](assets/images_readme/avatar_notes.jpg)
 
 <hr>
 
