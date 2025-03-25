@@ -36,18 +36,10 @@
         </div>
         {% endif %}
 
-        <!-- Username/Email Field -->      <div class="form-group">
+        <!-- Username/Email Field -->      
+         <div class="form-group">
           {{ form.login.label_tag }}
           {{ form.login }}
-
-          <script>
-            document.addEventListener("DOMContentLoaded", function () {
-              let loginField = document.querySelector("[name='login']");
-              if (loginField) {
-                loginField.setAttribute("placeholder", "Email");
-              }
-            });
-          </script>
 
           {% if form.login.errors %}
           <small class="text-danger">{{ form.login.errors.0 }}</small>
@@ -59,7 +51,7 @@
           {{ form.password.label_tag }}
           <div class="input-group">
             {{ form.password }}
-            <button type="button" class="btn toggle-password" onclick="togglePassword('{{ form.password.id_for_label }}')">
+            <button type="button" class="btn toggle-password" aria-label="Toggle password visibility" onclick="togglePassword('{{ form.password.id_for_label }}')">
               <i class="fa fa-eye"></i>
               <span class="toggle-text">Show Password</span>
             </button>
@@ -79,7 +71,7 @@
   </div>
 </div>
 
-<!-- Password Toggle Script -->s
+<!-- Password Toggle Script -->
 <script>
   function togglePassword(fieldId) {
     var passwordField = document.getElementById(fieldId);
