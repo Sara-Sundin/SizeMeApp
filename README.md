@@ -59,8 +59,6 @@ Explore the site to learn more about how SizeMeApp reduces returns, improves cus
 - Bugs & Fixes
 
 [REFERENCES](#references)
-- Media References
-- Content References
 
 [CREDITS](#credits)
 - Images
@@ -766,7 +764,7 @@ We will set up a custom admin template for the newsletter with summernote featur
 - Techsini.com (for multidevice image and testing responsiveness).
 
 ## AI
-I am a big fan of AI tools like ChatGPT and Perplexity and have used them both throughout my work on SizeMeApp. These platforms have supported everything from technical troubleshooting and coding to refining UX and brainstorming product features. AI has accelerated my workflow, offered new perspectives, and helped me make more informed decisions at every stage of the project. For me it's like having an always-available creative and technical partner.
+I am a big fan of AI tools like ChatGPT and Perplexity and have used them both throughout my work on SizeMeApp. These platforms have supported everything from technical troubleshooting to refining UX and brainstorming product features. AI has accelerated my workflow, offered new perspectives, and helped me make more informed decisions at every stage of the project. For me it's like having an always-available creative and technical partner.
 
 [Back to Content Table](#content)
 
@@ -886,7 +884,12 @@ I have used Chrome Dev Tools throughout the development of the website to test f
 <hr>
 
 ## Lighthouse
-I used Chrome Dev Tools Lightouse to help improve the website's performance, accessibility, SEO, and user experience. The first time I ran the testing I received messages for improvement that I have recorded in the [TESTING.md](TESTING.md). After fixing the issues I received a full score on all components. The Lighthouse tool provided actionable insights to optimize speed and fix issues. 
+I used Chrome Dev Tools Lightouse to help improve the website's performance, accessibility, SEO, and user experience. The first time I ran the testing I received messages for improvement that I have recorded in the [TESTING.md](TESTING.md). The Lighthouse tool provided actionable insights to optimize speed and fix issues. I did not manage to get the best scores for Performance on some of the pages due to shifting layouts in the avtar maker and hidden measurements section in the Dashboard. 
+
+### Lighthouse 3rd party cookies
+When running the lighthouse tests I received a cookies warning for Best Practices due to Cloudinary. I implemented a cookie consent window but I still could not remove the warning. This comes up on all pages that uses Cloudinary Images. After checking with the school I decided to let the warnings be since it is not a major issue.
+
+![Image 3rd party cookies](assets/images_readme/bug_lighthouse_cloudinary.jpg)
 
 <hr>
 
@@ -899,15 +902,10 @@ The HTML, CSS, Javascript and Python code has been validated on below editors. T
 - CI Python Linter
 
 ## Testing with Django
-To ensure stability and reliability, I’ve implemented automated tests using Django’s built-in testing framework. Tests are organized within the blog app directory and cover models, views, and forms. Django’s test suite provides an integrated test client, database isolation, and robust assertions, making it easy to simulate real user interactions and catch potential issues before deployment.
+I have implemented automated tests using Django’s built-in testing framework for the blog app. Tests are organized within the blog app directory and cover models, views, and forms. Django’s test suite provides an integrated test client and database isolation that makes it easy to simulate real user interactions and catch potential issues before deployment.
 
 ## Bugs and Fixes
 Here I have recorded some issues that I spent excessive time solving with the solutions indicated below.
-
-### Lighthouse 3rd party cookies
-When running the lighthouse tests I received a cookies warning for Best Practices due to Cloudinary. I implemented a cookie consent window but I still could not remove the warning. This comes up on all pages that uses Cloudinary Images. After checking with the school I decided to let the warnings be since it is not a major issue.
-
-![Image Bug](assets/images_readme/bug_lighthouse_cloudinary.jpg)
 
 ### Bug
 
@@ -923,19 +921,17 @@ When running the lighthouse tests I received a cookies warning for Best Practice
 <br>
 
 # REFERENCES
-- [Media References](#media-references)
-- [Content References](#content-references)
 
-## Media References
+https://getbootstrap.com/docs/5.3/components/modal/<br>
+https://www.djangoproject.com/<br>
 https://docs.djangoproject.com/en/5.1/topics/async/<br>
-https://peps.python.org/pep-0008/
-- Slack Community and information
-- Stand Ups with Kay
-
-## Content References
-https://dighital.com/icon-pack/icons/flat-icons/robot-avatar-icons/
+https://peps.python.org/pep-0008/<br>
+https://www.osano.com/cookieconsent<br>
+https://dighital.com/icon-pack/icons/flat-icons/robot-avatar-icons/<br>
 - Free Download Template for website checking from https://www.hubspot.com
 - Code Institute Tutorials and Learning Content
+- Slack Community and information
+- Stand Ups with Kay
 
 [Back to Content Table](#content)
 
@@ -956,11 +952,8 @@ The images used on this site are mainly generated using AI. The images for the b
 ## Code
 
 ### Cookie Consent
-I used Osano for making the cookie consent code:
+I used Osano for the cookie consent code:
 https://www.osano.com/cookieconsent
-
-### AI
-I have used AI throughout the process as a sparring partner for ideas, troubleshooting, and problem-solving. I have asked AI on solutions with the HTML, styling CSS and solutions for Javascript and Python code that I have followed in either writing or copied snippets of code into the IDE.
 
 <br>
 <br>
