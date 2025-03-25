@@ -38,11 +38,12 @@
 /* Center-align header elements */
 .dashboard-header {
     display: flex;
-    flex-direction: column; /* Stack elements vertically */
+    flex-direction: column;
     align-items: center;
     justify-content: center;
     gap: 15px;
     margin-bottom: 20px;
+    text-align: center;
 }
 
 /* Profile section */
@@ -156,12 +157,6 @@
     margin-bottom: 15px;
 }
 
-.dashboard-header {
-    flex-direction: column; 
-    justify-content: center;
-    align-items: center;
-}
-
 /* Measurement Image */
 .measurement-image img {
     width: 300px;
@@ -208,15 +203,7 @@
     }
 
     .dashboard-header {
-        flex-direction: column; 
-        justify-content: center;
-        align-items: center;
-    }
-
-    .profile-section {
-        flex-direction: column; /* Align profile image and info side-by-side */
-        align-items: center;
-        padding-top: 30px;
+        justify-content: space-between;
     }
 
     .measurements-container {
@@ -236,20 +223,10 @@
         max-height: 980px;
     }
 
-    .dashboard-header {
-        justify-content: space-between; /* Space them out */
-        text-align: center;
-    }
-
     .profile-section {
         flex-direction: row; /* Align profile image and info side-by-side */
         align-items: center;
         gap: 50px; /* Add spacing */
-    }
-
-    .measurements-container {
-        flex-direction: row; /* Place elements side by side */
-        align-items: center; /* Align them at the center */
     }
 
     #avatar-modal {   
