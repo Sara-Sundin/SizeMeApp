@@ -2,7 +2,7 @@
 
 # SizeMeApp Website 
 
-[View project on Heroku](#) 
+[View project on Heroku](https://size-me-app-da707695b73b.herokuapp.com/) 
 
 ## Introduction 
 
@@ -129,7 +129,7 @@ Additional features, such as testimonials, success stories, and a retailer-focus
 The website is structured to ensure smooth navigation and user engagement:
 
 - The homepage provides an overview with a strong call to action.
-- The "How It Works" page explains the sizing technology in an easy-to-understand format.
+- The "About" page explains the sizing technology in an easy-to-understand format.
 - A user dashboard (for registered users) allows them to manage their profile and measurements.
 - The blog section offers informative content and allows registered users to engage via comments.
 
@@ -139,7 +139,7 @@ This logical structure ensures that first-time visitors, returning users, and fr
 The website layout is designed for clarity and usability:
 
 - Navigation menus provide quick access to key sections.
-- Clear CTAs (e.g., "Sign Up," "Try Now") guide users toward important actions.
+- Clear CTAs ("Sign Up," "Try Now", "Contact") guide users toward important actions.
 - A well-structured blog page ensures easy reading and engagement.
 - The user dashboard presents stored measurements and recommendations in an intuitive format.
 - The contact page offers a simple, accessible form for inquiries.
@@ -151,16 +151,23 @@ The visual design of the SizeMeApp website is clean, modern, and user-friendly, 
 
 - A neutral color palette combined with accent colors for CTAs enhances readability and usability.
 - Typography is professional and easy to read, reinforcing clarity.
-- High-quality visuals (icons, imaged) strengthen user engagement.
+- High-quality visuals (icons, images) strengthen user engagement.
 - Hover effects improve interactivity without distracting from core content.
 
 Together, these design choices ensure that the website provides an engaging, informative, and intuitive experience for all visitors.
+
+[Back to Content Table](#content)
 
 <hr>
 
 ## User Stories
 
 The development of the SizeMeApp website followed a structured user story framework, ensuring that each feature was designed with clear objectives, measurable success, and actionable development steps.
+
+The site follows the CRUD (Create, Read, Update, Delete) methodology to manage data efficiently. Each user story is structured to ensure that core functionalities align with CRUD operations, enabling seamless interaction with the system.
+
+Full user stories and progress tracking are available on the **SizeMeApp Kanban Board**:  
+[View the Kanban Board](https://github.com/users/Sara-Sundin/projects/10/views/1)
 
 ### Example of User Story Implementation
 
@@ -176,17 +183,14 @@ As a registered user, I want to update my measurements, so that I can keep my si
 - Ensure previous data is overwritten securely.
 - By following this structured approach for each feature, the website ensures a user-centered experience while maintaining development clarity and efficiency.
 
-The site follows the CRUD (Create, Read, Update, Delete) methodology to manage data efficiently. Each user story is structured to ensure that core functionalities align with CRUD operations, enabling seamless interaction with the system.
-
+### Visitors
 The user stories for SizeMeApp are structured into three categories:
 
 - New Visitors – First-time users exploring the site to understand its purpose and decide whether to sign up.
-
 - Returning Users – Registered users who come back to interact with features such as storing measurements and commenting on blog posts.
-
 - Frequent Users – Engaged users who update their data, interact regularly, and receive personalized recommendations.
 
-### New Visitors (First-Time Users Exploring the Site)
+#### New Visitors (First-Time Users Exploring the Site)
 New visitors primarily engage with the site through reading and navigating content to understand SizeMeApp and its benefits.
 
 - Visitors want to quickly understand what SizeMeApp does, how it works, and whether it is relevant to them.
@@ -198,22 +202,22 @@ New visitors primarily engage with the site through reading and navigating conte
 
 CRUD implementation: Create (contact form submission), Read (blog posts, team page, testimonials).
 
-### Returning Visitors (Users Coming Back After Initial Engagement)
+#### Returning Visitors (Users Coming Back After Initial Engagement)
 Returning users have registered and now interact with the site by storing personal data and engaging with content.
 
 - Users can store their personal measurements in their profile for easier access while shopping online.
 - They can comment on blog posts to engage in discussions.
 - A simple and secure login process allows them to access stored measurements and interact with blog content.
-- Users can like blog posts to save their favorite content.
+- Users can like blog posts.
 
 CRUD implementation: Create (measurements, comments, likes), Read (stored data, blog posts), Update (profile details).
 
-### Frequent Visitors (Engaged Users Who Interact Regularly)
+#### Frequent Visitors (Engaged Users Who Interact Regularly)
 Frequent users continue to refine their data and interact with advanced features.
 
 - Users can update their measurements as their body changes to ensure accuracy.
 - They remain logged in for convenience, reducing the need to re-enter credentials.
-- Based on stored measurements, users receive personalized recommendations.
+- Based on stored measurements, users receive personalized recommendations (future implementation).
 - Newsletters inform them about new features and updates.
 
 CRUD implementation: Read (recommendations, testimonials), Update (measurements, profile), Read/Delete (notifications).
@@ -224,12 +228,8 @@ To ensure full CRUD coverage, additional user stories for managing blog posts, c
 - Admins can create, edit, and delete blog posts to maintain relevant content.
 - Registered users can edit or delete their own comments.
 - Admins can moderate and delete inappropriate comments.
-- Users can delete their account if they choose to remove their data.
 
-CRUD implementation: Create (blog posts, comments, newsletters), Read (blog content, comments, measurements), Update (blog posts, profile), Delete (comments, user accounts).
-
-Full user stories and progress tracking are available on the **SizeMeApp Kanban Board**:  
-[View the Kanban Board](https://github.com/users/Sara-Sundin/projects/10/views/1)
+CRUD implementation: Create (blog posts, comments, newsletters), Read (blog content, comments, measurements), Update (blog posts, profile), Delete (comments).
 
 <hr>
 
@@ -244,7 +244,7 @@ The following measures has been taken to make sure the website is accessible.
 - Viewport Meta Tag: Ensures proper scaling and readability on mobile devices.
 - Labels for Form Fields: All form fields include <label> tags or appropriate aria-label attributes to guide users through form completion.
 - ARIA labels: Aria roles are added where necessary to define regions of the page for assistive technologies.
-- Readable Fonts: Fonts like "Lato" are legible with sufficient size and line spacing for comfortable reading.
+- Readable Fonts: Fonts like "Raleway" are legible with sufficient size and line spacing for comfortable reading.
 - Scalable Text: Text can be resized without loss of content or functionality.
 - Accessibility Testing Tools: Lighthouse and Django automated tools has been used to identify and address accessibility issues.
 
@@ -372,7 +372,7 @@ To ensure that the website is fully accessible and user-friendly for individuals
 - [Kanban Board](#kanban-board)
 
 ## Design Planning
-This diagram represents the planning phase of my SizeMeApp project, mapping out its core structure and functionality. It outlines how users register, log in, and manage their profiles, including updating measurements for accurate size recommendations. I designed a dashboard with an avatar generator, a blog with a comment system, and a newsletter feature. In the end I managed to implify all features of the diagram except the actual application SizeMeApp, making the site a front end user and marketing tool.
+This diagram represents the planning phase of my SizeMeApp project, mapping out its core structure and functionality. It outlines how users register, log in, and manage their profiles, including updating measurements for accurate size recommendations. I designed a dashboard with an avatar generator, a blog with a comment system, a contact form and a newsletter feature. In the end I managed to implify all features of the diagram except the actual application SizeMeApp, making the site a front end user and marketing tool.
 
 ![Planning Diagram](assets/images_readme/planning_project_3.jpg)
 
@@ -402,13 +402,13 @@ In the development of SizeMeApp, I used a Kanban board to organize tasks and pri
 ## Colour Scheme
 The SizeMeApp color scheme is carefully chosen to create a clean, modern, and user-friendly interface. It consists of four key colors:
 
-#616f82 (Muted Blue) – Used for the header, footer, and headings, this color establishes a professional and trustworthy feel. Blue is often associated with reliability, making it an ideal choice for a tool focused on accuracy in sizing.
+#616F82 (Muted Blue) – Used for the header, footer, and headings, this color establishes a professional and trustworthy feel. Blue is often associated with reliability, making it an ideal choice for a tool focused on accuracy in sizing.
 
-#d4d8dc (Neutral Grey) – The primary background color, grey adds subtle depth while maintaining a neutral, sophisticated look. It helps separate sections without being too visually dominant.
+#D4D8DC (Neutral Grey) – The primary background color, grey adds subtle depth while maintaining a neutral, sophisticated look. It helps separate sections without being too visually dominant.
 
-#ffffff (White) – Applied as a secondary background color, ensuring a clean and spacious layout. White provides contrast, improving readability and enhancing the minimalist aesthetic.
+#FFFFFF (White) – Applied as a secondary background color, ensuring a clean and spacious layout. White provides contrast, improving readability and enhancing the minimalist aesthetic.
 
-#e84e1b (Vibrant Orange) – Used for buttons and highlights, orange draws attention to important interactive elements, such as calls to action. The warm tone energizes the interface and creates a sense of urgency and engagement.
+#E84E1B (Vibrant Orange) – Used for buttons and highlights, orange draws attention to important interactive elements, such as calls to action. The warm tone energizes the interface and creates a sense of urgency and engagement.
 <br>
 
 ![Colour Scheme](assets/images_readme/color_scheme_3.jpg)
@@ -429,7 +429,7 @@ Raleway is a lightweight, elegant sans-serif font designed for readability. Its 
 <hr>
 
 ## Imagery
-SizeMeApp uses an AI-generated human body illustration as a clean and inclusive background for measurement guidance. Throughout the site, icons are used as contextual images to support navigation and user actions. The visual style is minimal, functional, and intentionally neutral to keep focus on usability and personal fit.
+SizeMeApp uses an AI-generated human body illustration as a clean and inclusive background. Throughout the site, icons are used as contextual images to support navigation and user actions. The visual style is minimal, functional, and intentionally neutral to keep focus on usability and personal fit.
 
 <hr>
 
@@ -465,6 +465,8 @@ The wireframes were created in Adobe Illustrator for mobile, tablet and desktop.
 
 ![Wireframes Post Page](assets/images_readme/wireframes_post.jpg)
 </details>
+
+[Back to Content Table](#content)
 
 <hr>
 
@@ -665,7 +667,7 @@ The reset password form allows users to securely recover their account by enteri
 ![Confirm Reset Desktop](assets/images_readme/confirm_reset_desktop.jpg)
 
 ### Dashboard
-The dashboard provides a centralized space for users to manage their measurements securely. The "Body Measurements" section, hidden by default for privacy, allows users to enter, update, and delete their size data. Additionally, the dashboard includes an avatar generator and a direct link to the SizeMeApp application for accurate size recommendations.
+The dashboard provides a centralized space for users to manage their measurements securely. When signed up the user gets directed straight to the dashboard with a dynamic welcome heading. If a returing visitor the heading states "Welcome back". The "Body Measurements" section, hidden by default for privacy, allows users to enter, update, and delete their size data. Additionally, the dashboard includes an avatar generator and a direct link to the SizeMeApp application for accurate size recommendations.
 
 ![Dashboard Desktop](assets/images_readme/dashboard_desktop.jpg)
 
@@ -692,7 +694,7 @@ The measurements form allows users to enter, update, and delete their body measu
 </details>
 
 ### Mockup SizeMeApp Access
-The SizeMeApp button in your dashboard is currently a mockup for future development.
+The SizeMeApp button in the dashboard is currently a mockup for future development.
 
 ![SizeMeApp Access](assets/images_readme/enter_application_tablet.jpg)
 
@@ -702,7 +704,7 @@ Clicking the SizeMeApp access button will take you to the under construction pag
 ![Under Construction Page](assets/images_readme/under_construction_tablet.jpg)
 
 ### 404 Page
-Oops! You’ve landed on a 404 page, but don’t worry—you’re not lost alone! Your custom avatar is here to guide you back. The page you’re looking for doesn’t exist, but you can return to the dashboard or explore other sections of SizeMeApp to find what you need.
+Oops! You’ve landed on a 404 page, but don’t worry - you’re not lost alone! Your custom avatar is here to guide you back. The page you’re looking for doesn’t exist, but you can return to the dashboard or explore other sections of SizeMeApp to find what you need.
 
 ![404 Page](assets/images_readme/404.jpg)
 
@@ -721,6 +723,7 @@ In future development, we will integrate social media and Google login, allowing
 ### Newsletter Template Admin 
 We will set up a custom admin template for the newsletter with summernote featuring a Cloudinary-hosted image to enhance the admin interface. This will allow for a more visually appealing and branded experience while ensuring efficient image handling. The integration will streamline media management and improve the overall admin user experience when sending the newsletters.
 
+[Back to Content Table](#content)
 
 <br>
 <br>
@@ -760,11 +763,12 @@ We will set up a custom admin template for the newsletter with summernote featur
 - Chrome DevTools (for debugging and testing).
 - Lighthouse (to analyze performance, accessibility, and SEO).
 - W3C HTML & CSS Validator (to validate and check the html and css).
-- JSHint (to validate and check the javascript code).
+- JSHint (to validate and check the Javascript code).
 - Techsini.com (for multidevice image and testing responsiveness).
+- CI Python Linter (to validate and check the Python code).
 
 ## AI
-I am a big fan of AI tools like ChatGPT and Perplexity and have used them both throughout my work on SizeMeApp. These platforms have supported everything from technical troubleshooting to refining UX and brainstorming product features. AI has accelerated my workflow, offered new perspectives, and helped me make more informed decisions at every stage of the project. For me it's like having an always-available creative and technical partner.
+I often use AI tools like ChatGPT and Perplexity and have used them both throughout my work on SizeMeApp. These platforms have supported everything from technical troubleshooting to refining UX and brainstorming product features. AI has accelerated my workflow, offered new perspectives, and helped me make more informed decisions at every stage of the project. For me it's like having an always-available creative and technical partner.
 
 [Back to Content Table](#content)
 
@@ -887,7 +891,7 @@ I have used Chrome Dev Tools throughout the development of the website to test f
 I used Chrome Dev Tools Lightouse to help improve the website's performance, accessibility, SEO, and user experience. The first time I ran the testing I received messages for improvement that I have recorded in the [TESTING.md](TESTING.md). The Lighthouse tool provided actionable insights to optimize speed and fix issues. I did not manage to get the best scores for Performance on some of the pages due to shifting layouts in the avtar maker and hidden measurements section in the Dashboard. 
 
 ### Lighthouse 3rd party cookies
-When running the lighthouse tests I received a cookies warning for Best Practices due to Cloudinary. I implemented a cookie consent window but I still could not remove the warning. This comes up on all pages that uses Cloudinary Images. After checking with the school I decided to let the warnings be since it is not a major issue.
+When running the lighthouse tests I received a cookies warning for Best Practices due to Cloudinary. I implemented a cookie consent window but I still could not remove the warning in Lighthouse. This comes up on all pages that uses Cloudinary Images. After checking with the school I decided to let the warnings be since it is not a major issue.
 
 ![Image 3rd party cookies](assets/images_readme/bug_lighthouse_cloudinary.jpg)
 
@@ -928,6 +932,8 @@ https://docs.djangoproject.com/en/5.1/topics/async/<br>
 https://peps.python.org/pep-0008/<br>
 https://www.osano.com/cookieconsent<br>
 https://dighital.com/icon-pack/icons/flat-icons/robot-avatar-icons/<br>
+https://www.iloveimg.com/
+https://stackoverflow.com/questions
 - Free Download Template for website checking from https://www.hubspot.com
 - Code Institute Tutorials and Learning Content
 - Slack Community and information
@@ -947,7 +953,7 @@ https://dighital.com/icon-pack/icons/flat-icons/robot-avatar-icons/<br>
 - [Code](#code)
 
 ## Images
-The images used on this site are mainly generated using AI. The images for the blog posts and the male background template are generated through ChatGPT. The robot avatar outlines are created in Illustrator from a dighital.com icon pack. The logo images are created by myself using Illustrator.
+The male background image used on this site and the images for the blog posts are generated through ChatGPT. The robot avatar outlines are created in Illustrator from a dighital.com icon pack. The logo images are created by myself using Illustrator.
 
 ## Code
 
