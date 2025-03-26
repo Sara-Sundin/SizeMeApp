@@ -3,10 +3,23 @@
     --brand-blue: #616F82; 
   }
   
-  body {
+  html, body {
+    height: 100%;
+    margin: 0;
+}
+
+body {
     background-color: #d4d7db;
-    font-family: "Raleway",sans-serif;
+    font-family: "Raleway", sans-serif;
     margin-top: 100px;
+
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+main {
+    flex: 1;
 }
 
 h2,
@@ -50,24 +63,27 @@ h4 {
     background-repeat: no-repeat;
     background-position: top center;
     background-attachment: scroll;
-    position: relative; /* Ensures content is positioned correctly */
     min-height: 100vh;
 }
 
-/* Overlay to make only the background semi-transparent */
-.index-page::before,
-.blog-page::before,
-.about-page::before  {
+/* Main content container holds the background image */
+.content {
+    position: relative;
+    z-index: 1; /* Keep it above the pseudo-element background */
+}
+
+/* Add background image behind content only */
+.content::before {
     content: "";
     position: absolute;
-    width: 100%;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
     background: url("../images/body_male.gif") no-repeat top center;
-    opacity: 0.5; /* Only the background image is transparent */
-    z-index: -1; /*  Keeps it behind the content */
-    bottom: 0; 
-    height: 2000px;
     background-size: 100%;
-    top: 0px; 
+    opacity: 0.5;
+    z-index: -1;
 }
 
 .navbar {
@@ -706,12 +722,9 @@ h1 img {
         margin-top: 60px; /* Moves the second column slightly down */
     }
 
-    .index-page::before,
-    .blog-page::before,
-    .about-page::before  {
+    .content::before {
         background-size: 75%;
-        top: 0px;
-    } 
+    }
 
     .team-member {
         margin-bottom: 30px; /* Adds extra space between items on smaller screens */
@@ -755,11 +768,8 @@ h1 img {
         margin: auto;
     }
 
-    .index-page::before,
-    .blog-page::before,
-    .about-page::before  {
+    .content::before {
         background-size: 50%;
-        top: 0px; /* Moves the background image further down */
     }
 
     .card-body {
