@@ -110,8 +110,8 @@
         <div class="col-md-4 card mb-4  mt-3 ">
             <div class="card-body">
                 {% if user.is_authenticated %}
-                <h3>Leave a comment:</h3>
-                <p>Posting as: {{ user.username }}</p>
+                <h3>Leave a comment:</h3> 
+                <p>Posting as: {{ user.get_short_name }}</p>
                 <form id="commentForm" method="post" data-post-slug="{{ post.slug }}" action="">
                     {% csrf_token %}
                     {{ comment_form | crispy }}
