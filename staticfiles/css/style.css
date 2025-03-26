@@ -641,9 +641,11 @@ h1 img {
     margin: 0 auto;
     border-radius: 10px;
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-    background-color: #e76b3d; /* Final one wins */
-    color: white;
     padding: 10px 20px;
+}
+
+.password-heading {
+    color: black;
 }
 
 .password-reset-card p {
