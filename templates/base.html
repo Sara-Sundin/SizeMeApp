@@ -141,25 +141,17 @@
     {% endblock %}
 
     <script>
-        window.addEventListener("load", function () {
-          if (window.cookieconsent) {
-            window.cookieconsent.initialise({
-              palette: {
+        window.cookieconsent.initialise({
+            palette: {
                 popup: { background: "#000" },
                 button: { background: "#f1d600" }
-              },
-              theme: "classic",
-              position: "bottom-right",
-              content: {
+            },
+            theme: "classic",
+            position: "bottom-right",
+            content: {
                 message: "We use cookies to improve your experience.",
-                dismiss: "Got it!",
-                link: "Learn more",
-                href: "/privacy-policy"
-              }
-            });
-          } else {
-            console.error("CookieConsent library did not load.");
-          }
+                dismiss: "Got it!"
+            }
         });
       </script>      
 
