@@ -251,7 +251,7 @@ The following measures has been taken to make sure the website is accessible.
 <hr>
 
 ## ARIA Labels
-To ensure that the website is fully accessible and user-friendly for individuals using assistive technologies, the following ARIA attributes have been implemented. All form inputs are properly labeled, and dynamic elements like toggle buttons use aria-expanded and aria-controls. Planned improvements for the avatar maker include keyboard navigation, aria-labels for visual options and accessible focus handling within modals.
+To ensure that the website is fully accessible and user-friendly for individuals using assistive technologies, the following ARIA attributes have been implemented. All form inputs are properly labelled, and dynamic elements like toggle buttons use aria-expanded and aria-controls. Planned improvements for the avatar maker include keyboard navigation, aria-labels for visual options and accessible focus handling within modals.
 
 ### Base Template (all pages)
 - aria-controls="navbarNav" (for navbar toggler)
