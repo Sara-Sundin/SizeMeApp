@@ -156,7 +156,10 @@ CSRF_TRUSTED_ORIGINS = [
     "https://*.herokuapp.com",
     "https://*.techsini.com",
 ]
-CSRF_USE_SESSIONS = True  # Ensures CSRF tokens match session authentication
+
+CSRF_USE_SESSIONS = False
+CSRF_COOKIE_SECURE = True
+SESSION_COOKIE_SECURE = True
 
 # === INTERNATIONALIZATION === #
 LANGUAGE_CODE = "en-us"
