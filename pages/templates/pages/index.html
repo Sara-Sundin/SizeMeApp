@@ -9,16 +9,21 @@
     <div class="container text-center">
         <h1>
             <img src="{% static 'images/logo-hero.png' %}" alt="SizeMeApp Logo">
-        </h1>    
+        </h1>  
+        
         <div class="white-text">
             <h2 class="section display-5">Ready to have a go?</h2>
-            <a class="btn-orange" 
-            {% if user.is_authenticated %} href="{{ dashboard_url }}"
-            {% else %} href="{{ signup_url }}"
-            {% endif %}
-             >Click here!</a>
-            <p class="section"> Register and try now.</p>
-        </div>
+        <a class="btn-orange"
+        {% if user.is_authenticated %} href="{{ dashboard_url }}"
+        {% else %} href="{{ signup_url }}"
+        {% endif %}
+        >
+          {% if user.is_authenticated %}
+            Go to your dashboard!
+          {% else %}
+            SIGN UP!
+          {% endif %}
+        </a>        
     </div>
 </section>
 
@@ -58,7 +63,7 @@
     </div>
 </section>           
 
-<!-- Newsletter Signup -->
+<!-- Newslette to get startedr Signup -->
 <section class="newsletter text-center">
     <div class="container">
         <h2>Sign up to our newsletter!</h2>
